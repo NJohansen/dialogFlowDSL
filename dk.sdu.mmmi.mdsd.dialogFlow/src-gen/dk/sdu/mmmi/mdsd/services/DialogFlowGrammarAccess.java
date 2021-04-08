@@ -156,56 +156,75 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.DialogFlow.PhraseValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cValKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cTextAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cTextSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cTextAssignment_2_1.eContents().get(0);
+		private final Assignment cEntityAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final CrossReference cEntityEntityCrossReference_2_2_0 = (CrossReference)cEntityAssignment_2_2.eContents().get(0);
+		private final RuleCall cEntityEntityIDTerminalRuleCall_2_2_0_1 = (RuleCall)cEntityEntityCrossReference_2_2_0.eContents().get(1);
 		
 		//PhraseValue:
-		//    'val' '"' value=STRING '"'
+		//    'val' value=STRING (',' text+=STRING (entity+=[Entity])?)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'val' '"' value=STRING '"'
+		//'val' value=STRING (',' text+=STRING (entity+=[Entity])?)*
 		public Group getGroup() { return cGroup; }
 		
 		//'val'
 		public Keyword getValKeyword_0() { return cValKeyword_0; }
 		
-		//'"'
-		public Keyword getQuotationMarkKeyword_1() { return cQuotationMarkKeyword_1; }
-		
 		//value=STRING
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
 		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 		
-		//'"'
-		public Keyword getQuotationMarkKeyword_3() { return cQuotationMarkKeyword_3; }
+		//(',' text+=STRING (entity+=[Entity])?)*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//','
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		
+		//text+=STRING
+		public Assignment getTextAssignment_2_1() { return cTextAssignment_2_1; }
+		
+		//STRING
+		public RuleCall getTextSTRINGTerminalRuleCall_2_1_0() { return cTextSTRINGTerminalRuleCall_2_1_0; }
+		
+		//(entity+=[Entity])?
+		public Assignment getEntityAssignment_2_2() { return cEntityAssignment_2_2; }
+		
+		//[Entity]
+		public CrossReference getEntityEntityCrossReference_2_2_0() { return cEntityEntityCrossReference_2_2_0; }
+		
+		//ID
+		public RuleCall getEntityEntityIDTerminalRuleCall_2_2_0_1() { return cEntityEntityIDTerminalRuleCall_2_2_0_1; }
 	}
 	public class ResponsesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.DialogFlow.Responses");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cQuotationMarkKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cResponsesKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cResponsesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cResponsesSTRINGTerminalRuleCall_1_0 = (RuleCall)cResponsesAssignment_1.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cResponsesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cResponsesSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cResponsesAssignment_3_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cResponsesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cResponsesSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cResponsesAssignment_2_1.eContents().get(0);
 		
 		//Responses:
-		//    '"' responses+=STRING '"' (',' responses+=STRING)*
+		//    'responses' responses+=STRING (',' responses+=STRING)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'"' responses+=STRING '"' (',' responses+=STRING)*
+		//'responses' responses+=STRING (',' responses+=STRING)*
 		public Group getGroup() { return cGroup; }
 		
-		//'"'
-		public Keyword getQuotationMarkKeyword_0() { return cQuotationMarkKeyword_0; }
+		//'responses'
+		public Keyword getResponsesKeyword_0() { return cResponsesKeyword_0; }
 		
 		//responses+=STRING
 		public Assignment getResponsesAssignment_1() { return cResponsesAssignment_1; }
@@ -213,20 +232,17 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 		//STRING
 		public RuleCall getResponsesSTRINGTerminalRuleCall_1_0() { return cResponsesSTRINGTerminalRuleCall_1_0; }
 		
-		//'"'
-		public Keyword getQuotationMarkKeyword_2() { return cQuotationMarkKeyword_2; }
-		
 		//(',' responses+=STRING)*
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//','
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
 		//responses+=STRING
-		public Assignment getResponsesAssignment_3_1() { return cResponsesAssignment_3_1; }
+		public Assignment getResponsesAssignment_2_1() { return cResponsesAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getResponsesSTRINGTerminalRuleCall_3_1_0() { return cResponsesSTRINGTerminalRuleCall_3_1_0; }
+		public RuleCall getResponsesSTRINGTerminalRuleCall_2_1_0() { return cResponsesSTRINGTerminalRuleCall_2_1_0; }
 	}
 	public class ActionsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.DialogFlow.Actions");
@@ -310,11 +326,11 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 		private final RuleCall cEntitiesEntityValueParserRuleCall_2_0 = (RuleCall)cEntitiesAssignment_2.eContents().get(0);
 		
 		//Entity:
-		//    'entity'name=ID entities+=EntityValue*
+		//    'entity' name=ID entities+=EntityValue*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'entity'name=ID entities+=EntityValue*
+		//'entity' name=ID entities+=EntityValue*
 		public Group getGroup() { return cGroup; }
 		
 		//'entity'
@@ -336,49 +352,61 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.DialogFlow.EntityValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cValKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValuesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValuesSTRINGTerminalRuleCall_2_0 = (RuleCall)cValuesAssignment_2.eContents().get(0);
-		private final Keyword cQuotationMarkKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cValuesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cValuesSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cValuesAssignment_4_1.eContents().get(0);
+		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValuesSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
 		
 		//EntityValue:
-		//    'val' '"' values+=STRING '"' (',' values+=STRING )*
+		//    'val' values+=STRING (',' values+=STRING )*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'val' '"' values+=STRING '"' (',' values+=STRING )*
+		//'val' values+=STRING (',' values+=STRING )*
 		public Group getGroup() { return cGroup; }
 		
 		//'val'
 		public Keyword getValKeyword_0() { return cValKeyword_0; }
 		
-		//'"'
-		public Keyword getQuotationMarkKeyword_1() { return cQuotationMarkKeyword_1; }
-		
 		//values+=STRING
-		public Assignment getValuesAssignment_2() { return cValuesAssignment_2; }
+		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
 		
 		//STRING
-		public RuleCall getValuesSTRINGTerminalRuleCall_2_0() { return cValuesSTRINGTerminalRuleCall_2_0; }
-		
-		//'"'
-		public Keyword getQuotationMarkKeyword_3() { return cQuotationMarkKeyword_3; }
+		public RuleCall getValuesSTRINGTerminalRuleCall_1_0() { return cValuesSTRINGTerminalRuleCall_1_0; }
 		
 		//(',' values+=STRING )*
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//','
-		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
 		//values+=STRING
-		public Assignment getValuesAssignment_4_1() { return cValuesAssignment_4_1; }
+		public Assignment getValuesAssignment_2_1() { return cValuesAssignment_2_1; }
 		
 		//STRING
-		public RuleCall getValuesSTRINGTerminalRuleCall_4_1_0() { return cValuesSTRINGTerminalRuleCall_4_1_0; }
+		public RuleCall getValuesSTRINGTerminalRuleCall_2_1_0() { return cValuesSTRINGTerminalRuleCall_2_1_0; }
+	}
+	public class ValueElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.DialogFlow.Value");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cIDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cWSTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Value:
+		//        ID | WS
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//ID | WS
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ID
+		public RuleCall getIDTerminalRuleCall_0() { return cIDTerminalRuleCall_0; }
+		
+		//WS
+		public RuleCall getWSTerminalRuleCall_1() { return cWSTerminalRuleCall_1; }
 	}
 	
 	
@@ -392,6 +420,7 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 	private final ActionValueElements pActionValue;
 	private final EntityElements pEntity;
 	private final EntityValueElements pEntityValue;
+	private final ValueElements pValue;
 	
 	private final Grammar grammar;
 	
@@ -412,6 +441,7 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 		this.pActionValue = new ActionValueElements();
 		this.pEntity = new EntityElements();
 		this.pEntityValue = new EntityValueElements();
+		this.pValue = new ValueElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -486,7 +516,7 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//PhraseValue:
-	//    'val' '"' value=STRING '"'
+	//    'val' value=STRING (',' text+=STRING (entity+=[Entity])?)*
 	//;
 	public PhraseValueElements getPhraseValueAccess() {
 		return pPhraseValue;
@@ -497,7 +527,7 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//Responses:
-	//    '"' responses+=STRING '"' (',' responses+=STRING)*
+	//    'responses' responses+=STRING (',' responses+=STRING)*
 	//;
 	public ResponsesElements getResponsesAccess() {
 		return pResponses;
@@ -530,7 +560,7 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//Entity:
-	//    'entity'name=ID entities+=EntityValue*
+	//    'entity' name=ID entities+=EntityValue*
 	//;
 	public EntityElements getEntityAccess() {
 		return pEntity;
@@ -541,7 +571,7 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//EntityValue:
-	//    'val' '"' values+=STRING '"' (',' values+=STRING )*
+	//    'val' values+=STRING (',' values+=STRING )*
 	//;
 	public EntityValueElements getEntityValueAccess() {
 		return pEntityValue;
@@ -549,6 +579,17 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 	
 	public ParserRule getEntityValueRule() {
 		return getEntityValueAccess().getRule();
+	}
+	
+	//Value:
+	//        ID | WS
+	//;
+	public ValueElements getValueAccess() {
+		return pValue;
+	}
+	
+	public ParserRule getValueRule() {
+		return getValueAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

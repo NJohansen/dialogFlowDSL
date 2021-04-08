@@ -131,10 +131,10 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = T__15;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:15:7: ( '\"' )
-            // InternalDialogFlow.g:15:9: '\"'
+            // InternalDialogFlow.g:15:7: ( ',' )
+            // InternalDialogFlow.g:15:9: ','
             {
-            match('\"'); 
+            match(','); 
 
             }
 
@@ -151,10 +151,11 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = T__16;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:16:7: ( ',' )
-            // InternalDialogFlow.g:16:9: ','
+            // InternalDialogFlow.g:16:7: ( 'responses' )
+            // InternalDialogFlow.g:16:9: 'responses'
             {
-            match(','); 
+            match("responses"); 
+
 
             }
 
@@ -213,10 +214,10 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:678:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalDialogFlow.g:678:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalDialogFlow.g:695:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalDialogFlow.g:695:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalDialogFlow.g:678:11: ( '^' )?
+            // InternalDialogFlow.g:695:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -225,7 +226,7 @@ public class InternalDialogFlowLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalDialogFlow.g:678:11: '^'
+                    // InternalDialogFlow.g:695:11: '^'
                     {
                     match('^'); 
 
@@ -243,7 +244,7 @@ public class InternalDialogFlowLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalDialogFlow.g:678:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalDialogFlow.g:695:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -292,10 +293,10 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:680:10: ( ( '0' .. '9' )+ )
-            // InternalDialogFlow.g:680:12: ( '0' .. '9' )+
+            // InternalDialogFlow.g:697:10: ( ( '0' .. '9' )+ )
+            // InternalDialogFlow.g:697:12: ( '0' .. '9' )+
             {
-            // InternalDialogFlow.g:680:12: ( '0' .. '9' )+
+            // InternalDialogFlow.g:697:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -309,7 +310,7 @@ public class InternalDialogFlowLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalDialogFlow.g:680:13: '0' .. '9'
+            	    // InternalDialogFlow.g:697:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -341,10 +342,10 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:682:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalDialogFlow.g:682:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDialogFlow.g:699:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalDialogFlow.g:699:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalDialogFlow.g:682:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalDialogFlow.g:699:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -362,10 +363,10 @@ public class InternalDialogFlowLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalDialogFlow.g:682:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalDialogFlow.g:699:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalDialogFlow.g:682:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalDialogFlow.g:699:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -381,7 +382,7 @@ public class InternalDialogFlowLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalDialogFlow.g:682:21: '\\\\' .
+                    	    // InternalDialogFlow.g:699:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -389,7 +390,7 @@ public class InternalDialogFlowLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDialogFlow.g:682:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalDialogFlow.g:699:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -414,10 +415,10 @@ public class InternalDialogFlowLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalDialogFlow.g:682:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalDialogFlow.g:699:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalDialogFlow.g:682:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalDialogFlow.g:699:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -433,7 +434,7 @@ public class InternalDialogFlowLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalDialogFlow.g:682:54: '\\\\' .
+                    	    // InternalDialogFlow.g:699:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -441,7 +442,7 @@ public class InternalDialogFlowLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalDialogFlow.g:682:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalDialogFlow.g:699:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -484,12 +485,12 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:684:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalDialogFlow.g:684:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalDialogFlow.g:701:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalDialogFlow.g:701:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalDialogFlow.g:684:24: ( options {greedy=false; } : . )*
+            // InternalDialogFlow.g:701:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -514,7 +515,7 @@ public class InternalDialogFlowLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalDialogFlow.g:684:52: .
+            	    // InternalDialogFlow.g:701:52: .
             	    {
             	    matchAny(); 
 
@@ -544,12 +545,12 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:686:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalDialogFlow.g:686:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalDialogFlow.g:703:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalDialogFlow.g:703:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalDialogFlow.g:686:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalDialogFlow.g:703:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -562,7 +563,7 @@ public class InternalDialogFlowLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalDialogFlow.g:686:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalDialogFlow.g:703:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -582,7 +583,7 @@ public class InternalDialogFlowLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalDialogFlow.g:686:40: ( ( '\\r' )? '\\n' )?
+            // InternalDialogFlow.g:703:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -591,9 +592,9 @@ public class InternalDialogFlowLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalDialogFlow.g:686:41: ( '\\r' )? '\\n'
+                    // InternalDialogFlow.g:703:41: ( '\\r' )? '\\n'
                     {
-                    // InternalDialogFlow.g:686:41: ( '\\r' )?
+                    // InternalDialogFlow.g:703:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -602,7 +603,7 @@ public class InternalDialogFlowLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalDialogFlow.g:686:41: '\\r'
+                            // InternalDialogFlow.g:703:41: '\\r'
                             {
                             match('\r'); 
 
@@ -634,10 +635,10 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:688:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalDialogFlow.g:688:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDialogFlow.g:705:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalDialogFlow.g:705:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalDialogFlow.g:688:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalDialogFlow.g:705:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -691,8 +692,8 @@ public class InternalDialogFlowLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalDialogFlow.g:690:16: ( . )
-            // InternalDialogFlow.g:690:18: .
+            // InternalDialogFlow.g:707:16: ( . )
+            // InternalDialogFlow.g:707:18: .
             {
             matchAny(); 
 
@@ -824,76 +825,85 @@ public class InternalDialogFlowLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\4\21\1\26\1\uffff\2\21\1\17\2\uffff\2\17\2\uffff\1\21\1\uffff\3\21\3\uffff\2\21\4\uffff\3\21\1\47\5\21\1\uffff\7\21\1\64\1\65\2\21\1\70\2\uffff\1\71\1\72\3\uffff";
+        "\1\uffff\4\22\1\uffff\3\22\1\20\2\uffff\3\20\2\uffff\1\22\1\uffff\3\22\1\uffff\3\22\5\uffff\3\22\1\51\6\22\1\uffff\11\22\1\71\1\72\3\22\1\76\2\uffff\1\77\1\22\1\101\2\uffff\1\22\1\uffff\1\103\1\uffff";
     static final String DFA12_eofS =
-        "\73\uffff";
+        "\104\uffff";
     static final String DFA12_minS =
-        "\1\0\1\171\1\156\1\150\1\141\1\0\1\uffff\1\143\1\156\1\101\2\uffff\1\0\1\52\2\uffff\1\163\1\uffff\1\164\1\162\1\154\3\uffff\2\164\4\uffff\1\164\1\145\1\141\1\60\2\151\1\145\1\156\1\163\1\uffff\1\157\1\164\1\155\1\164\1\145\1\156\1\171\2\60\2\163\1\60\2\uffff\2\60\3\uffff";
+        "\1\0\1\171\1\156\1\150\1\141\1\uffff\1\145\1\143\1\156\1\101\2\uffff\2\0\1\52\2\uffff\1\163\1\uffff\1\164\1\162\1\154\1\uffff\1\163\2\164\5\uffff\1\164\1\145\1\141\1\60\1\160\2\151\1\145\1\156\1\163\1\uffff\2\157\1\164\1\155\1\164\1\145\2\156\1\171\2\60\3\163\1\60\2\uffff\1\60\1\145\1\60\2\uffff\1\163\1\uffff\1\60\1\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\171\1\156\1\150\1\141\1\uffff\1\uffff\1\143\1\156\1\172\2\uffff\1\uffff\1\57\2\uffff\1\163\1\uffff\1\164\1\162\1\154\3\uffff\2\164\4\uffff\1\164\1\145\1\141\1\172\2\151\1\145\1\156\1\163\1\uffff\1\157\1\164\1\155\1\164\1\145\1\156\1\171\2\172\2\163\1\172\2\uffff\2\172\3\uffff";
+        "\1\uffff\1\171\1\156\1\150\1\141\1\uffff\1\145\1\143\1\156\1\172\2\uffff\2\uffff\1\57\2\uffff\1\163\1\uffff\1\164\1\162\1\154\1\uffff\1\163\2\164\5\uffff\1\164\1\145\1\141\1\172\1\160\2\151\1\145\1\156\1\163\1\uffff\2\157\1\164\1\155\1\164\1\145\2\156\1\171\2\172\3\163\1\172\2\uffff\1\172\1\145\1\172\2\uffff\1\163\1\uffff\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\6\uffff\1\6\3\uffff\1\11\1\12\2\uffff\1\16\1\17\1\uffff\1\11\3\uffff\1\13\1\5\1\6\2\uffff\1\12\1\14\1\15\1\16\11\uffff\1\4\14\uffff\1\1\1\2\2\uffff\1\10\1\3\1\7";
+        "\5\uffff\1\5\4\uffff\1\11\1\12\3\uffff\1\16\1\17\1\uffff\1\11\3\uffff\1\5\3\uffff\1\12\1\13\1\14\1\15\1\16\12\uffff\1\4\17\uffff\1\1\1\2\3\uffff\1\10\1\3\1\uffff\1\7\1\uffff\1\6";
     static final String DFA12_specialS =
-        "\1\0\4\uffff\1\2\6\uffff\1\1\56\uffff}>";
+        "\1\1\13\uffff\1\0\1\2\66\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\17\2\16\2\17\1\16\22\17\1\16\1\17\1\5\4\17\1\14\4\17\1\6\2\17\1\15\12\13\7\17\32\12\3\17\1\11\1\12\1\17\1\7\3\12\1\10\3\12\1\2\6\12\1\3\2\12\1\1\2\12\1\4\4\12\uff85\17",
-            "\1\20",
-            "\1\22",
+            "\11\20\2\17\2\20\1\17\22\20\1\17\1\20\1\14\4\20\1\15\4\20\1\5\2\20\1\16\12\13\7\20\32\12\3\20\1\11\1\12\1\20\1\7\3\12\1\10\3\12\1\2\6\12\1\3\1\12\1\6\1\1\2\12\1\4\4\12\uff85\20",
+            "\1\21",
             "\1\23",
             "\1\24",
-            "\0\25",
+            "\1\25",
             "",
+            "\1\27",
             "\1\30",
             "\1\31",
-            "\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\32\22\4\uffff\1\22\1\uffff\32\22",
             "",
             "",
-            "\0\25",
-            "\1\33\4\uffff\1\34",
+            "\0\33",
+            "\0\33",
+            "\1\34\4\uffff\1\35",
             "",
-            "",
-            "\1\36",
             "",
             "\1\37",
+            "",
             "\1\40",
             "\1\41",
-            "",
-            "",
-            "",
             "\1\42",
+            "",
             "\1\43",
-            "",
-            "",
-            "",
-            "",
             "\1\44",
             "\1\45",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\46",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\47",
             "\1\50",
-            "\1\51",
+            "\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
             "\1\52",
             "\1\53",
             "\1\54",
-            "",
             "\1\55",
             "\1\56",
             "\1\57",
+            "",
             "\1\60",
             "\1\61",
             "\1\62",
             "\1\63",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\64",
+            "\1\65",
             "\1\66",
             "\1\67",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\1\70",
+            "\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\73",
+            "\1\74",
+            "\1\75",
+            "\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
             "",
             "",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
-            "\12\21\7\uffff\32\21\4\uffff\1\21\1\uffff\32\21",
+            "\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
+            "\1\100",
+            "\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
             "",
             "",
+            "\1\102",
+            "",
+            "\12\22\7\uffff\32\22\4\uffff\1\22\1\uffff\32\22",
             ""
     };
 
@@ -934,6 +944,16 @@ public class InternalDialogFlowLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
+                        int LA12_12 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFF')) ) {s = 27;}
+
+                        else s = 16;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
                         int LA12_0 = input.LA(1);
 
                         s = -1;
@@ -945,9 +965,9 @@ public class InternalDialogFlowLexer extends Lexer {
 
                         else if ( (LA12_0=='v') ) {s = 4;}
 
-                        else if ( (LA12_0=='\"') ) {s = 5;}
+                        else if ( (LA12_0==',') ) {s = 5;}
 
-                        else if ( (LA12_0==',') ) {s = 6;}
+                        else if ( (LA12_0=='r') ) {s = 6;}
 
                         else if ( (LA12_0=='a') ) {s = 7;}
 
@@ -955,37 +975,29 @@ public class InternalDialogFlowLexer extends Lexer {
 
                         else if ( (LA12_0=='^') ) {s = 9;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='b' && LA12_0<='d')||(LA12_0>='f' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='o')||(LA12_0>='q' && LA12_0<='r')||(LA12_0>='t' && LA12_0<='u')||(LA12_0>='w' && LA12_0<='z')) ) {s = 10;}
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='b' && LA12_0<='d')||(LA12_0>='f' && LA12_0<='h')||(LA12_0>='j' && LA12_0<='o')||LA12_0=='q'||(LA12_0>='t' && LA12_0<='u')||(LA12_0>='w' && LA12_0<='z')) ) {s = 10;}
 
                         else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 11;}
 
-                        else if ( (LA12_0=='\'') ) {s = 12;}
+                        else if ( (LA12_0=='\"') ) {s = 12;}
 
-                        else if ( (LA12_0=='/') ) {s = 13;}
+                        else if ( (LA12_0=='\'') ) {s = 13;}
 
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 14;}
+                        else if ( (LA12_0=='/') ) {s = 14;}
 
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 15;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 15;}
 
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA12_12 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA12_12>='\u0000' && LA12_12<='\uFFFF')) ) {s = 21;}
-
-                        else s = 15;
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||(LA12_0>='(' && LA12_0<='+')||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||(LA12_0>='[' && LA12_0<=']')||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 16;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_5 = input.LA(1);
+                        int LA12_13 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_5>='\u0000' && LA12_5<='\uFFFF')) ) {s = 21;}
+                        if ( ((LA12_13>='\u0000' && LA12_13<='\uFFFF')) ) {s = 27;}
 
-                        else s = 22;
+                        else s = 16;
 
                         if ( s>=0 ) return s;
                         break;

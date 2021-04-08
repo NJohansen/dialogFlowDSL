@@ -225,13 +225,31 @@ public interface DialogFlowPackage extends EPackage
   int PHRASE_VALUE__VALUE = 0;
 
   /**
+   * The feature id for the '<em><b>Text</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PHRASE_VALUE__TEXT = 1;
+
+  /**
+   * The feature id for the '<em><b>Entity</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PHRASE_VALUE__ENTITY = 2;
+
+  /**
    * The number of structural features of the '<em>Phrase Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PHRASE_VALUE_FEATURE_COUNT = 1;
+  int PHRASE_VALUE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ResponsesImpl <em>Responses</em>}' class.
@@ -540,6 +558,28 @@ public interface DialogFlowPackage extends EPackage
   EAttribute getPhraseValue_Value();
 
   /**
+   * Returns the meta object for the attribute list '{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getText <em>Text</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Text</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getText()
+   * @see #getPhraseValue()
+   * @generated
+   */
+  EAttribute getPhraseValue_Text();
+
+  /**
+   * Returns the meta object for the reference list '{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getEntity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Entity</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getEntity()
+   * @see #getPhraseValue()
+   * @generated
+   */
+  EReference getPhraseValue_Entity();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.dialogFlow.Responses <em>Responses</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -802,6 +842,22 @@ public interface DialogFlowPackage extends EPackage
      * @generated
      */
     EAttribute PHRASE_VALUE__VALUE = eINSTANCE.getPhraseValue_Value();
+
+    /**
+     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PHRASE_VALUE__TEXT = eINSTANCE.getPhraseValue_Text();
+
+    /**
+     * The meta object literal for the '<em><b>Entity</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PHRASE_VALUE__ENTITY = eINSTANCE.getPhraseValue_Entity();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ResponsesImpl <em>Responses</em>}' class.

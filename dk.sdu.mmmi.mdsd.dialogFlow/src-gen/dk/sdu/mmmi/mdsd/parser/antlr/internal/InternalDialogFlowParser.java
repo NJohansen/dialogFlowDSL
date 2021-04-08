@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'system'", "'intent'", "'phrases'", "'val'", "'\"'", "','", "'actions'", "'entity'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'system'", "'intent'", "'phrases'", "'val'", "','", "'responses'", "'actions'", "'entity'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -758,42 +758,39 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePhraseValue"
-    // InternalDialogFlow.g:314:1: rulePhraseValue returns [EObject current=null] : (otherlv_0= 'val' otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' ) ;
+    // InternalDialogFlow.g:314:1: rulePhraseValue returns [EObject current=null] : (otherlv_0= 'val' ( (lv_value_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_text_3_0= RULE_STRING ) ) ( (otherlv_4= RULE_ID ) )? )* ) ;
     public final EObject rulePhraseValue() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token lv_value_2_0=null;
-        Token otherlv_3=null;
+        Token lv_value_1_0=null;
+        Token otherlv_2=null;
+        Token lv_text_3_0=null;
+        Token otherlv_4=null;
 
 
         	enterRule();
 
         try {
-            // InternalDialogFlow.g:320:2: ( (otherlv_0= 'val' otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' ) )
-            // InternalDialogFlow.g:321:2: (otherlv_0= 'val' otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' )
+            // InternalDialogFlow.g:320:2: ( (otherlv_0= 'val' ( (lv_value_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_text_3_0= RULE_STRING ) ) ( (otherlv_4= RULE_ID ) )? )* ) )
+            // InternalDialogFlow.g:321:2: (otherlv_0= 'val' ( (lv_value_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_text_3_0= RULE_STRING ) ) ( (otherlv_4= RULE_ID ) )? )* )
             {
-            // InternalDialogFlow.g:321:2: (otherlv_0= 'val' otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"' )
-            // InternalDialogFlow.g:322:3: otherlv_0= 'val' otherlv_1= '\"' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= '\"'
+            // InternalDialogFlow.g:321:2: (otherlv_0= 'val' ( (lv_value_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_text_3_0= RULE_STRING ) ) ( (otherlv_4= RULE_ID ) )? )* )
+            // InternalDialogFlow.g:322:3: otherlv_0= 'val' ( (lv_value_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_text_3_0= RULE_STRING ) ) ( (otherlv_4= RULE_ID ) )? )*
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_6); 
+            otherlv_0=(Token)match(input,14,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPhraseValueAccess().getValKeyword_0());
             		
-            otherlv_1=(Token)match(input,15,FOLLOW_9); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getPhraseValueAccess().getQuotationMarkKeyword_1());
-            		
-            // InternalDialogFlow.g:330:3: ( (lv_value_2_0= RULE_STRING ) )
-            // InternalDialogFlow.g:331:4: (lv_value_2_0= RULE_STRING )
+            // InternalDialogFlow.g:326:3: ( (lv_value_1_0= RULE_STRING ) )
+            // InternalDialogFlow.g:327:4: (lv_value_1_0= RULE_STRING )
             {
-            // InternalDialogFlow.g:331:4: (lv_value_2_0= RULE_STRING )
-            // InternalDialogFlow.g:332:5: lv_value_2_0= RULE_STRING
+            // InternalDialogFlow.g:327:4: (lv_value_1_0= RULE_STRING )
+            // InternalDialogFlow.g:328:5: lv_value_1_0= RULE_STRING
             {
-            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_value_2_0, grammarAccess.getPhraseValueAccess().getValueSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_value_1_0, grammarAccess.getPhraseValueAccess().getValueSTRINGTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -802,7 +799,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"value",
-            						lv_value_2_0,
+            						lv_value_1_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -811,160 +808,43 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getPhraseValueAccess().getQuotationMarkKeyword_3());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "rulePhraseValue"
-
-
-    // $ANTLR start "entryRuleResponses"
-    // InternalDialogFlow.g:356:1: entryRuleResponses returns [EObject current=null] : iv_ruleResponses= ruleResponses EOF ;
-    public final EObject entryRuleResponses() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleResponses = null;
-
-
-        try {
-            // InternalDialogFlow.g:356:50: (iv_ruleResponses= ruleResponses EOF )
-            // InternalDialogFlow.g:357:2: iv_ruleResponses= ruleResponses EOF
-            {
-             newCompositeNode(grammarAccess.getResponsesRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleResponses=ruleResponses();
-
-            state._fsp--;
-
-             current =iv_ruleResponses; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleResponses"
-
-
-    // $ANTLR start "ruleResponses"
-    // InternalDialogFlow.g:363:1: ruleResponses returns [EObject current=null] : (otherlv_0= '\"' ( (lv_responses_1_0= RULE_STRING ) ) otherlv_2= '\"' (otherlv_3= ',' ( (lv_responses_4_0= RULE_STRING ) ) )* ) ;
-    public final EObject ruleResponses() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_responses_1_0=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token lv_responses_4_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalDialogFlow.g:369:2: ( (otherlv_0= '\"' ( (lv_responses_1_0= RULE_STRING ) ) otherlv_2= '\"' (otherlv_3= ',' ( (lv_responses_4_0= RULE_STRING ) ) )* ) )
-            // InternalDialogFlow.g:370:2: (otherlv_0= '\"' ( (lv_responses_1_0= RULE_STRING ) ) otherlv_2= '\"' (otherlv_3= ',' ( (lv_responses_4_0= RULE_STRING ) ) )* )
-            {
-            // InternalDialogFlow.g:370:2: (otherlv_0= '\"' ( (lv_responses_1_0= RULE_STRING ) ) otherlv_2= '\"' (otherlv_3= ',' ( (lv_responses_4_0= RULE_STRING ) ) )* )
-            // InternalDialogFlow.g:371:3: otherlv_0= '\"' ( (lv_responses_1_0= RULE_STRING ) ) otherlv_2= '\"' (otherlv_3= ',' ( (lv_responses_4_0= RULE_STRING ) ) )*
-            {
-            otherlv_0=(Token)match(input,15,FOLLOW_9); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getResponsesAccess().getQuotationMarkKeyword_0());
-            		
-            // InternalDialogFlow.g:375:3: ( (lv_responses_1_0= RULE_STRING ) )
-            // InternalDialogFlow.g:376:4: (lv_responses_1_0= RULE_STRING )
-            {
-            // InternalDialogFlow.g:376:4: (lv_responses_1_0= RULE_STRING )
-            // InternalDialogFlow.g:377:5: lv_responses_1_0= RULE_STRING
-            {
-            lv_responses_1_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
-
-            					newLeafNode(lv_responses_1_0, grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getResponsesRule());
-            					}
-            					addWithLastConsumed(
-            						current,
-            						"responses",
-            						lv_responses_1_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_2=(Token)match(input,15,FOLLOW_10); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getResponsesAccess().getQuotationMarkKeyword_2());
-            		
-            // InternalDialogFlow.g:397:3: (otherlv_3= ',' ( (lv_responses_4_0= RULE_STRING ) ) )*
-            loop5:
+            // InternalDialogFlow.g:344:3: (otherlv_2= ',' ( (lv_text_3_0= RULE_STRING ) ) ( (otherlv_4= RULE_ID ) )? )*
+            loop6:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA5_0==16) ) {
-                    alt5=1;
+                if ( (LA6_0==15) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalDialogFlow.g:398:4: otherlv_3= ',' ( (lv_responses_4_0= RULE_STRING ) )
+            	    // InternalDialogFlow.g:345:4: otherlv_2= ',' ( (lv_text_3_0= RULE_STRING ) ) ( (otherlv_4= RULE_ID ) )?
             	    {
-            	    otherlv_3=(Token)match(input,16,FOLLOW_9); 
+            	    otherlv_2=(Token)match(input,15,FOLLOW_9); 
 
-            	    				newLeafNode(otherlv_3, grammarAccess.getResponsesAccess().getCommaKeyword_3_0());
+            	    				newLeafNode(otherlv_2, grammarAccess.getPhraseValueAccess().getCommaKeyword_2_0());
             	    			
-            	    // InternalDialogFlow.g:402:4: ( (lv_responses_4_0= RULE_STRING ) )
-            	    // InternalDialogFlow.g:403:5: (lv_responses_4_0= RULE_STRING )
+            	    // InternalDialogFlow.g:349:4: ( (lv_text_3_0= RULE_STRING ) )
+            	    // InternalDialogFlow.g:350:5: (lv_text_3_0= RULE_STRING )
             	    {
-            	    // InternalDialogFlow.g:403:5: (lv_responses_4_0= RULE_STRING )
-            	    // InternalDialogFlow.g:404:6: lv_responses_4_0= RULE_STRING
+            	    // InternalDialogFlow.g:350:5: (lv_text_3_0= RULE_STRING )
+            	    // InternalDialogFlow.g:351:6: lv_text_3_0= RULE_STRING
             	    {
-            	    lv_responses_4_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+            	    lv_text_3_0=(Token)match(input,RULE_STRING,FOLLOW_11); 
 
-            	    						newLeafNode(lv_responses_4_0, grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_3_1_0());
+            	    						newLeafNode(lv_text_3_0, grammarAccess.getPhraseValueAccess().getTextSTRINGTerminalRuleCall_2_1_0());
             	    					
 
             	    						if (current==null) {
-            	    							current = createModelElement(grammarAccess.getResponsesRule());
+            	    							current = createModelElement(grammarAccess.getPhraseValueRule());
             	    						}
             	    						addWithLastConsumed(
             	    							current,
-            	    							"responses",
-            	    							lv_responses_4_0,
+            	    							"text",
+            	    							lv_text_3_0,
             	    							"org.eclipse.xtext.common.Terminals.STRING");
             	    					
 
@@ -973,144 +853,35 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
             	    }
 
+            	    // InternalDialogFlow.g:367:4: ( (otherlv_4= RULE_ID ) )?
+            	    int alt5=2;
+            	    int LA5_0 = input.LA(1);
 
+            	    if ( (LA5_0==RULE_ID) ) {
+            	        alt5=1;
             	    }
-            	    break;
+            	    switch (alt5) {
+            	        case 1 :
+            	            // InternalDialogFlow.g:368:5: (otherlv_4= RULE_ID )
+            	            {
+            	            // InternalDialogFlow.g:368:5: (otherlv_4= RULE_ID )
+            	            // InternalDialogFlow.g:369:6: otherlv_4= RULE_ID
+            	            {
 
-            	default :
-            	    break loop5;
-                }
-            } while (true);
+            	            						if (current==null) {
+            	            							current = createModelElement(grammarAccess.getPhraseValueRule());
+            	            						}
+            	            					
+            	            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_10); 
 
+            	            						newLeafNode(otherlv_4, grammarAccess.getPhraseValueAccess().getEntityEntityCrossReference_2_2_0());
+            	            					
 
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleResponses"
+            	            }
 
 
-    // $ANTLR start "entryRuleActions"
-    // InternalDialogFlow.g:425:1: entryRuleActions returns [EObject current=null] : iv_ruleActions= ruleActions EOF ;
-    public final EObject entryRuleActions() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleActions = null;
-
-
-        try {
-            // InternalDialogFlow.g:425:48: (iv_ruleActions= ruleActions EOF )
-            // InternalDialogFlow.g:426:2: iv_ruleActions= ruleActions EOF
-            {
-             newCompositeNode(grammarAccess.getActionsRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleActions=ruleActions();
-
-            state._fsp--;
-
-             current =iv_ruleActions; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleActions"
-
-
-    // $ANTLR start "ruleActions"
-    // InternalDialogFlow.g:432:1: ruleActions returns [EObject current=null] : ( () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )* ) ;
-    public final EObject ruleActions() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        EObject lv_actions_2_0 = null;
-
-
-
-        	enterRule();
-
-        try {
-            // InternalDialogFlow.g:438:2: ( ( () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )* ) )
-            // InternalDialogFlow.g:439:2: ( () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )* )
-            {
-            // InternalDialogFlow.g:439:2: ( () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )* )
-            // InternalDialogFlow.g:440:3: () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )*
-            {
-            // InternalDialogFlow.g:440:3: ()
-            // InternalDialogFlow.g:441:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getActionsAccess().getActionsAction_0(),
-            					current);
-            			
-
-            }
-
-            otherlv_1=(Token)match(input,17,FOLLOW_8); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getActionsAccess().getActionsKeyword_1());
-            		
-            // InternalDialogFlow.g:451:3: ( (lv_actions_2_0= ruleActionValue ) )*
-            loop6:
-            do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
-
-                if ( (LA6_0==14) ) {
-                    alt6=1;
-                }
-
-
-                switch (alt6) {
-            	case 1 :
-            	    // InternalDialogFlow.g:452:4: (lv_actions_2_0= ruleActionValue )
-            	    {
-            	    // InternalDialogFlow.g:452:4: (lv_actions_2_0= ruleActionValue )
-            	    // InternalDialogFlow.g:453:5: lv_actions_2_0= ruleActionValue
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getActionsAccess().getActionsActionValueParserRuleCall_2_0());
-            	    				
-            	    pushFollow(FOLLOW_8);
-            	    lv_actions_2_0=ruleActionValue();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getActionsRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"actions",
-            	    						lv_actions_2_0,
-            	    						"dk.sdu.mmmi.mdsd.DialogFlow.ActionValue");
-            	    					afterParserOrEnumRuleCall();
-            	    				
+            	            }
+            	            break;
 
             	    }
 
@@ -1142,11 +913,314 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "rulePhraseValue"
+
+
+    // $ANTLR start "entryRuleResponses"
+    // InternalDialogFlow.g:385:1: entryRuleResponses returns [EObject current=null] : iv_ruleResponses= ruleResponses EOF ;
+    public final EObject entryRuleResponses() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleResponses = null;
+
+
+        try {
+            // InternalDialogFlow.g:385:50: (iv_ruleResponses= ruleResponses EOF )
+            // InternalDialogFlow.g:386:2: iv_ruleResponses= ruleResponses EOF
+            {
+             newCompositeNode(grammarAccess.getResponsesRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleResponses=ruleResponses();
+
+            state._fsp--;
+
+             current =iv_ruleResponses; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleResponses"
+
+
+    // $ANTLR start "ruleResponses"
+    // InternalDialogFlow.g:392:1: ruleResponses returns [EObject current=null] : (otherlv_0= 'responses' ( (lv_responses_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_responses_3_0= RULE_STRING ) ) )* ) ;
+    public final EObject ruleResponses() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_responses_1_0=null;
+        Token otherlv_2=null;
+        Token lv_responses_3_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalDialogFlow.g:398:2: ( (otherlv_0= 'responses' ( (lv_responses_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_responses_3_0= RULE_STRING ) ) )* ) )
+            // InternalDialogFlow.g:399:2: (otherlv_0= 'responses' ( (lv_responses_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_responses_3_0= RULE_STRING ) ) )* )
+            {
+            // InternalDialogFlow.g:399:2: (otherlv_0= 'responses' ( (lv_responses_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_responses_3_0= RULE_STRING ) ) )* )
+            // InternalDialogFlow.g:400:3: otherlv_0= 'responses' ( (lv_responses_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_responses_3_0= RULE_STRING ) ) )*
+            {
+            otherlv_0=(Token)match(input,16,FOLLOW_9); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getResponsesAccess().getResponsesKeyword_0());
+            		
+            // InternalDialogFlow.g:404:3: ( (lv_responses_1_0= RULE_STRING ) )
+            // InternalDialogFlow.g:405:4: (lv_responses_1_0= RULE_STRING )
+            {
+            // InternalDialogFlow.g:405:4: (lv_responses_1_0= RULE_STRING )
+            // InternalDialogFlow.g:406:5: lv_responses_1_0= RULE_STRING
+            {
+            lv_responses_1_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+
+            					newLeafNode(lv_responses_1_0, grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getResponsesRule());
+            					}
+            					addWithLastConsumed(
+            						current,
+            						"responses",
+            						lv_responses_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            // InternalDialogFlow.g:422:3: (otherlv_2= ',' ( (lv_responses_3_0= RULE_STRING ) ) )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0==15) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalDialogFlow.g:423:4: otherlv_2= ',' ( (lv_responses_3_0= RULE_STRING ) )
+            	    {
+            	    otherlv_2=(Token)match(input,15,FOLLOW_9); 
+
+            	    				newLeafNode(otherlv_2, grammarAccess.getResponsesAccess().getCommaKeyword_2_0());
+            	    			
+            	    // InternalDialogFlow.g:427:4: ( (lv_responses_3_0= RULE_STRING ) )
+            	    // InternalDialogFlow.g:428:5: (lv_responses_3_0= RULE_STRING )
+            	    {
+            	    // InternalDialogFlow.g:428:5: (lv_responses_3_0= RULE_STRING )
+            	    // InternalDialogFlow.g:429:6: lv_responses_3_0= RULE_STRING
+            	    {
+            	    lv_responses_3_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+
+            	    						newLeafNode(lv_responses_3_0, grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_2_1_0());
+            	    					
+
+            	    						if (current==null) {
+            	    							current = createModelElement(grammarAccess.getResponsesRule());
+            	    						}
+            	    						addWithLastConsumed(
+            	    							current,
+            	    							"responses",
+            	    							lv_responses_3_0,
+            	    							"org.eclipse.xtext.common.Terminals.STRING");
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleResponses"
+
+
+    // $ANTLR start "entryRuleActions"
+    // InternalDialogFlow.g:450:1: entryRuleActions returns [EObject current=null] : iv_ruleActions= ruleActions EOF ;
+    public final EObject entryRuleActions() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleActions = null;
+
+
+        try {
+            // InternalDialogFlow.g:450:48: (iv_ruleActions= ruleActions EOF )
+            // InternalDialogFlow.g:451:2: iv_ruleActions= ruleActions EOF
+            {
+             newCompositeNode(grammarAccess.getActionsRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleActions=ruleActions();
+
+            state._fsp--;
+
+             current =iv_ruleActions; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleActions"
+
+
+    // $ANTLR start "ruleActions"
+    // InternalDialogFlow.g:457:1: ruleActions returns [EObject current=null] : ( () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )* ) ;
+    public final EObject ruleActions() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        EObject lv_actions_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalDialogFlow.g:463:2: ( ( () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )* ) )
+            // InternalDialogFlow.g:464:2: ( () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )* )
+            {
+            // InternalDialogFlow.g:464:2: ( () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )* )
+            // InternalDialogFlow.g:465:3: () otherlv_1= 'actions' ( (lv_actions_2_0= ruleActionValue ) )*
+            {
+            // InternalDialogFlow.g:465:3: ()
+            // InternalDialogFlow.g:466:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getActionsAccess().getActionsAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,17,FOLLOW_8); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getActionsAccess().getActionsKeyword_1());
+            		
+            // InternalDialogFlow.g:476:3: ( (lv_actions_2_0= ruleActionValue ) )*
+            loop8:
+            do {
+                int alt8=2;
+                int LA8_0 = input.LA(1);
+
+                if ( (LA8_0==14) ) {
+                    alt8=1;
+                }
+
+
+                switch (alt8) {
+            	case 1 :
+            	    // InternalDialogFlow.g:477:4: (lv_actions_2_0= ruleActionValue )
+            	    {
+            	    // InternalDialogFlow.g:477:4: (lv_actions_2_0= ruleActionValue )
+            	    // InternalDialogFlow.g:478:5: lv_actions_2_0= ruleActionValue
+            	    {
+
+            	    					newCompositeNode(grammarAccess.getActionsAccess().getActionsActionValueParserRuleCall_2_0());
+            	    				
+            	    pushFollow(FOLLOW_8);
+            	    lv_actions_2_0=ruleActionValue();
+
+            	    state._fsp--;
+
+
+            	    					if (current==null) {
+            	    						current = createModelElementForParent(grammarAccess.getActionsRule());
+            	    					}
+            	    					add(
+            	    						current,
+            	    						"actions",
+            	    						lv_actions_2_0,
+            	    						"dk.sdu.mmmi.mdsd.DialogFlow.ActionValue");
+            	    					afterParserOrEnumRuleCall();
+            	    				
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop8;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "ruleActions"
 
 
     // $ANTLR start "entryRuleActionValue"
-    // InternalDialogFlow.g:474:1: entryRuleActionValue returns [EObject current=null] : iv_ruleActionValue= ruleActionValue EOF ;
+    // InternalDialogFlow.g:499:1: entryRuleActionValue returns [EObject current=null] : iv_ruleActionValue= ruleActionValue EOF ;
     public final EObject entryRuleActionValue() throws RecognitionException {
         EObject current = null;
 
@@ -1154,8 +1228,8 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDialogFlow.g:474:52: (iv_ruleActionValue= ruleActionValue EOF )
-            // InternalDialogFlow.g:475:2: iv_ruleActionValue= ruleActionValue EOF
+            // InternalDialogFlow.g:499:52: (iv_ruleActionValue= ruleActionValue EOF )
+            // InternalDialogFlow.g:500:2: iv_ruleActionValue= ruleActionValue EOF
             {
              newCompositeNode(grammarAccess.getActionValueRule()); 
             pushFollow(FOLLOW_1);
@@ -1182,7 +1256,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleActionValue"
-    // InternalDialogFlow.g:481:1: ruleActionValue returns [EObject current=null] : (otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )? ) ;
+    // InternalDialogFlow.g:506:1: ruleActionValue returns [EObject current=null] : (otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )? ) ;
     public final EObject ruleActionValue() throws RecognitionException {
         EObject current = null;
 
@@ -1195,21 +1269,21 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDialogFlow.g:487:2: ( (otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )? ) )
-            // InternalDialogFlow.g:488:2: (otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )? )
+            // InternalDialogFlow.g:512:2: ( (otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )? ) )
+            // InternalDialogFlow.g:513:2: (otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )? )
             {
-            // InternalDialogFlow.g:488:2: (otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )? )
-            // InternalDialogFlow.g:489:3: otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )?
+            // InternalDialogFlow.g:513:2: (otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )? )
+            // InternalDialogFlow.g:514:3: otherlv_0= 'val' ( (lv_name_1_0= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ( (lv_list_3_0= RULE_STRING ) )?
             {
             otherlv_0=(Token)match(input,14,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getActionValueAccess().getValKeyword_0());
             		
-            // InternalDialogFlow.g:493:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalDialogFlow.g:494:4: (lv_name_1_0= RULE_ID )
+            // InternalDialogFlow.g:518:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDialogFlow.g:519:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalDialogFlow.g:494:4: (lv_name_1_0= RULE_ID )
-            // InternalDialogFlow.g:495:5: lv_name_1_0= RULE_ID
+            // InternalDialogFlow.g:519:4: (lv_name_1_0= RULE_ID )
+            // InternalDialogFlow.g:520:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
 
@@ -1231,18 +1305,18 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDialogFlow.g:511:3: ( (otherlv_2= RULE_ID ) )
-            // InternalDialogFlow.g:512:4: (otherlv_2= RULE_ID )
+            // InternalDialogFlow.g:536:3: ( (otherlv_2= RULE_ID ) )
+            // InternalDialogFlow.g:537:4: (otherlv_2= RULE_ID )
             {
-            // InternalDialogFlow.g:512:4: (otherlv_2= RULE_ID )
-            // InternalDialogFlow.g:513:5: otherlv_2= RULE_ID
+            // InternalDialogFlow.g:537:4: (otherlv_2= RULE_ID )
+            // InternalDialogFlow.g:538:5: otherlv_2= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getActionValueRule());
             					}
             				
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_11); 
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_12); 
 
             					newLeafNode(otherlv_2, grammarAccess.getActionValueAccess().getTypeEntityCrossReference_2_0());
             				
@@ -1252,19 +1326,19 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDialogFlow.g:524:3: ( (lv_list_3_0= RULE_STRING ) )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalDialogFlow.g:549:3: ( (lv_list_3_0= RULE_STRING ) )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_STRING) ) {
-                alt7=1;
+            if ( (LA9_0==RULE_STRING) ) {
+                alt9=1;
             }
-            switch (alt7) {
+            switch (alt9) {
                 case 1 :
-                    // InternalDialogFlow.g:525:4: (lv_list_3_0= RULE_STRING )
+                    // InternalDialogFlow.g:550:4: (lv_list_3_0= RULE_STRING )
                     {
-                    // InternalDialogFlow.g:525:4: (lv_list_3_0= RULE_STRING )
-                    // InternalDialogFlow.g:526:5: lv_list_3_0= RULE_STRING
+                    // InternalDialogFlow.g:550:4: (lv_list_3_0= RULE_STRING )
+                    // InternalDialogFlow.g:551:5: lv_list_3_0= RULE_STRING
                     {
                     lv_list_3_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1312,7 +1386,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntity"
-    // InternalDialogFlow.g:546:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
+    // InternalDialogFlow.g:571:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
     public final EObject entryRuleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1320,8 +1394,8 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDialogFlow.g:546:47: (iv_ruleEntity= ruleEntity EOF )
-            // InternalDialogFlow.g:547:2: iv_ruleEntity= ruleEntity EOF
+            // InternalDialogFlow.g:571:47: (iv_ruleEntity= ruleEntity EOF )
+            // InternalDialogFlow.g:572:2: iv_ruleEntity= ruleEntity EOF
             {
              newCompositeNode(grammarAccess.getEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -1348,7 +1422,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntity"
-    // InternalDialogFlow.g:553:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )* ) ;
+    // InternalDialogFlow.g:578:1: ruleEntity returns [EObject current=null] : (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )* ) ;
     public final EObject ruleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1361,21 +1435,21 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDialogFlow.g:559:2: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )* ) )
-            // InternalDialogFlow.g:560:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )* )
+            // InternalDialogFlow.g:584:2: ( (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )* ) )
+            // InternalDialogFlow.g:585:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )* )
             {
-            // InternalDialogFlow.g:560:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )* )
-            // InternalDialogFlow.g:561:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )*
+            // InternalDialogFlow.g:585:2: (otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )* )
+            // InternalDialogFlow.g:586:3: otherlv_0= 'entity' ( (lv_name_1_0= RULE_ID ) ) ( (lv_entities_2_0= ruleEntityValue ) )*
             {
             otherlv_0=(Token)match(input,18,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEntityAccess().getEntityKeyword_0());
             		
-            // InternalDialogFlow.g:565:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalDialogFlow.g:566:4: (lv_name_1_0= RULE_ID )
+            // InternalDialogFlow.g:590:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalDialogFlow.g:591:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalDialogFlow.g:566:4: (lv_name_1_0= RULE_ID )
-            // InternalDialogFlow.g:567:5: lv_name_1_0= RULE_ID
+            // InternalDialogFlow.g:591:4: (lv_name_1_0= RULE_ID )
+            // InternalDialogFlow.g:592:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_8); 
 
@@ -1397,23 +1471,23 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDialogFlow.g:583:3: ( (lv_entities_2_0= ruleEntityValue ) )*
-            loop8:
+            // InternalDialogFlow.g:608:3: ( (lv_entities_2_0= ruleEntityValue ) )*
+            loop10:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA8_0==14) ) {
-                    alt8=1;
+                if ( (LA10_0==14) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalDialogFlow.g:584:4: (lv_entities_2_0= ruleEntityValue )
+            	    // InternalDialogFlow.g:609:4: (lv_entities_2_0= ruleEntityValue )
             	    {
-            	    // InternalDialogFlow.g:584:4: (lv_entities_2_0= ruleEntityValue )
-            	    // InternalDialogFlow.g:585:5: lv_entities_2_0= ruleEntityValue
+            	    // InternalDialogFlow.g:609:4: (lv_entities_2_0= ruleEntityValue )
+            	    // InternalDialogFlow.g:610:5: lv_entities_2_0= ruleEntityValue
             	    {
 
             	    					newCompositeNode(grammarAccess.getEntityAccess().getEntitiesEntityValueParserRuleCall_2_0());
@@ -1442,7 +1516,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop10;
                 }
             } while (true);
 
@@ -1469,7 +1543,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntityValue"
-    // InternalDialogFlow.g:606:1: entryRuleEntityValue returns [EObject current=null] : iv_ruleEntityValue= ruleEntityValue EOF ;
+    // InternalDialogFlow.g:631:1: entryRuleEntityValue returns [EObject current=null] : iv_ruleEntityValue= ruleEntityValue EOF ;
     public final EObject entryRuleEntityValue() throws RecognitionException {
         EObject current = null;
 
@@ -1477,8 +1551,8 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalDialogFlow.g:606:52: (iv_ruleEntityValue= ruleEntityValue EOF )
-            // InternalDialogFlow.g:607:2: iv_ruleEntityValue= ruleEntityValue EOF
+            // InternalDialogFlow.g:631:52: (iv_ruleEntityValue= ruleEntityValue EOF )
+            // InternalDialogFlow.g:632:2: iv_ruleEntityValue= ruleEntityValue EOF
             {
              newCompositeNode(grammarAccess.getEntityValueRule()); 
             pushFollow(FOLLOW_1);
@@ -1505,44 +1579,38 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntityValue"
-    // InternalDialogFlow.g:613:1: ruleEntityValue returns [EObject current=null] : (otherlv_0= 'val' otherlv_1= '\"' ( (lv_values_2_0= RULE_STRING ) ) otherlv_3= '\"' (otherlv_4= ',' ( (lv_values_5_0= RULE_STRING ) ) )* ) ;
+    // InternalDialogFlow.g:638:1: ruleEntityValue returns [EObject current=null] : (otherlv_0= 'val' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* ) ;
     public final EObject ruleEntityValue() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token lv_values_2_0=null;
-        Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token lv_values_5_0=null;
+        Token lv_values_1_0=null;
+        Token otherlv_2=null;
+        Token lv_values_3_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalDialogFlow.g:619:2: ( (otherlv_0= 'val' otherlv_1= '\"' ( (lv_values_2_0= RULE_STRING ) ) otherlv_3= '\"' (otherlv_4= ',' ( (lv_values_5_0= RULE_STRING ) ) )* ) )
-            // InternalDialogFlow.g:620:2: (otherlv_0= 'val' otherlv_1= '\"' ( (lv_values_2_0= RULE_STRING ) ) otherlv_3= '\"' (otherlv_4= ',' ( (lv_values_5_0= RULE_STRING ) ) )* )
+            // InternalDialogFlow.g:644:2: ( (otherlv_0= 'val' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* ) )
+            // InternalDialogFlow.g:645:2: (otherlv_0= 'val' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* )
             {
-            // InternalDialogFlow.g:620:2: (otherlv_0= 'val' otherlv_1= '\"' ( (lv_values_2_0= RULE_STRING ) ) otherlv_3= '\"' (otherlv_4= ',' ( (lv_values_5_0= RULE_STRING ) ) )* )
-            // InternalDialogFlow.g:621:3: otherlv_0= 'val' otherlv_1= '\"' ( (lv_values_2_0= RULE_STRING ) ) otherlv_3= '\"' (otherlv_4= ',' ( (lv_values_5_0= RULE_STRING ) ) )*
+            // InternalDialogFlow.g:645:2: (otherlv_0= 'val' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* )
+            // InternalDialogFlow.g:646:3: otherlv_0= 'val' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_6); 
+            otherlv_0=(Token)match(input,14,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEntityValueAccess().getValKeyword_0());
             		
-            otherlv_1=(Token)match(input,15,FOLLOW_9); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getEntityValueAccess().getQuotationMarkKeyword_1());
-            		
-            // InternalDialogFlow.g:629:3: ( (lv_values_2_0= RULE_STRING ) )
-            // InternalDialogFlow.g:630:4: (lv_values_2_0= RULE_STRING )
+            // InternalDialogFlow.g:650:3: ( (lv_values_1_0= RULE_STRING ) )
+            // InternalDialogFlow.g:651:4: (lv_values_1_0= RULE_STRING )
             {
-            // InternalDialogFlow.g:630:4: (lv_values_2_0= RULE_STRING )
-            // InternalDialogFlow.g:631:5: lv_values_2_0= RULE_STRING
+            // InternalDialogFlow.g:651:4: (lv_values_1_0= RULE_STRING )
+            // InternalDialogFlow.g:652:5: lv_values_1_0= RULE_STRING
             {
-            lv_values_2_0=(Token)match(input,RULE_STRING,FOLLOW_6); 
+            lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            					newLeafNode(lv_values_2_0, grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_values_1_0, grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
@@ -1551,7 +1619,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
             					addWithLastConsumed(
             						current,
             						"values",
-            						lv_values_2_0,
+            						lv_values_1_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1560,38 +1628,34 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,15,FOLLOW_10); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getEntityValueAccess().getQuotationMarkKeyword_3());
-            		
-            // InternalDialogFlow.g:651:3: (otherlv_4= ',' ( (lv_values_5_0= RULE_STRING ) ) )*
-            loop9:
+            // InternalDialogFlow.g:668:3: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
+            loop11:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA9_0==16) ) {
-                    alt9=1;
+                if ( (LA11_0==15) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt11) {
             	case 1 :
-            	    // InternalDialogFlow.g:652:4: otherlv_4= ',' ( (lv_values_5_0= RULE_STRING ) )
+            	    // InternalDialogFlow.g:669:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
             	    {
-            	    otherlv_4=(Token)match(input,16,FOLLOW_9); 
+            	    otherlv_2=(Token)match(input,15,FOLLOW_9); 
 
-            	    				newLeafNode(otherlv_4, grammarAccess.getEntityValueAccess().getCommaKeyword_4_0());
+            	    				newLeafNode(otherlv_2, grammarAccess.getEntityValueAccess().getCommaKeyword_2_0());
             	    			
-            	    // InternalDialogFlow.g:656:4: ( (lv_values_5_0= RULE_STRING ) )
-            	    // InternalDialogFlow.g:657:5: (lv_values_5_0= RULE_STRING )
+            	    // InternalDialogFlow.g:673:4: ( (lv_values_3_0= RULE_STRING ) )
+            	    // InternalDialogFlow.g:674:5: (lv_values_3_0= RULE_STRING )
             	    {
-            	    // InternalDialogFlow.g:657:5: (lv_values_5_0= RULE_STRING )
-            	    // InternalDialogFlow.g:658:6: lv_values_5_0= RULE_STRING
+            	    // InternalDialogFlow.g:674:5: (lv_values_3_0= RULE_STRING )
+            	    // InternalDialogFlow.g:675:6: lv_values_3_0= RULE_STRING
             	    {
-            	    lv_values_5_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
+            	    lv_values_3_0=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
-            	    						newLeafNode(lv_values_5_0, grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_4_1_0());
+            	    						newLeafNode(lv_values_3_0, grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_2_1_0());
             	    					
 
             	    						if (current==null) {
@@ -1600,7 +1664,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
             	    						addWithLastConsumed(
             	    							current,
             	    							"values",
-            	    							lv_values_5_0,
+            	    							lv_values_3_0,
             	    							"org.eclipse.xtext.common.Terminals.STRING");
             	    					
 
@@ -1614,7 +1678,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop11;
                 }
             } while (true);
 
@@ -1649,11 +1713,12 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000041002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000008012L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000022L});
 
 }

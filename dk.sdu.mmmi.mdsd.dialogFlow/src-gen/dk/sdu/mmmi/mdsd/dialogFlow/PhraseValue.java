@@ -3,6 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.dialogFlow;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,6 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getValue <em>Value</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getText <em>Text</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getPhraseValue()
@@ -44,5 +48,29 @@ public interface PhraseValue extends EObject
    * @generated
    */
   void setValue(String value);
+
+  /**
+   * Returns the value of the '<em><b>Text</b></em>' attribute list.
+   * The list contents are of type {@link java.lang.String}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Text</em>' attribute list.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getPhraseValue_Text()
+   * @model unique="false"
+   * @generated
+   */
+  EList<String> getText();
+
+  /**
+   * Returns the value of the '<em><b>Entity</b></em>' reference list.
+   * The list contents are of type {@link dk.sdu.mmmi.mdsd.dialogFlow.Entity}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Entity</em>' reference list.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getPhraseValue_Entity()
+   * @model
+   * @generated
+   */
+  EList<Entity> getEntity();
 
 } // PhraseValue

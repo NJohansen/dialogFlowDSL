@@ -23,6 +23,8 @@
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//PhraseValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//PhraseValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//PhraseValue/text"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//PhraseValue/entity"/>
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//Responses">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//Responses/responses"/>

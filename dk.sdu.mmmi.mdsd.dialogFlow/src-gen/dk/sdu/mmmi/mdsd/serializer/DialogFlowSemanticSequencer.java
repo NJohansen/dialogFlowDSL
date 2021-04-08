@@ -22,9 +22,7 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Parameter;
 import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
-import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
-import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 
 @SuppressWarnings("all")
 public class DialogFlowSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -151,16 +149,10 @@ public class DialogFlowSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     PhraseValue returns PhraseValue
 	 *
 	 * Constraint:
-	 *     value=STRING
+	 *     (value=STRING (text+=STRING entity+=[Entity|ID]?)*)
 	 */
 	protected void sequence_PhraseValue(ISerializationContext context, PhraseValue semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, DialogFlowPackage.Literals.PHRASE_VALUE__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DialogFlowPackage.Literals.PHRASE_VALUE__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPhraseValueAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

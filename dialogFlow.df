@@ -1,0 +1,31 @@
+system Booking
+  entity venue_accomodation_chain
+	val "Hilton" 
+	val "Hilton one", "Hotel two"
+  entity venue_accomodation_type
+	val "apartment”, “apartments"
+	val "hotel", "hotels"
+	val "motel", "motels"
+  entity star
+	val "1", "1 or more", "1 star" 
+	val "2", "2 or more", "2 star"
+  intent Welcome 
+    phrases
+		val "Hello" 
+ 		val "Hi"
+  	responses "Welcome. I can help you book a hotel. Would you like to
+                 book a hotel room?",
+                 "Hello. Would you like to book a hotel room?",
+                 "Hi there. I can help you book a hotel room. Would you
+                 like to book a hotel room?"
+    intent Book
+     phrases
+     	val "book suite in", "Hilton" venue_accomodation_type 
+     	val "book", "1 star" star, "motel" venue_accomodation_type, "room"
+     responses "I need some more information.", "Okay I have
+                 booked a room of $venue-type with $star star"
+     actions 
+     	val venue_type venue_accomodation_type
+     	val venue_chain venue_accomodation_chain "isList"
+     	val star star
+

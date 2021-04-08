@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDialogFlowParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'system'", "'intent'", "'phrases'", "'val'", "'\"'", "','", "'actions'", "'entity'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'system'", "'intent'", "'phrases'", "'val'", "','", "'responses'", "'actions'", "'entity'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -1862,7 +1862,7 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
             // InternalDialogFlow.g:624:1: ( rule__PhraseValue__Group__0__Impl rule__PhraseValue__Group__1 )
             // InternalDialogFlow.g:625:2: rule__PhraseValue__Group__0__Impl rule__PhraseValue__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_11);
             rule__PhraseValue__Group__0__Impl();
 
             state._fsp--;
@@ -1937,7 +1937,7 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
             // InternalDialogFlow.g:651:1: ( rule__PhraseValue__Group__1__Impl rule__PhraseValue__Group__2 )
             // InternalDialogFlow.g:652:2: rule__PhraseValue__Group__1__Impl rule__PhraseValue__Group__2
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__PhraseValue__Group__1__Impl();
 
             state._fsp--;
@@ -1966,21 +1966,31 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__PhraseValue__Group__1__Impl"
-    // InternalDialogFlow.g:659:1: rule__PhraseValue__Group__1__Impl : ( '\"' ) ;
+    // InternalDialogFlow.g:659:1: rule__PhraseValue__Group__1__Impl : ( ( rule__PhraseValue__ValueAssignment_1 ) ) ;
     public final void rule__PhraseValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:663:1: ( ( '\"' ) )
-            // InternalDialogFlow.g:664:1: ( '\"' )
+            // InternalDialogFlow.g:663:1: ( ( ( rule__PhraseValue__ValueAssignment_1 ) ) )
+            // InternalDialogFlow.g:664:1: ( ( rule__PhraseValue__ValueAssignment_1 ) )
             {
-            // InternalDialogFlow.g:664:1: ( '\"' )
-            // InternalDialogFlow.g:665:2: '\"'
+            // InternalDialogFlow.g:664:1: ( ( rule__PhraseValue__ValueAssignment_1 ) )
+            // InternalDialogFlow.g:665:2: ( rule__PhraseValue__ValueAssignment_1 )
             {
-             before(grammarAccess.getPhraseValueAccess().getQuotationMarkKeyword_1()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getPhraseValueAccess().getQuotationMarkKeyword_1()); 
+             before(grammarAccess.getPhraseValueAccess().getValueAssignment_1()); 
+            // InternalDialogFlow.g:666:2: ( rule__PhraseValue__ValueAssignment_1 )
+            // InternalDialogFlow.g:666:3: rule__PhraseValue__ValueAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__PhraseValue__ValueAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPhraseValueAccess().getValueAssignment_1()); 
 
             }
 
@@ -2003,22 +2013,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__PhraseValue__Group__2"
-    // InternalDialogFlow.g:674:1: rule__PhraseValue__Group__2 : rule__PhraseValue__Group__2__Impl rule__PhraseValue__Group__3 ;
+    // InternalDialogFlow.g:674:1: rule__PhraseValue__Group__2 : rule__PhraseValue__Group__2__Impl ;
     public final void rule__PhraseValue__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:678:1: ( rule__PhraseValue__Group__2__Impl rule__PhraseValue__Group__3 )
-            // InternalDialogFlow.g:679:2: rule__PhraseValue__Group__2__Impl rule__PhraseValue__Group__3
+            // InternalDialogFlow.g:678:1: ( rule__PhraseValue__Group__2__Impl )
+            // InternalDialogFlow.g:679:2: rule__PhraseValue__Group__2__Impl
             {
-            pushFollow(FOLLOW_7);
-            rule__PhraseValue__Group__2__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__PhraseValue__Group__3();
+            rule__PhraseValue__Group__2__Impl();
 
             state._fsp--;
 
@@ -2041,31 +2046,49 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__PhraseValue__Group__2__Impl"
-    // InternalDialogFlow.g:686:1: rule__PhraseValue__Group__2__Impl : ( ( rule__PhraseValue__ValueAssignment_2 ) ) ;
+    // InternalDialogFlow.g:685:1: rule__PhraseValue__Group__2__Impl : ( ( rule__PhraseValue__Group_2__0 )* ) ;
     public final void rule__PhraseValue__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:690:1: ( ( ( rule__PhraseValue__ValueAssignment_2 ) ) )
-            // InternalDialogFlow.g:691:1: ( ( rule__PhraseValue__ValueAssignment_2 ) )
+            // InternalDialogFlow.g:689:1: ( ( ( rule__PhraseValue__Group_2__0 )* ) )
+            // InternalDialogFlow.g:690:1: ( ( rule__PhraseValue__Group_2__0 )* )
             {
-            // InternalDialogFlow.g:691:1: ( ( rule__PhraseValue__ValueAssignment_2 ) )
-            // InternalDialogFlow.g:692:2: ( rule__PhraseValue__ValueAssignment_2 )
+            // InternalDialogFlow.g:690:1: ( ( rule__PhraseValue__Group_2__0 )* )
+            // InternalDialogFlow.g:691:2: ( rule__PhraseValue__Group_2__0 )*
             {
-             before(grammarAccess.getPhraseValueAccess().getValueAssignment_2()); 
-            // InternalDialogFlow.g:693:2: ( rule__PhraseValue__ValueAssignment_2 )
-            // InternalDialogFlow.g:693:3: rule__PhraseValue__ValueAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__PhraseValue__ValueAssignment_2();
+             before(grammarAccess.getPhraseValueAccess().getGroup_2()); 
+            // InternalDialogFlow.g:692:2: ( rule__PhraseValue__Group_2__0 )*
+            loop5:
+            do {
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA5_0==15) ) {
+                    alt5=1;
+                }
 
 
-            }
+                switch (alt5) {
+            	case 1 :
+            	    // InternalDialogFlow.g:692:3: rule__PhraseValue__Group_2__0
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__PhraseValue__Group_2__0();
 
-             after(grammarAccess.getPhraseValueAccess().getValueAssignment_2()); 
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop5;
+                }
+            } while (true);
+
+             after(grammarAccess.getPhraseValueAccess().getGroup_2()); 
 
             }
 
@@ -2087,18 +2110,23 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__PhraseValue__Group__2__Impl"
 
 
-    // $ANTLR start "rule__PhraseValue__Group__3"
-    // InternalDialogFlow.g:701:1: rule__PhraseValue__Group__3 : rule__PhraseValue__Group__3__Impl ;
-    public final void rule__PhraseValue__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__PhraseValue__Group_2__0"
+    // InternalDialogFlow.g:701:1: rule__PhraseValue__Group_2__0 : rule__PhraseValue__Group_2__0__Impl rule__PhraseValue__Group_2__1 ;
+    public final void rule__PhraseValue__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:705:1: ( rule__PhraseValue__Group__3__Impl )
-            // InternalDialogFlow.g:706:2: rule__PhraseValue__Group__3__Impl
+            // InternalDialogFlow.g:705:1: ( rule__PhraseValue__Group_2__0__Impl rule__PhraseValue__Group_2__1 )
+            // InternalDialogFlow.g:706:2: rule__PhraseValue__Group_2__0__Impl rule__PhraseValue__Group_2__1
             {
+            pushFollow(FOLLOW_11);
+            rule__PhraseValue__Group_2__0__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__PhraseValue__Group__3__Impl();
+            rule__PhraseValue__Group_2__1();
 
             state._fsp--;
 
@@ -2117,25 +2145,25 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__PhraseValue__Group__3"
+    // $ANTLR end "rule__PhraseValue__Group_2__0"
 
 
-    // $ANTLR start "rule__PhraseValue__Group__3__Impl"
-    // InternalDialogFlow.g:712:1: rule__PhraseValue__Group__3__Impl : ( '\"' ) ;
-    public final void rule__PhraseValue__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__PhraseValue__Group_2__0__Impl"
+    // InternalDialogFlow.g:713:1: rule__PhraseValue__Group_2__0__Impl : ( ',' ) ;
+    public final void rule__PhraseValue__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:716:1: ( ( '\"' ) )
-            // InternalDialogFlow.g:717:1: ( '\"' )
+            // InternalDialogFlow.g:717:1: ( ( ',' ) )
+            // InternalDialogFlow.g:718:1: ( ',' )
             {
-            // InternalDialogFlow.g:717:1: ( '\"' )
-            // InternalDialogFlow.g:718:2: '\"'
+            // InternalDialogFlow.g:718:1: ( ',' )
+            // InternalDialogFlow.g:719:2: ','
             {
-             before(grammarAccess.getPhraseValueAccess().getQuotationMarkKeyword_3()); 
+             before(grammarAccess.getPhraseValueAccess().getCommaKeyword_2_0()); 
             match(input,15,FOLLOW_2); 
-             after(grammarAccess.getPhraseValueAccess().getQuotationMarkKeyword_3()); 
+             after(grammarAccess.getPhraseValueAccess().getCommaKeyword_2_0()); 
 
             }
 
@@ -2154,18 +2182,194 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__PhraseValue__Group__3__Impl"
+    // $ANTLR end "rule__PhraseValue__Group_2__0__Impl"
+
+
+    // $ANTLR start "rule__PhraseValue__Group_2__1"
+    // InternalDialogFlow.g:728:1: rule__PhraseValue__Group_2__1 : rule__PhraseValue__Group_2__1__Impl rule__PhraseValue__Group_2__2 ;
+    public final void rule__PhraseValue__Group_2__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDialogFlow.g:732:1: ( rule__PhraseValue__Group_2__1__Impl rule__PhraseValue__Group_2__2 )
+            // InternalDialogFlow.g:733:2: rule__PhraseValue__Group_2__1__Impl rule__PhraseValue__Group_2__2
+            {
+            pushFollow(FOLLOW_3);
+            rule__PhraseValue__Group_2__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__PhraseValue__Group_2__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PhraseValue__Group_2__1"
+
+
+    // $ANTLR start "rule__PhraseValue__Group_2__1__Impl"
+    // InternalDialogFlow.g:740:1: rule__PhraseValue__Group_2__1__Impl : ( ( rule__PhraseValue__TextAssignment_2_1 ) ) ;
+    public final void rule__PhraseValue__Group_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDialogFlow.g:744:1: ( ( ( rule__PhraseValue__TextAssignment_2_1 ) ) )
+            // InternalDialogFlow.g:745:1: ( ( rule__PhraseValue__TextAssignment_2_1 ) )
+            {
+            // InternalDialogFlow.g:745:1: ( ( rule__PhraseValue__TextAssignment_2_1 ) )
+            // InternalDialogFlow.g:746:2: ( rule__PhraseValue__TextAssignment_2_1 )
+            {
+             before(grammarAccess.getPhraseValueAccess().getTextAssignment_2_1()); 
+            // InternalDialogFlow.g:747:2: ( rule__PhraseValue__TextAssignment_2_1 )
+            // InternalDialogFlow.g:747:3: rule__PhraseValue__TextAssignment_2_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__PhraseValue__TextAssignment_2_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getPhraseValueAccess().getTextAssignment_2_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PhraseValue__Group_2__1__Impl"
+
+
+    // $ANTLR start "rule__PhraseValue__Group_2__2"
+    // InternalDialogFlow.g:755:1: rule__PhraseValue__Group_2__2 : rule__PhraseValue__Group_2__2__Impl ;
+    public final void rule__PhraseValue__Group_2__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDialogFlow.g:759:1: ( rule__PhraseValue__Group_2__2__Impl )
+            // InternalDialogFlow.g:760:2: rule__PhraseValue__Group_2__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__PhraseValue__Group_2__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PhraseValue__Group_2__2"
+
+
+    // $ANTLR start "rule__PhraseValue__Group_2__2__Impl"
+    // InternalDialogFlow.g:766:1: rule__PhraseValue__Group_2__2__Impl : ( ( rule__PhraseValue__EntityAssignment_2_2 )? ) ;
+    public final void rule__PhraseValue__Group_2__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDialogFlow.g:770:1: ( ( ( rule__PhraseValue__EntityAssignment_2_2 )? ) )
+            // InternalDialogFlow.g:771:1: ( ( rule__PhraseValue__EntityAssignment_2_2 )? )
+            {
+            // InternalDialogFlow.g:771:1: ( ( rule__PhraseValue__EntityAssignment_2_2 )? )
+            // InternalDialogFlow.g:772:2: ( rule__PhraseValue__EntityAssignment_2_2 )?
+            {
+             before(grammarAccess.getPhraseValueAccess().getEntityAssignment_2_2()); 
+            // InternalDialogFlow.g:773:2: ( rule__PhraseValue__EntityAssignment_2_2 )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==RULE_ID) ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // InternalDialogFlow.g:773:3: rule__PhraseValue__EntityAssignment_2_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__PhraseValue__EntityAssignment_2_2();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPhraseValueAccess().getEntityAssignment_2_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PhraseValue__Group_2__2__Impl"
 
 
     // $ANTLR start "rule__Responses__Group__0"
-    // InternalDialogFlow.g:728:1: rule__Responses__Group__0 : rule__Responses__Group__0__Impl rule__Responses__Group__1 ;
+    // InternalDialogFlow.g:782:1: rule__Responses__Group__0 : rule__Responses__Group__0__Impl rule__Responses__Group__1 ;
     public final void rule__Responses__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:732:1: ( rule__Responses__Group__0__Impl rule__Responses__Group__1 )
-            // InternalDialogFlow.g:733:2: rule__Responses__Group__0__Impl rule__Responses__Group__1
+            // InternalDialogFlow.g:786:1: ( rule__Responses__Group__0__Impl rule__Responses__Group__1 )
+            // InternalDialogFlow.g:787:2: rule__Responses__Group__0__Impl rule__Responses__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Responses__Group__0__Impl();
@@ -2196,21 +2400,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Responses__Group__0__Impl"
-    // InternalDialogFlow.g:740:1: rule__Responses__Group__0__Impl : ( '\"' ) ;
+    // InternalDialogFlow.g:794:1: rule__Responses__Group__0__Impl : ( 'responses' ) ;
     public final void rule__Responses__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:744:1: ( ( '\"' ) )
-            // InternalDialogFlow.g:745:1: ( '\"' )
+            // InternalDialogFlow.g:798:1: ( ( 'responses' ) )
+            // InternalDialogFlow.g:799:1: ( 'responses' )
             {
-            // InternalDialogFlow.g:745:1: ( '\"' )
-            // InternalDialogFlow.g:746:2: '\"'
+            // InternalDialogFlow.g:799:1: ( 'responses' )
+            // InternalDialogFlow.g:800:2: 'responses'
             {
-             before(grammarAccess.getResponsesAccess().getQuotationMarkKeyword_0()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getResponsesAccess().getQuotationMarkKeyword_0()); 
+             before(grammarAccess.getResponsesAccess().getResponsesKeyword_0()); 
+            match(input,16,FOLLOW_2); 
+             after(grammarAccess.getResponsesAccess().getResponsesKeyword_0()); 
 
             }
 
@@ -2233,16 +2437,16 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Responses__Group__1"
-    // InternalDialogFlow.g:755:1: rule__Responses__Group__1 : rule__Responses__Group__1__Impl rule__Responses__Group__2 ;
+    // InternalDialogFlow.g:809:1: rule__Responses__Group__1 : rule__Responses__Group__1__Impl rule__Responses__Group__2 ;
     public final void rule__Responses__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:759:1: ( rule__Responses__Group__1__Impl rule__Responses__Group__2 )
-            // InternalDialogFlow.g:760:2: rule__Responses__Group__1__Impl rule__Responses__Group__2
+            // InternalDialogFlow.g:813:1: ( rule__Responses__Group__1__Impl rule__Responses__Group__2 )
+            // InternalDialogFlow.g:814:2: rule__Responses__Group__1__Impl rule__Responses__Group__2
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_12);
             rule__Responses__Group__1__Impl();
 
             state._fsp--;
@@ -2271,21 +2475,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Responses__Group__1__Impl"
-    // InternalDialogFlow.g:767:1: rule__Responses__Group__1__Impl : ( ( rule__Responses__ResponsesAssignment_1 ) ) ;
+    // InternalDialogFlow.g:821:1: rule__Responses__Group__1__Impl : ( ( rule__Responses__ResponsesAssignment_1 ) ) ;
     public final void rule__Responses__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:771:1: ( ( ( rule__Responses__ResponsesAssignment_1 ) ) )
-            // InternalDialogFlow.g:772:1: ( ( rule__Responses__ResponsesAssignment_1 ) )
+            // InternalDialogFlow.g:825:1: ( ( ( rule__Responses__ResponsesAssignment_1 ) ) )
+            // InternalDialogFlow.g:826:1: ( ( rule__Responses__ResponsesAssignment_1 ) )
             {
-            // InternalDialogFlow.g:772:1: ( ( rule__Responses__ResponsesAssignment_1 ) )
-            // InternalDialogFlow.g:773:2: ( rule__Responses__ResponsesAssignment_1 )
+            // InternalDialogFlow.g:826:1: ( ( rule__Responses__ResponsesAssignment_1 ) )
+            // InternalDialogFlow.g:827:2: ( rule__Responses__ResponsesAssignment_1 )
             {
              before(grammarAccess.getResponsesAccess().getResponsesAssignment_1()); 
-            // InternalDialogFlow.g:774:2: ( rule__Responses__ResponsesAssignment_1 )
-            // InternalDialogFlow.g:774:3: rule__Responses__ResponsesAssignment_1
+            // InternalDialogFlow.g:828:2: ( rule__Responses__ResponsesAssignment_1 )
+            // InternalDialogFlow.g:828:3: rule__Responses__ResponsesAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Responses__ResponsesAssignment_1();
@@ -2318,22 +2522,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Responses__Group__2"
-    // InternalDialogFlow.g:782:1: rule__Responses__Group__2 : rule__Responses__Group__2__Impl rule__Responses__Group__3 ;
+    // InternalDialogFlow.g:836:1: rule__Responses__Group__2 : rule__Responses__Group__2__Impl ;
     public final void rule__Responses__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:786:1: ( rule__Responses__Group__2__Impl rule__Responses__Group__3 )
-            // InternalDialogFlow.g:787:2: rule__Responses__Group__2__Impl rule__Responses__Group__3
+            // InternalDialogFlow.g:840:1: ( rule__Responses__Group__2__Impl )
+            // InternalDialogFlow.g:841:2: rule__Responses__Group__2__Impl
             {
-            pushFollow(FOLLOW_12);
-            rule__Responses__Group__2__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Responses__Group__3();
+            rule__Responses__Group__2__Impl();
 
             state._fsp--;
 
@@ -2356,21 +2555,49 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Responses__Group__2__Impl"
-    // InternalDialogFlow.g:794:1: rule__Responses__Group__2__Impl : ( '\"' ) ;
+    // InternalDialogFlow.g:847:1: rule__Responses__Group__2__Impl : ( ( rule__Responses__Group_2__0 )* ) ;
     public final void rule__Responses__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:798:1: ( ( '\"' ) )
-            // InternalDialogFlow.g:799:1: ( '\"' )
+            // InternalDialogFlow.g:851:1: ( ( ( rule__Responses__Group_2__0 )* ) )
+            // InternalDialogFlow.g:852:1: ( ( rule__Responses__Group_2__0 )* )
             {
-            // InternalDialogFlow.g:799:1: ( '\"' )
-            // InternalDialogFlow.g:800:2: '\"'
+            // InternalDialogFlow.g:852:1: ( ( rule__Responses__Group_2__0 )* )
+            // InternalDialogFlow.g:853:2: ( rule__Responses__Group_2__0 )*
             {
-             before(grammarAccess.getResponsesAccess().getQuotationMarkKeyword_2()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getResponsesAccess().getQuotationMarkKeyword_2()); 
+             before(grammarAccess.getResponsesAccess().getGroup_2()); 
+            // InternalDialogFlow.g:854:2: ( rule__Responses__Group_2__0 )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0==15) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalDialogFlow.g:854:3: rule__Responses__Group_2__0
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__Responses__Group_2__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+             after(grammarAccess.getResponsesAccess().getGroup_2()); 
 
             }
 
@@ -2392,121 +2619,23 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Responses__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Responses__Group__3"
-    // InternalDialogFlow.g:809:1: rule__Responses__Group__3 : rule__Responses__Group__3__Impl ;
-    public final void rule__Responses__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__Responses__Group_2__0"
+    // InternalDialogFlow.g:863:1: rule__Responses__Group_2__0 : rule__Responses__Group_2__0__Impl rule__Responses__Group_2__1 ;
+    public final void rule__Responses__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:813:1: ( rule__Responses__Group__3__Impl )
-            // InternalDialogFlow.g:814:2: rule__Responses__Group__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Responses__Group__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Responses__Group__3"
-
-
-    // $ANTLR start "rule__Responses__Group__3__Impl"
-    // InternalDialogFlow.g:820:1: rule__Responses__Group__3__Impl : ( ( rule__Responses__Group_3__0 )* ) ;
-    public final void rule__Responses__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDialogFlow.g:824:1: ( ( ( rule__Responses__Group_3__0 )* ) )
-            // InternalDialogFlow.g:825:1: ( ( rule__Responses__Group_3__0 )* )
-            {
-            // InternalDialogFlow.g:825:1: ( ( rule__Responses__Group_3__0 )* )
-            // InternalDialogFlow.g:826:2: ( rule__Responses__Group_3__0 )*
-            {
-             before(grammarAccess.getResponsesAccess().getGroup_3()); 
-            // InternalDialogFlow.g:827:2: ( rule__Responses__Group_3__0 )*
-            loop5:
-            do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
-
-                if ( (LA5_0==16) ) {
-                    alt5=1;
-                }
-
-
-                switch (alt5) {
-            	case 1 :
-            	    // InternalDialogFlow.g:827:3: rule__Responses__Group_3__0
-            	    {
-            	    pushFollow(FOLLOW_13);
-            	    rule__Responses__Group_3__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop5;
-                }
-            } while (true);
-
-             after(grammarAccess.getResponsesAccess().getGroup_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Responses__Group__3__Impl"
-
-
-    // $ANTLR start "rule__Responses__Group_3__0"
-    // InternalDialogFlow.g:836:1: rule__Responses__Group_3__0 : rule__Responses__Group_3__0__Impl rule__Responses__Group_3__1 ;
-    public final void rule__Responses__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDialogFlow.g:840:1: ( rule__Responses__Group_3__0__Impl rule__Responses__Group_3__1 )
-            // InternalDialogFlow.g:841:2: rule__Responses__Group_3__0__Impl rule__Responses__Group_3__1
+            // InternalDialogFlow.g:867:1: ( rule__Responses__Group_2__0__Impl rule__Responses__Group_2__1 )
+            // InternalDialogFlow.g:868:2: rule__Responses__Group_2__0__Impl rule__Responses__Group_2__1
             {
             pushFollow(FOLLOW_11);
-            rule__Responses__Group_3__0__Impl();
+            rule__Responses__Group_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Responses__Group_3__1();
+            rule__Responses__Group_2__1();
 
             state._fsp--;
 
@@ -2525,25 +2654,25 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Responses__Group_3__0"
+    // $ANTLR end "rule__Responses__Group_2__0"
 
 
-    // $ANTLR start "rule__Responses__Group_3__0__Impl"
-    // InternalDialogFlow.g:848:1: rule__Responses__Group_3__0__Impl : ( ',' ) ;
-    public final void rule__Responses__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Responses__Group_2__0__Impl"
+    // InternalDialogFlow.g:875:1: rule__Responses__Group_2__0__Impl : ( ',' ) ;
+    public final void rule__Responses__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:852:1: ( ( ',' ) )
-            // InternalDialogFlow.g:853:1: ( ',' )
+            // InternalDialogFlow.g:879:1: ( ( ',' ) )
+            // InternalDialogFlow.g:880:1: ( ',' )
             {
-            // InternalDialogFlow.g:853:1: ( ',' )
-            // InternalDialogFlow.g:854:2: ','
+            // InternalDialogFlow.g:880:1: ( ',' )
+            // InternalDialogFlow.g:881:2: ','
             {
-             before(grammarAccess.getResponsesAccess().getCommaKeyword_3_0()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getResponsesAccess().getCommaKeyword_3_0()); 
+             before(grammarAccess.getResponsesAccess().getCommaKeyword_2_0()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getResponsesAccess().getCommaKeyword_2_0()); 
 
             }
 
@@ -2562,21 +2691,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Responses__Group_3__0__Impl"
+    // $ANTLR end "rule__Responses__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__Responses__Group_3__1"
-    // InternalDialogFlow.g:863:1: rule__Responses__Group_3__1 : rule__Responses__Group_3__1__Impl ;
-    public final void rule__Responses__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__Responses__Group_2__1"
+    // InternalDialogFlow.g:890:1: rule__Responses__Group_2__1 : rule__Responses__Group_2__1__Impl ;
+    public final void rule__Responses__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:867:1: ( rule__Responses__Group_3__1__Impl )
-            // InternalDialogFlow.g:868:2: rule__Responses__Group_3__1__Impl
+            // InternalDialogFlow.g:894:1: ( rule__Responses__Group_2__1__Impl )
+            // InternalDialogFlow.g:895:2: rule__Responses__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Responses__Group_3__1__Impl();
+            rule__Responses__Group_2__1__Impl();
 
             state._fsp--;
 
@@ -2595,35 +2724,35 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Responses__Group_3__1"
+    // $ANTLR end "rule__Responses__Group_2__1"
 
 
-    // $ANTLR start "rule__Responses__Group_3__1__Impl"
-    // InternalDialogFlow.g:874:1: rule__Responses__Group_3__1__Impl : ( ( rule__Responses__ResponsesAssignment_3_1 ) ) ;
-    public final void rule__Responses__Group_3__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Responses__Group_2__1__Impl"
+    // InternalDialogFlow.g:901:1: rule__Responses__Group_2__1__Impl : ( ( rule__Responses__ResponsesAssignment_2_1 ) ) ;
+    public final void rule__Responses__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:878:1: ( ( ( rule__Responses__ResponsesAssignment_3_1 ) ) )
-            // InternalDialogFlow.g:879:1: ( ( rule__Responses__ResponsesAssignment_3_1 ) )
+            // InternalDialogFlow.g:905:1: ( ( ( rule__Responses__ResponsesAssignment_2_1 ) ) )
+            // InternalDialogFlow.g:906:1: ( ( rule__Responses__ResponsesAssignment_2_1 ) )
             {
-            // InternalDialogFlow.g:879:1: ( ( rule__Responses__ResponsesAssignment_3_1 ) )
-            // InternalDialogFlow.g:880:2: ( rule__Responses__ResponsesAssignment_3_1 )
+            // InternalDialogFlow.g:906:1: ( ( rule__Responses__ResponsesAssignment_2_1 ) )
+            // InternalDialogFlow.g:907:2: ( rule__Responses__ResponsesAssignment_2_1 )
             {
-             before(grammarAccess.getResponsesAccess().getResponsesAssignment_3_1()); 
-            // InternalDialogFlow.g:881:2: ( rule__Responses__ResponsesAssignment_3_1 )
-            // InternalDialogFlow.g:881:3: rule__Responses__ResponsesAssignment_3_1
+             before(grammarAccess.getResponsesAccess().getResponsesAssignment_2_1()); 
+            // InternalDialogFlow.g:908:2: ( rule__Responses__ResponsesAssignment_2_1 )
+            // InternalDialogFlow.g:908:3: rule__Responses__ResponsesAssignment_2_1
             {
             pushFollow(FOLLOW_2);
-            rule__Responses__ResponsesAssignment_3_1();
+            rule__Responses__ResponsesAssignment_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getResponsesAccess().getResponsesAssignment_3_1()); 
+             after(grammarAccess.getResponsesAccess().getResponsesAssignment_2_1()); 
 
             }
 
@@ -2642,18 +2771,18 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Responses__Group_3__1__Impl"
+    // $ANTLR end "rule__Responses__Group_2__1__Impl"
 
 
     // $ANTLR start "rule__Actions__Group__0"
-    // InternalDialogFlow.g:890:1: rule__Actions__Group__0 : rule__Actions__Group__0__Impl rule__Actions__Group__1 ;
+    // InternalDialogFlow.g:917:1: rule__Actions__Group__0 : rule__Actions__Group__0__Impl rule__Actions__Group__1 ;
     public final void rule__Actions__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:894:1: ( rule__Actions__Group__0__Impl rule__Actions__Group__1 )
-            // InternalDialogFlow.g:895:2: rule__Actions__Group__0__Impl rule__Actions__Group__1
+            // InternalDialogFlow.g:921:1: ( rule__Actions__Group__0__Impl rule__Actions__Group__1 )
+            // InternalDialogFlow.g:922:2: rule__Actions__Group__0__Impl rule__Actions__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__Actions__Group__0__Impl();
@@ -2684,21 +2813,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Actions__Group__0__Impl"
-    // InternalDialogFlow.g:902:1: rule__Actions__Group__0__Impl : ( () ) ;
+    // InternalDialogFlow.g:929:1: rule__Actions__Group__0__Impl : ( () ) ;
     public final void rule__Actions__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:906:1: ( ( () ) )
-            // InternalDialogFlow.g:907:1: ( () )
+            // InternalDialogFlow.g:933:1: ( ( () ) )
+            // InternalDialogFlow.g:934:1: ( () )
             {
-            // InternalDialogFlow.g:907:1: ( () )
-            // InternalDialogFlow.g:908:2: ()
+            // InternalDialogFlow.g:934:1: ( () )
+            // InternalDialogFlow.g:935:2: ()
             {
              before(grammarAccess.getActionsAccess().getActionsAction_0()); 
-            // InternalDialogFlow.g:909:2: ()
-            // InternalDialogFlow.g:909:3: 
+            // InternalDialogFlow.g:936:2: ()
+            // InternalDialogFlow.g:936:3: 
             {
             }
 
@@ -2721,14 +2850,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Actions__Group__1"
-    // InternalDialogFlow.g:917:1: rule__Actions__Group__1 : rule__Actions__Group__1__Impl rule__Actions__Group__2 ;
+    // InternalDialogFlow.g:944:1: rule__Actions__Group__1 : rule__Actions__Group__1__Impl rule__Actions__Group__2 ;
     public final void rule__Actions__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:921:1: ( rule__Actions__Group__1__Impl rule__Actions__Group__2 )
-            // InternalDialogFlow.g:922:2: rule__Actions__Group__1__Impl rule__Actions__Group__2
+            // InternalDialogFlow.g:948:1: ( rule__Actions__Group__1__Impl rule__Actions__Group__2 )
+            // InternalDialogFlow.g:949:2: rule__Actions__Group__1__Impl rule__Actions__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__Actions__Group__1__Impl();
@@ -2759,17 +2888,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Actions__Group__1__Impl"
-    // InternalDialogFlow.g:929:1: rule__Actions__Group__1__Impl : ( 'actions' ) ;
+    // InternalDialogFlow.g:956:1: rule__Actions__Group__1__Impl : ( 'actions' ) ;
     public final void rule__Actions__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:933:1: ( ( 'actions' ) )
-            // InternalDialogFlow.g:934:1: ( 'actions' )
+            // InternalDialogFlow.g:960:1: ( ( 'actions' ) )
+            // InternalDialogFlow.g:961:1: ( 'actions' )
             {
-            // InternalDialogFlow.g:934:1: ( 'actions' )
-            // InternalDialogFlow.g:935:2: 'actions'
+            // InternalDialogFlow.g:961:1: ( 'actions' )
+            // InternalDialogFlow.g:962:2: 'actions'
             {
              before(grammarAccess.getActionsAccess().getActionsKeyword_1()); 
             match(input,17,FOLLOW_2); 
@@ -2796,14 +2925,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Actions__Group__2"
-    // InternalDialogFlow.g:944:1: rule__Actions__Group__2 : rule__Actions__Group__2__Impl ;
+    // InternalDialogFlow.g:971:1: rule__Actions__Group__2 : rule__Actions__Group__2__Impl ;
     public final void rule__Actions__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:948:1: ( rule__Actions__Group__2__Impl )
-            // InternalDialogFlow.g:949:2: rule__Actions__Group__2__Impl
+            // InternalDialogFlow.g:975:1: ( rule__Actions__Group__2__Impl )
+            // InternalDialogFlow.g:976:2: rule__Actions__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Actions__Group__2__Impl();
@@ -2829,33 +2958,33 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Actions__Group__2__Impl"
-    // InternalDialogFlow.g:955:1: rule__Actions__Group__2__Impl : ( ( rule__Actions__ActionsAssignment_2 )* ) ;
+    // InternalDialogFlow.g:982:1: rule__Actions__Group__2__Impl : ( ( rule__Actions__ActionsAssignment_2 )* ) ;
     public final void rule__Actions__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:959:1: ( ( ( rule__Actions__ActionsAssignment_2 )* ) )
-            // InternalDialogFlow.g:960:1: ( ( rule__Actions__ActionsAssignment_2 )* )
+            // InternalDialogFlow.g:986:1: ( ( ( rule__Actions__ActionsAssignment_2 )* ) )
+            // InternalDialogFlow.g:987:1: ( ( rule__Actions__ActionsAssignment_2 )* )
             {
-            // InternalDialogFlow.g:960:1: ( ( rule__Actions__ActionsAssignment_2 )* )
-            // InternalDialogFlow.g:961:2: ( rule__Actions__ActionsAssignment_2 )*
+            // InternalDialogFlow.g:987:1: ( ( rule__Actions__ActionsAssignment_2 )* )
+            // InternalDialogFlow.g:988:2: ( rule__Actions__ActionsAssignment_2 )*
             {
              before(grammarAccess.getActionsAccess().getActionsAssignment_2()); 
-            // InternalDialogFlow.g:962:2: ( rule__Actions__ActionsAssignment_2 )*
-            loop6:
+            // InternalDialogFlow.g:989:2: ( rule__Actions__ActionsAssignment_2 )*
+            loop8:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( (LA6_0==14) ) {
-                    alt6=1;
+                if ( (LA8_0==14) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt8) {
             	case 1 :
-            	    // InternalDialogFlow.g:962:3: rule__Actions__ActionsAssignment_2
+            	    // InternalDialogFlow.g:989:3: rule__Actions__ActionsAssignment_2
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Actions__ActionsAssignment_2();
@@ -2867,7 +2996,7 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop8;
                 }
             } while (true);
 
@@ -2894,14 +3023,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__Group__0"
-    // InternalDialogFlow.g:971:1: rule__ActionValue__Group__0 : rule__ActionValue__Group__0__Impl rule__ActionValue__Group__1 ;
+    // InternalDialogFlow.g:998:1: rule__ActionValue__Group__0 : rule__ActionValue__Group__0__Impl rule__ActionValue__Group__1 ;
     public final void rule__ActionValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:975:1: ( rule__ActionValue__Group__0__Impl rule__ActionValue__Group__1 )
-            // InternalDialogFlow.g:976:2: rule__ActionValue__Group__0__Impl rule__ActionValue__Group__1
+            // InternalDialogFlow.g:1002:1: ( rule__ActionValue__Group__0__Impl rule__ActionValue__Group__1 )
+            // InternalDialogFlow.g:1003:2: rule__ActionValue__Group__0__Impl rule__ActionValue__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__ActionValue__Group__0__Impl();
@@ -2932,17 +3061,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__Group__0__Impl"
-    // InternalDialogFlow.g:983:1: rule__ActionValue__Group__0__Impl : ( 'val' ) ;
+    // InternalDialogFlow.g:1010:1: rule__ActionValue__Group__0__Impl : ( 'val' ) ;
     public final void rule__ActionValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:987:1: ( ( 'val' ) )
-            // InternalDialogFlow.g:988:1: ( 'val' )
+            // InternalDialogFlow.g:1014:1: ( ( 'val' ) )
+            // InternalDialogFlow.g:1015:1: ( 'val' )
             {
-            // InternalDialogFlow.g:988:1: ( 'val' )
-            // InternalDialogFlow.g:989:2: 'val'
+            // InternalDialogFlow.g:1015:1: ( 'val' )
+            // InternalDialogFlow.g:1016:2: 'val'
             {
              before(grammarAccess.getActionValueAccess().getValKeyword_0()); 
             match(input,14,FOLLOW_2); 
@@ -2969,14 +3098,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__Group__1"
-    // InternalDialogFlow.g:998:1: rule__ActionValue__Group__1 : rule__ActionValue__Group__1__Impl rule__ActionValue__Group__2 ;
+    // InternalDialogFlow.g:1025:1: rule__ActionValue__Group__1 : rule__ActionValue__Group__1__Impl rule__ActionValue__Group__2 ;
     public final void rule__ActionValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1002:1: ( rule__ActionValue__Group__1__Impl rule__ActionValue__Group__2 )
-            // InternalDialogFlow.g:1003:2: rule__ActionValue__Group__1__Impl rule__ActionValue__Group__2
+            // InternalDialogFlow.g:1029:1: ( rule__ActionValue__Group__1__Impl rule__ActionValue__Group__2 )
+            // InternalDialogFlow.g:1030:2: rule__ActionValue__Group__1__Impl rule__ActionValue__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__ActionValue__Group__1__Impl();
@@ -3007,21 +3136,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__Group__1__Impl"
-    // InternalDialogFlow.g:1010:1: rule__ActionValue__Group__1__Impl : ( ( rule__ActionValue__NameAssignment_1 ) ) ;
+    // InternalDialogFlow.g:1037:1: rule__ActionValue__Group__1__Impl : ( ( rule__ActionValue__NameAssignment_1 ) ) ;
     public final void rule__ActionValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1014:1: ( ( ( rule__ActionValue__NameAssignment_1 ) ) )
-            // InternalDialogFlow.g:1015:1: ( ( rule__ActionValue__NameAssignment_1 ) )
+            // InternalDialogFlow.g:1041:1: ( ( ( rule__ActionValue__NameAssignment_1 ) ) )
+            // InternalDialogFlow.g:1042:1: ( ( rule__ActionValue__NameAssignment_1 ) )
             {
-            // InternalDialogFlow.g:1015:1: ( ( rule__ActionValue__NameAssignment_1 ) )
-            // InternalDialogFlow.g:1016:2: ( rule__ActionValue__NameAssignment_1 )
+            // InternalDialogFlow.g:1042:1: ( ( rule__ActionValue__NameAssignment_1 ) )
+            // InternalDialogFlow.g:1043:2: ( rule__ActionValue__NameAssignment_1 )
             {
              before(grammarAccess.getActionValueAccess().getNameAssignment_1()); 
-            // InternalDialogFlow.g:1017:2: ( rule__ActionValue__NameAssignment_1 )
-            // InternalDialogFlow.g:1017:3: rule__ActionValue__NameAssignment_1
+            // InternalDialogFlow.g:1044:2: ( rule__ActionValue__NameAssignment_1 )
+            // InternalDialogFlow.g:1044:3: rule__ActionValue__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ActionValue__NameAssignment_1();
@@ -3054,14 +3183,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__Group__2"
-    // InternalDialogFlow.g:1025:1: rule__ActionValue__Group__2 : rule__ActionValue__Group__2__Impl rule__ActionValue__Group__3 ;
+    // InternalDialogFlow.g:1052:1: rule__ActionValue__Group__2 : rule__ActionValue__Group__2__Impl rule__ActionValue__Group__3 ;
     public final void rule__ActionValue__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1029:1: ( rule__ActionValue__Group__2__Impl rule__ActionValue__Group__3 )
-            // InternalDialogFlow.g:1030:2: rule__ActionValue__Group__2__Impl rule__ActionValue__Group__3
+            // InternalDialogFlow.g:1056:1: ( rule__ActionValue__Group__2__Impl rule__ActionValue__Group__3 )
+            // InternalDialogFlow.g:1057:2: rule__ActionValue__Group__2__Impl rule__ActionValue__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__ActionValue__Group__2__Impl();
@@ -3092,21 +3221,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__Group__2__Impl"
-    // InternalDialogFlow.g:1037:1: rule__ActionValue__Group__2__Impl : ( ( rule__ActionValue__TypeAssignment_2 ) ) ;
+    // InternalDialogFlow.g:1064:1: rule__ActionValue__Group__2__Impl : ( ( rule__ActionValue__TypeAssignment_2 ) ) ;
     public final void rule__ActionValue__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1041:1: ( ( ( rule__ActionValue__TypeAssignment_2 ) ) )
-            // InternalDialogFlow.g:1042:1: ( ( rule__ActionValue__TypeAssignment_2 ) )
+            // InternalDialogFlow.g:1068:1: ( ( ( rule__ActionValue__TypeAssignment_2 ) ) )
+            // InternalDialogFlow.g:1069:1: ( ( rule__ActionValue__TypeAssignment_2 ) )
             {
-            // InternalDialogFlow.g:1042:1: ( ( rule__ActionValue__TypeAssignment_2 ) )
-            // InternalDialogFlow.g:1043:2: ( rule__ActionValue__TypeAssignment_2 )
+            // InternalDialogFlow.g:1069:1: ( ( rule__ActionValue__TypeAssignment_2 ) )
+            // InternalDialogFlow.g:1070:2: ( rule__ActionValue__TypeAssignment_2 )
             {
              before(grammarAccess.getActionValueAccess().getTypeAssignment_2()); 
-            // InternalDialogFlow.g:1044:2: ( rule__ActionValue__TypeAssignment_2 )
-            // InternalDialogFlow.g:1044:3: rule__ActionValue__TypeAssignment_2
+            // InternalDialogFlow.g:1071:2: ( rule__ActionValue__TypeAssignment_2 )
+            // InternalDialogFlow.g:1071:3: rule__ActionValue__TypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ActionValue__TypeAssignment_2();
@@ -3139,14 +3268,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__Group__3"
-    // InternalDialogFlow.g:1052:1: rule__ActionValue__Group__3 : rule__ActionValue__Group__3__Impl ;
+    // InternalDialogFlow.g:1079:1: rule__ActionValue__Group__3 : rule__ActionValue__Group__3__Impl ;
     public final void rule__ActionValue__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1056:1: ( rule__ActionValue__Group__3__Impl )
-            // InternalDialogFlow.g:1057:2: rule__ActionValue__Group__3__Impl
+            // InternalDialogFlow.g:1083:1: ( rule__ActionValue__Group__3__Impl )
+            // InternalDialogFlow.g:1084:2: rule__ActionValue__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ActionValue__Group__3__Impl();
@@ -3172,29 +3301,29 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__Group__3__Impl"
-    // InternalDialogFlow.g:1063:1: rule__ActionValue__Group__3__Impl : ( ( rule__ActionValue__ListAssignment_3 )? ) ;
+    // InternalDialogFlow.g:1090:1: rule__ActionValue__Group__3__Impl : ( ( rule__ActionValue__ListAssignment_3 )? ) ;
     public final void rule__ActionValue__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1067:1: ( ( ( rule__ActionValue__ListAssignment_3 )? ) )
-            // InternalDialogFlow.g:1068:1: ( ( rule__ActionValue__ListAssignment_3 )? )
+            // InternalDialogFlow.g:1094:1: ( ( ( rule__ActionValue__ListAssignment_3 )? ) )
+            // InternalDialogFlow.g:1095:1: ( ( rule__ActionValue__ListAssignment_3 )? )
             {
-            // InternalDialogFlow.g:1068:1: ( ( rule__ActionValue__ListAssignment_3 )? )
-            // InternalDialogFlow.g:1069:2: ( rule__ActionValue__ListAssignment_3 )?
+            // InternalDialogFlow.g:1095:1: ( ( rule__ActionValue__ListAssignment_3 )? )
+            // InternalDialogFlow.g:1096:2: ( rule__ActionValue__ListAssignment_3 )?
             {
              before(grammarAccess.getActionValueAccess().getListAssignment_3()); 
-            // InternalDialogFlow.g:1070:2: ( rule__ActionValue__ListAssignment_3 )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalDialogFlow.g:1097:2: ( rule__ActionValue__ListAssignment_3 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA7_0==RULE_STRING) ) {
-                alt7=1;
+            if ( (LA9_0==RULE_STRING) ) {
+                alt9=1;
             }
-            switch (alt7) {
+            switch (alt9) {
                 case 1 :
-                    // InternalDialogFlow.g:1070:3: rule__ActionValue__ListAssignment_3
+                    // InternalDialogFlow.g:1097:3: rule__ActionValue__ListAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__ActionValue__ListAssignment_3();
@@ -3230,14 +3359,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__Group__0"
-    // InternalDialogFlow.g:1079:1: rule__Entity__Group__0 : rule__Entity__Group__0__Impl rule__Entity__Group__1 ;
+    // InternalDialogFlow.g:1106:1: rule__Entity__Group__0 : rule__Entity__Group__0__Impl rule__Entity__Group__1 ;
     public final void rule__Entity__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1083:1: ( rule__Entity__Group__0__Impl rule__Entity__Group__1 )
-            // InternalDialogFlow.g:1084:2: rule__Entity__Group__0__Impl rule__Entity__Group__1
+            // InternalDialogFlow.g:1110:1: ( rule__Entity__Group__0__Impl rule__Entity__Group__1 )
+            // InternalDialogFlow.g:1111:2: rule__Entity__Group__0__Impl rule__Entity__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Entity__Group__0__Impl();
@@ -3268,17 +3397,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__Group__0__Impl"
-    // InternalDialogFlow.g:1091:1: rule__Entity__Group__0__Impl : ( 'entity' ) ;
+    // InternalDialogFlow.g:1118:1: rule__Entity__Group__0__Impl : ( 'entity' ) ;
     public final void rule__Entity__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1095:1: ( ( 'entity' ) )
-            // InternalDialogFlow.g:1096:1: ( 'entity' )
+            // InternalDialogFlow.g:1122:1: ( ( 'entity' ) )
+            // InternalDialogFlow.g:1123:1: ( 'entity' )
             {
-            // InternalDialogFlow.g:1096:1: ( 'entity' )
-            // InternalDialogFlow.g:1097:2: 'entity'
+            // InternalDialogFlow.g:1123:1: ( 'entity' )
+            // InternalDialogFlow.g:1124:2: 'entity'
             {
              before(grammarAccess.getEntityAccess().getEntityKeyword_0()); 
             match(input,18,FOLLOW_2); 
@@ -3305,14 +3434,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__Group__1"
-    // InternalDialogFlow.g:1106:1: rule__Entity__Group__1 : rule__Entity__Group__1__Impl rule__Entity__Group__2 ;
+    // InternalDialogFlow.g:1133:1: rule__Entity__Group__1 : rule__Entity__Group__1__Impl rule__Entity__Group__2 ;
     public final void rule__Entity__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1110:1: ( rule__Entity__Group__1__Impl rule__Entity__Group__2 )
-            // InternalDialogFlow.g:1111:2: rule__Entity__Group__1__Impl rule__Entity__Group__2
+            // InternalDialogFlow.g:1137:1: ( rule__Entity__Group__1__Impl rule__Entity__Group__2 )
+            // InternalDialogFlow.g:1138:2: rule__Entity__Group__1__Impl rule__Entity__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__Entity__Group__1__Impl();
@@ -3343,21 +3472,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__Group__1__Impl"
-    // InternalDialogFlow.g:1118:1: rule__Entity__Group__1__Impl : ( ( rule__Entity__NameAssignment_1 ) ) ;
+    // InternalDialogFlow.g:1145:1: rule__Entity__Group__1__Impl : ( ( rule__Entity__NameAssignment_1 ) ) ;
     public final void rule__Entity__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1122:1: ( ( ( rule__Entity__NameAssignment_1 ) ) )
-            // InternalDialogFlow.g:1123:1: ( ( rule__Entity__NameAssignment_1 ) )
+            // InternalDialogFlow.g:1149:1: ( ( ( rule__Entity__NameAssignment_1 ) ) )
+            // InternalDialogFlow.g:1150:1: ( ( rule__Entity__NameAssignment_1 ) )
             {
-            // InternalDialogFlow.g:1123:1: ( ( rule__Entity__NameAssignment_1 ) )
-            // InternalDialogFlow.g:1124:2: ( rule__Entity__NameAssignment_1 )
+            // InternalDialogFlow.g:1150:1: ( ( rule__Entity__NameAssignment_1 ) )
+            // InternalDialogFlow.g:1151:2: ( rule__Entity__NameAssignment_1 )
             {
              before(grammarAccess.getEntityAccess().getNameAssignment_1()); 
-            // InternalDialogFlow.g:1125:2: ( rule__Entity__NameAssignment_1 )
-            // InternalDialogFlow.g:1125:3: rule__Entity__NameAssignment_1
+            // InternalDialogFlow.g:1152:2: ( rule__Entity__NameAssignment_1 )
+            // InternalDialogFlow.g:1152:3: rule__Entity__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Entity__NameAssignment_1();
@@ -3390,14 +3519,14 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__Group__2"
-    // InternalDialogFlow.g:1133:1: rule__Entity__Group__2 : rule__Entity__Group__2__Impl ;
+    // InternalDialogFlow.g:1160:1: rule__Entity__Group__2 : rule__Entity__Group__2__Impl ;
     public final void rule__Entity__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1137:1: ( rule__Entity__Group__2__Impl )
-            // InternalDialogFlow.g:1138:2: rule__Entity__Group__2__Impl
+            // InternalDialogFlow.g:1164:1: ( rule__Entity__Group__2__Impl )
+            // InternalDialogFlow.g:1165:2: rule__Entity__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Entity__Group__2__Impl();
@@ -3423,33 +3552,33 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__Group__2__Impl"
-    // InternalDialogFlow.g:1144:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__EntitiesAssignment_2 )* ) ;
+    // InternalDialogFlow.g:1171:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__EntitiesAssignment_2 )* ) ;
     public final void rule__Entity__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1148:1: ( ( ( rule__Entity__EntitiesAssignment_2 )* ) )
-            // InternalDialogFlow.g:1149:1: ( ( rule__Entity__EntitiesAssignment_2 )* )
+            // InternalDialogFlow.g:1175:1: ( ( ( rule__Entity__EntitiesAssignment_2 )* ) )
+            // InternalDialogFlow.g:1176:1: ( ( rule__Entity__EntitiesAssignment_2 )* )
             {
-            // InternalDialogFlow.g:1149:1: ( ( rule__Entity__EntitiesAssignment_2 )* )
-            // InternalDialogFlow.g:1150:2: ( rule__Entity__EntitiesAssignment_2 )*
+            // InternalDialogFlow.g:1176:1: ( ( rule__Entity__EntitiesAssignment_2 )* )
+            // InternalDialogFlow.g:1177:2: ( rule__Entity__EntitiesAssignment_2 )*
             {
              before(grammarAccess.getEntityAccess().getEntitiesAssignment_2()); 
-            // InternalDialogFlow.g:1151:2: ( rule__Entity__EntitiesAssignment_2 )*
-            loop8:
+            // InternalDialogFlow.g:1178:2: ( rule__Entity__EntitiesAssignment_2 )*
+            loop10:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA8_0==14) ) {
-                    alt8=1;
+                if ( (LA10_0==14) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalDialogFlow.g:1151:3: rule__Entity__EntitiesAssignment_2
+            	    // InternalDialogFlow.g:1178:3: rule__Entity__EntitiesAssignment_2
             	    {
             	    pushFollow(FOLLOW_10);
             	    rule__Entity__EntitiesAssignment_2();
@@ -3461,7 +3590,7 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop10;
                 }
             } while (true);
 
@@ -3488,16 +3617,16 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__EntityValue__Group__0"
-    // InternalDialogFlow.g:1160:1: rule__EntityValue__Group__0 : rule__EntityValue__Group__0__Impl rule__EntityValue__Group__1 ;
+    // InternalDialogFlow.g:1187:1: rule__EntityValue__Group__0 : rule__EntityValue__Group__0__Impl rule__EntityValue__Group__1 ;
     public final void rule__EntityValue__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1164:1: ( rule__EntityValue__Group__0__Impl rule__EntityValue__Group__1 )
-            // InternalDialogFlow.g:1165:2: rule__EntityValue__Group__0__Impl rule__EntityValue__Group__1
+            // InternalDialogFlow.g:1191:1: ( rule__EntityValue__Group__0__Impl rule__EntityValue__Group__1 )
+            // InternalDialogFlow.g:1192:2: rule__EntityValue__Group__0__Impl rule__EntityValue__Group__1
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_11);
             rule__EntityValue__Group__0__Impl();
 
             state._fsp--;
@@ -3526,17 +3655,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__EntityValue__Group__0__Impl"
-    // InternalDialogFlow.g:1172:1: rule__EntityValue__Group__0__Impl : ( 'val' ) ;
+    // InternalDialogFlow.g:1199:1: rule__EntityValue__Group__0__Impl : ( 'val' ) ;
     public final void rule__EntityValue__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1176:1: ( ( 'val' ) )
-            // InternalDialogFlow.g:1177:1: ( 'val' )
+            // InternalDialogFlow.g:1203:1: ( ( 'val' ) )
+            // InternalDialogFlow.g:1204:1: ( 'val' )
             {
-            // InternalDialogFlow.g:1177:1: ( 'val' )
-            // InternalDialogFlow.g:1178:2: 'val'
+            // InternalDialogFlow.g:1204:1: ( 'val' )
+            // InternalDialogFlow.g:1205:2: 'val'
             {
              before(grammarAccess.getEntityValueAccess().getValKeyword_0()); 
             match(input,14,FOLLOW_2); 
@@ -3563,16 +3692,16 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__EntityValue__Group__1"
-    // InternalDialogFlow.g:1187:1: rule__EntityValue__Group__1 : rule__EntityValue__Group__1__Impl rule__EntityValue__Group__2 ;
+    // InternalDialogFlow.g:1214:1: rule__EntityValue__Group__1 : rule__EntityValue__Group__1__Impl rule__EntityValue__Group__2 ;
     public final void rule__EntityValue__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1191:1: ( rule__EntityValue__Group__1__Impl rule__EntityValue__Group__2 )
-            // InternalDialogFlow.g:1192:2: rule__EntityValue__Group__1__Impl rule__EntityValue__Group__2
+            // InternalDialogFlow.g:1218:1: ( rule__EntityValue__Group__1__Impl rule__EntityValue__Group__2 )
+            // InternalDialogFlow.g:1219:2: rule__EntityValue__Group__1__Impl rule__EntityValue__Group__2
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__EntityValue__Group__1__Impl();
 
             state._fsp--;
@@ -3601,21 +3730,31 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__EntityValue__Group__1__Impl"
-    // InternalDialogFlow.g:1199:1: rule__EntityValue__Group__1__Impl : ( '\"' ) ;
+    // InternalDialogFlow.g:1226:1: rule__EntityValue__Group__1__Impl : ( ( rule__EntityValue__ValuesAssignment_1 ) ) ;
     public final void rule__EntityValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1203:1: ( ( '\"' ) )
-            // InternalDialogFlow.g:1204:1: ( '\"' )
+            // InternalDialogFlow.g:1230:1: ( ( ( rule__EntityValue__ValuesAssignment_1 ) ) )
+            // InternalDialogFlow.g:1231:1: ( ( rule__EntityValue__ValuesAssignment_1 ) )
             {
-            // InternalDialogFlow.g:1204:1: ( '\"' )
-            // InternalDialogFlow.g:1205:2: '\"'
+            // InternalDialogFlow.g:1231:1: ( ( rule__EntityValue__ValuesAssignment_1 ) )
+            // InternalDialogFlow.g:1232:2: ( rule__EntityValue__ValuesAssignment_1 )
             {
-             before(grammarAccess.getEntityValueAccess().getQuotationMarkKeyword_1()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getEntityValueAccess().getQuotationMarkKeyword_1()); 
+             before(grammarAccess.getEntityValueAccess().getValuesAssignment_1()); 
+            // InternalDialogFlow.g:1233:2: ( rule__EntityValue__ValuesAssignment_1 )
+            // InternalDialogFlow.g:1233:3: rule__EntityValue__ValuesAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__EntityValue__ValuesAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEntityValueAccess().getValuesAssignment_1()); 
 
             }
 
@@ -3638,22 +3777,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__EntityValue__Group__2"
-    // InternalDialogFlow.g:1214:1: rule__EntityValue__Group__2 : rule__EntityValue__Group__2__Impl rule__EntityValue__Group__3 ;
+    // InternalDialogFlow.g:1241:1: rule__EntityValue__Group__2 : rule__EntityValue__Group__2__Impl ;
     public final void rule__EntityValue__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1218:1: ( rule__EntityValue__Group__2__Impl rule__EntityValue__Group__3 )
-            // InternalDialogFlow.g:1219:2: rule__EntityValue__Group__2__Impl rule__EntityValue__Group__3
+            // InternalDialogFlow.g:1245:1: ( rule__EntityValue__Group__2__Impl )
+            // InternalDialogFlow.g:1246:2: rule__EntityValue__Group__2__Impl
             {
-            pushFollow(FOLLOW_7);
-            rule__EntityValue__Group__2__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__EntityValue__Group__3();
+            rule__EntityValue__Group__2__Impl();
 
             state._fsp--;
 
@@ -3676,31 +3810,49 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__EntityValue__Group__2__Impl"
-    // InternalDialogFlow.g:1226:1: rule__EntityValue__Group__2__Impl : ( ( rule__EntityValue__ValuesAssignment_2 ) ) ;
+    // InternalDialogFlow.g:1252:1: rule__EntityValue__Group__2__Impl : ( ( rule__EntityValue__Group_2__0 )* ) ;
     public final void rule__EntityValue__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1230:1: ( ( ( rule__EntityValue__ValuesAssignment_2 ) ) )
-            // InternalDialogFlow.g:1231:1: ( ( rule__EntityValue__ValuesAssignment_2 ) )
+            // InternalDialogFlow.g:1256:1: ( ( ( rule__EntityValue__Group_2__0 )* ) )
+            // InternalDialogFlow.g:1257:1: ( ( rule__EntityValue__Group_2__0 )* )
             {
-            // InternalDialogFlow.g:1231:1: ( ( rule__EntityValue__ValuesAssignment_2 ) )
-            // InternalDialogFlow.g:1232:2: ( rule__EntityValue__ValuesAssignment_2 )
+            // InternalDialogFlow.g:1257:1: ( ( rule__EntityValue__Group_2__0 )* )
+            // InternalDialogFlow.g:1258:2: ( rule__EntityValue__Group_2__0 )*
             {
-             before(grammarAccess.getEntityValueAccess().getValuesAssignment_2()); 
-            // InternalDialogFlow.g:1233:2: ( rule__EntityValue__ValuesAssignment_2 )
-            // InternalDialogFlow.g:1233:3: rule__EntityValue__ValuesAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__EntityValue__ValuesAssignment_2();
+             before(grammarAccess.getEntityValueAccess().getGroup_2()); 
+            // InternalDialogFlow.g:1259:2: ( rule__EntityValue__Group_2__0 )*
+            loop11:
+            do {
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA11_0==15) ) {
+                    alt11=1;
+                }
 
 
-            }
+                switch (alt11) {
+            	case 1 :
+            	    // InternalDialogFlow.g:1259:3: rule__EntityValue__Group_2__0
+            	    {
+            	    pushFollow(FOLLOW_13);
+            	    rule__EntityValue__Group_2__0();
 
-             after(grammarAccess.getEntityValueAccess().getValuesAssignment_2()); 
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop11;
+                }
+            } while (true);
+
+             after(grammarAccess.getEntityValueAccess().getGroup_2()); 
 
             }
 
@@ -3722,196 +3874,23 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__EntityValue__Group__2__Impl"
 
 
-    // $ANTLR start "rule__EntityValue__Group__3"
-    // InternalDialogFlow.g:1241:1: rule__EntityValue__Group__3 : rule__EntityValue__Group__3__Impl rule__EntityValue__Group__4 ;
-    public final void rule__EntityValue__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__EntityValue__Group_2__0"
+    // InternalDialogFlow.g:1268:1: rule__EntityValue__Group_2__0 : rule__EntityValue__Group_2__0__Impl rule__EntityValue__Group_2__1 ;
+    public final void rule__EntityValue__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1245:1: ( rule__EntityValue__Group__3__Impl rule__EntityValue__Group__4 )
-            // InternalDialogFlow.g:1246:2: rule__EntityValue__Group__3__Impl rule__EntityValue__Group__4
-            {
-            pushFollow(FOLLOW_12);
-            rule__EntityValue__Group__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__EntityValue__Group__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EntityValue__Group__3"
-
-
-    // $ANTLR start "rule__EntityValue__Group__3__Impl"
-    // InternalDialogFlow.g:1253:1: rule__EntityValue__Group__3__Impl : ( '\"' ) ;
-    public final void rule__EntityValue__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDialogFlow.g:1257:1: ( ( '\"' ) )
-            // InternalDialogFlow.g:1258:1: ( '\"' )
-            {
-            // InternalDialogFlow.g:1258:1: ( '\"' )
-            // InternalDialogFlow.g:1259:2: '\"'
-            {
-             before(grammarAccess.getEntityValueAccess().getQuotationMarkKeyword_3()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getEntityValueAccess().getQuotationMarkKeyword_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EntityValue__Group__3__Impl"
-
-
-    // $ANTLR start "rule__EntityValue__Group__4"
-    // InternalDialogFlow.g:1268:1: rule__EntityValue__Group__4 : rule__EntityValue__Group__4__Impl ;
-    public final void rule__EntityValue__Group__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDialogFlow.g:1272:1: ( rule__EntityValue__Group__4__Impl )
-            // InternalDialogFlow.g:1273:2: rule__EntityValue__Group__4__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__EntityValue__Group__4__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EntityValue__Group__4"
-
-
-    // $ANTLR start "rule__EntityValue__Group__4__Impl"
-    // InternalDialogFlow.g:1279:1: rule__EntityValue__Group__4__Impl : ( ( rule__EntityValue__Group_4__0 )* ) ;
-    public final void rule__EntityValue__Group__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDialogFlow.g:1283:1: ( ( ( rule__EntityValue__Group_4__0 )* ) )
-            // InternalDialogFlow.g:1284:1: ( ( rule__EntityValue__Group_4__0 )* )
-            {
-            // InternalDialogFlow.g:1284:1: ( ( rule__EntityValue__Group_4__0 )* )
-            // InternalDialogFlow.g:1285:2: ( rule__EntityValue__Group_4__0 )*
-            {
-             before(grammarAccess.getEntityValueAccess().getGroup_4()); 
-            // InternalDialogFlow.g:1286:2: ( rule__EntityValue__Group_4__0 )*
-            loop9:
-            do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
-
-                if ( (LA9_0==16) ) {
-                    alt9=1;
-                }
-
-
-                switch (alt9) {
-            	case 1 :
-            	    // InternalDialogFlow.g:1286:3: rule__EntityValue__Group_4__0
-            	    {
-            	    pushFollow(FOLLOW_13);
-            	    rule__EntityValue__Group_4__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop9;
-                }
-            } while (true);
-
-             after(grammarAccess.getEntityValueAccess().getGroup_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EntityValue__Group__4__Impl"
-
-
-    // $ANTLR start "rule__EntityValue__Group_4__0"
-    // InternalDialogFlow.g:1295:1: rule__EntityValue__Group_4__0 : rule__EntityValue__Group_4__0__Impl rule__EntityValue__Group_4__1 ;
-    public final void rule__EntityValue__Group_4__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalDialogFlow.g:1299:1: ( rule__EntityValue__Group_4__0__Impl rule__EntityValue__Group_4__1 )
-            // InternalDialogFlow.g:1300:2: rule__EntityValue__Group_4__0__Impl rule__EntityValue__Group_4__1
+            // InternalDialogFlow.g:1272:1: ( rule__EntityValue__Group_2__0__Impl rule__EntityValue__Group_2__1 )
+            // InternalDialogFlow.g:1273:2: rule__EntityValue__Group_2__0__Impl rule__EntityValue__Group_2__1
             {
             pushFollow(FOLLOW_11);
-            rule__EntityValue__Group_4__0__Impl();
+            rule__EntityValue__Group_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__EntityValue__Group_4__1();
+            rule__EntityValue__Group_2__1();
 
             state._fsp--;
 
@@ -3930,25 +3909,25 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__EntityValue__Group_4__0"
+    // $ANTLR end "rule__EntityValue__Group_2__0"
 
 
-    // $ANTLR start "rule__EntityValue__Group_4__0__Impl"
-    // InternalDialogFlow.g:1307:1: rule__EntityValue__Group_4__0__Impl : ( ',' ) ;
-    public final void rule__EntityValue__Group_4__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EntityValue__Group_2__0__Impl"
+    // InternalDialogFlow.g:1280:1: rule__EntityValue__Group_2__0__Impl : ( ',' ) ;
+    public final void rule__EntityValue__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1311:1: ( ( ',' ) )
-            // InternalDialogFlow.g:1312:1: ( ',' )
+            // InternalDialogFlow.g:1284:1: ( ( ',' ) )
+            // InternalDialogFlow.g:1285:1: ( ',' )
             {
-            // InternalDialogFlow.g:1312:1: ( ',' )
-            // InternalDialogFlow.g:1313:2: ','
+            // InternalDialogFlow.g:1285:1: ( ',' )
+            // InternalDialogFlow.g:1286:2: ','
             {
-             before(grammarAccess.getEntityValueAccess().getCommaKeyword_4_0()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getEntityValueAccess().getCommaKeyword_4_0()); 
+             before(grammarAccess.getEntityValueAccess().getCommaKeyword_2_0()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getEntityValueAccess().getCommaKeyword_2_0()); 
 
             }
 
@@ -3967,21 +3946,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__EntityValue__Group_4__0__Impl"
+    // $ANTLR end "rule__EntityValue__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__EntityValue__Group_4__1"
-    // InternalDialogFlow.g:1322:1: rule__EntityValue__Group_4__1 : rule__EntityValue__Group_4__1__Impl ;
-    public final void rule__EntityValue__Group_4__1() throws RecognitionException {
+    // $ANTLR start "rule__EntityValue__Group_2__1"
+    // InternalDialogFlow.g:1295:1: rule__EntityValue__Group_2__1 : rule__EntityValue__Group_2__1__Impl ;
+    public final void rule__EntityValue__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1326:1: ( rule__EntityValue__Group_4__1__Impl )
-            // InternalDialogFlow.g:1327:2: rule__EntityValue__Group_4__1__Impl
+            // InternalDialogFlow.g:1299:1: ( rule__EntityValue__Group_2__1__Impl )
+            // InternalDialogFlow.g:1300:2: rule__EntityValue__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__EntityValue__Group_4__1__Impl();
+            rule__EntityValue__Group_2__1__Impl();
 
             state._fsp--;
 
@@ -4000,35 +3979,35 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__EntityValue__Group_4__1"
+    // $ANTLR end "rule__EntityValue__Group_2__1"
 
 
-    // $ANTLR start "rule__EntityValue__Group_4__1__Impl"
-    // InternalDialogFlow.g:1333:1: rule__EntityValue__Group_4__1__Impl : ( ( rule__EntityValue__ValuesAssignment_4_1 ) ) ;
-    public final void rule__EntityValue__Group_4__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__EntityValue__Group_2__1__Impl"
+    // InternalDialogFlow.g:1306:1: rule__EntityValue__Group_2__1__Impl : ( ( rule__EntityValue__ValuesAssignment_2_1 ) ) ;
+    public final void rule__EntityValue__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1337:1: ( ( ( rule__EntityValue__ValuesAssignment_4_1 ) ) )
-            // InternalDialogFlow.g:1338:1: ( ( rule__EntityValue__ValuesAssignment_4_1 ) )
+            // InternalDialogFlow.g:1310:1: ( ( ( rule__EntityValue__ValuesAssignment_2_1 ) ) )
+            // InternalDialogFlow.g:1311:1: ( ( rule__EntityValue__ValuesAssignment_2_1 ) )
             {
-            // InternalDialogFlow.g:1338:1: ( ( rule__EntityValue__ValuesAssignment_4_1 ) )
-            // InternalDialogFlow.g:1339:2: ( rule__EntityValue__ValuesAssignment_4_1 )
+            // InternalDialogFlow.g:1311:1: ( ( rule__EntityValue__ValuesAssignment_2_1 ) )
+            // InternalDialogFlow.g:1312:2: ( rule__EntityValue__ValuesAssignment_2_1 )
             {
-             before(grammarAccess.getEntityValueAccess().getValuesAssignment_4_1()); 
-            // InternalDialogFlow.g:1340:2: ( rule__EntityValue__ValuesAssignment_4_1 )
-            // InternalDialogFlow.g:1340:3: rule__EntityValue__ValuesAssignment_4_1
+             before(grammarAccess.getEntityValueAccess().getValuesAssignment_2_1()); 
+            // InternalDialogFlow.g:1313:2: ( rule__EntityValue__ValuesAssignment_2_1 )
+            // InternalDialogFlow.g:1313:3: rule__EntityValue__ValuesAssignment_2_1
             {
             pushFollow(FOLLOW_2);
-            rule__EntityValue__ValuesAssignment_4_1();
+            rule__EntityValue__ValuesAssignment_2_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEntityValueAccess().getValuesAssignment_4_1()); 
+             after(grammarAccess.getEntityValueAccess().getValuesAssignment_2_1()); 
 
             }
 
@@ -4047,21 +4026,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__EntityValue__Group_4__1__Impl"
+    // $ANTLR end "rule__EntityValue__Group_2__1__Impl"
 
 
     // $ANTLR start "rule__DialogFlowSystem__NameAssignment_1"
-    // InternalDialogFlow.g:1349:1: rule__DialogFlowSystem__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDialogFlow.g:1322:1: rule__DialogFlowSystem__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__DialogFlowSystem__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1353:1: ( ( RULE_ID ) )
-            // InternalDialogFlow.g:1354:2: ( RULE_ID )
+            // InternalDialogFlow.g:1326:1: ( ( RULE_ID ) )
+            // InternalDialogFlow.g:1327:2: ( RULE_ID )
             {
-            // InternalDialogFlow.g:1354:2: ( RULE_ID )
-            // InternalDialogFlow.g:1355:3: RULE_ID
+            // InternalDialogFlow.g:1327:2: ( RULE_ID )
+            // InternalDialogFlow.g:1328:3: RULE_ID
             {
              before(grammarAccess.getDialogFlowSystemAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4088,17 +4067,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__DialogFlowSystem__DeclarationsAssignment_2"
-    // InternalDialogFlow.g:1364:1: rule__DialogFlowSystem__DeclarationsAssignment_2 : ( ruleDeclaration ) ;
+    // InternalDialogFlow.g:1337:1: rule__DialogFlowSystem__DeclarationsAssignment_2 : ( ruleDeclaration ) ;
     public final void rule__DialogFlowSystem__DeclarationsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1368:1: ( ( ruleDeclaration ) )
-            // InternalDialogFlow.g:1369:2: ( ruleDeclaration )
+            // InternalDialogFlow.g:1341:1: ( ( ruleDeclaration ) )
+            // InternalDialogFlow.g:1342:2: ( ruleDeclaration )
             {
-            // InternalDialogFlow.g:1369:2: ( ruleDeclaration )
-            // InternalDialogFlow.g:1370:3: ruleDeclaration
+            // InternalDialogFlow.g:1342:2: ( ruleDeclaration )
+            // InternalDialogFlow.g:1343:3: ruleDeclaration
             {
              before(grammarAccess.getDialogFlowSystemAccess().getDeclarationsDeclarationParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4129,17 +4108,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Intent__NameAssignment_1"
-    // InternalDialogFlow.g:1379:1: rule__Intent__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDialogFlow.g:1352:1: rule__Intent__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Intent__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1383:1: ( ( RULE_ID ) )
-            // InternalDialogFlow.g:1384:2: ( RULE_ID )
+            // InternalDialogFlow.g:1356:1: ( ( RULE_ID ) )
+            // InternalDialogFlow.g:1357:2: ( RULE_ID )
             {
-            // InternalDialogFlow.g:1384:2: ( RULE_ID )
-            // InternalDialogFlow.g:1385:3: RULE_ID
+            // InternalDialogFlow.g:1357:2: ( RULE_ID )
+            // InternalDialogFlow.g:1358:3: RULE_ID
             {
              before(grammarAccess.getIntentAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4166,17 +4145,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Intent__PhraseAssignment_2"
-    // InternalDialogFlow.g:1394:1: rule__Intent__PhraseAssignment_2 : ( rulePhrases ) ;
+    // InternalDialogFlow.g:1367:1: rule__Intent__PhraseAssignment_2 : ( rulePhrases ) ;
     public final void rule__Intent__PhraseAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1398:1: ( ( rulePhrases ) )
-            // InternalDialogFlow.g:1399:2: ( rulePhrases )
+            // InternalDialogFlow.g:1371:1: ( ( rulePhrases ) )
+            // InternalDialogFlow.g:1372:2: ( rulePhrases )
             {
-            // InternalDialogFlow.g:1399:2: ( rulePhrases )
-            // InternalDialogFlow.g:1400:3: rulePhrases
+            // InternalDialogFlow.g:1372:2: ( rulePhrases )
+            // InternalDialogFlow.g:1373:3: rulePhrases
             {
              before(grammarAccess.getIntentAccess().getPhrasePhrasesParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4207,17 +4186,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Intent__ResponseAssignment_3"
-    // InternalDialogFlow.g:1409:1: rule__Intent__ResponseAssignment_3 : ( ruleResponses ) ;
+    // InternalDialogFlow.g:1382:1: rule__Intent__ResponseAssignment_3 : ( ruleResponses ) ;
     public final void rule__Intent__ResponseAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1413:1: ( ( ruleResponses ) )
-            // InternalDialogFlow.g:1414:2: ( ruleResponses )
+            // InternalDialogFlow.g:1386:1: ( ( ruleResponses ) )
+            // InternalDialogFlow.g:1387:2: ( ruleResponses )
             {
-            // InternalDialogFlow.g:1414:2: ( ruleResponses )
-            // InternalDialogFlow.g:1415:3: ruleResponses
+            // InternalDialogFlow.g:1387:2: ( ruleResponses )
+            // InternalDialogFlow.g:1388:3: ruleResponses
             {
              before(grammarAccess.getIntentAccess().getResponseResponsesParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -4248,17 +4227,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Intent__ActionAssignment_4"
-    // InternalDialogFlow.g:1424:1: rule__Intent__ActionAssignment_4 : ( ruleActions ) ;
+    // InternalDialogFlow.g:1397:1: rule__Intent__ActionAssignment_4 : ( ruleActions ) ;
     public final void rule__Intent__ActionAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1428:1: ( ( ruleActions ) )
-            // InternalDialogFlow.g:1429:2: ( ruleActions )
+            // InternalDialogFlow.g:1401:1: ( ( ruleActions ) )
+            // InternalDialogFlow.g:1402:2: ( ruleActions )
             {
-            // InternalDialogFlow.g:1429:2: ( ruleActions )
-            // InternalDialogFlow.g:1430:3: ruleActions
+            // InternalDialogFlow.g:1402:2: ( ruleActions )
+            // InternalDialogFlow.g:1403:3: ruleActions
             {
              before(grammarAccess.getIntentAccess().getActionActionsParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -4289,17 +4268,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Phrases__PhrasesAssignment_2"
-    // InternalDialogFlow.g:1439:1: rule__Phrases__PhrasesAssignment_2 : ( rulePhraseValue ) ;
+    // InternalDialogFlow.g:1412:1: rule__Phrases__PhrasesAssignment_2 : ( rulePhraseValue ) ;
     public final void rule__Phrases__PhrasesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1443:1: ( ( rulePhraseValue ) )
-            // InternalDialogFlow.g:1444:2: ( rulePhraseValue )
+            // InternalDialogFlow.g:1416:1: ( ( rulePhraseValue ) )
+            // InternalDialogFlow.g:1417:2: ( rulePhraseValue )
             {
-            // InternalDialogFlow.g:1444:2: ( rulePhraseValue )
-            // InternalDialogFlow.g:1445:3: rulePhraseValue
+            // InternalDialogFlow.g:1417:2: ( rulePhraseValue )
+            // InternalDialogFlow.g:1418:3: rulePhraseValue
             {
              before(grammarAccess.getPhrasesAccess().getPhrasesPhraseValueParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4329,22 +4308,22 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Phrases__PhrasesAssignment_2"
 
 
-    // $ANTLR start "rule__PhraseValue__ValueAssignment_2"
-    // InternalDialogFlow.g:1454:1: rule__PhraseValue__ValueAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__PhraseValue__ValueAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__PhraseValue__ValueAssignment_1"
+    // InternalDialogFlow.g:1427:1: rule__PhraseValue__ValueAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__PhraseValue__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1458:1: ( ( RULE_STRING ) )
-            // InternalDialogFlow.g:1459:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1431:1: ( ( RULE_STRING ) )
+            // InternalDialogFlow.g:1432:2: ( RULE_STRING )
             {
-            // InternalDialogFlow.g:1459:2: ( RULE_STRING )
-            // InternalDialogFlow.g:1460:3: RULE_STRING
+            // InternalDialogFlow.g:1432:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1433:3: RULE_STRING
             {
-             before(grammarAccess.getPhraseValueAccess().getValueSTRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getPhraseValueAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getPhraseValueAccess().getValueSTRINGTerminalRuleCall_2_0()); 
+             after(grammarAccess.getPhraseValueAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
 
@@ -4363,21 +4342,103 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__PhraseValue__ValueAssignment_2"
+    // $ANTLR end "rule__PhraseValue__ValueAssignment_1"
+
+
+    // $ANTLR start "rule__PhraseValue__TextAssignment_2_1"
+    // InternalDialogFlow.g:1442:1: rule__PhraseValue__TextAssignment_2_1 : ( RULE_STRING ) ;
+    public final void rule__PhraseValue__TextAssignment_2_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDialogFlow.g:1446:1: ( ( RULE_STRING ) )
+            // InternalDialogFlow.g:1447:2: ( RULE_STRING )
+            {
+            // InternalDialogFlow.g:1447:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1448:3: RULE_STRING
+            {
+             before(grammarAccess.getPhraseValueAccess().getTextSTRINGTerminalRuleCall_2_1_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getPhraseValueAccess().getTextSTRINGTerminalRuleCall_2_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PhraseValue__TextAssignment_2_1"
+
+
+    // $ANTLR start "rule__PhraseValue__EntityAssignment_2_2"
+    // InternalDialogFlow.g:1457:1: rule__PhraseValue__EntityAssignment_2_2 : ( ( RULE_ID ) ) ;
+    public final void rule__PhraseValue__EntityAssignment_2_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalDialogFlow.g:1461:1: ( ( ( RULE_ID ) ) )
+            // InternalDialogFlow.g:1462:2: ( ( RULE_ID ) )
+            {
+            // InternalDialogFlow.g:1462:2: ( ( RULE_ID ) )
+            // InternalDialogFlow.g:1463:3: ( RULE_ID )
+            {
+             before(grammarAccess.getPhraseValueAccess().getEntityEntityCrossReference_2_2_0()); 
+            // InternalDialogFlow.g:1464:3: ( RULE_ID )
+            // InternalDialogFlow.g:1465:4: RULE_ID
+            {
+             before(grammarAccess.getPhraseValueAccess().getEntityEntityIDTerminalRuleCall_2_2_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getPhraseValueAccess().getEntityEntityIDTerminalRuleCall_2_2_0_1()); 
+
+            }
+
+             after(grammarAccess.getPhraseValueAccess().getEntityEntityCrossReference_2_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__PhraseValue__EntityAssignment_2_2"
 
 
     // $ANTLR start "rule__Responses__ResponsesAssignment_1"
-    // InternalDialogFlow.g:1469:1: rule__Responses__ResponsesAssignment_1 : ( RULE_STRING ) ;
+    // InternalDialogFlow.g:1476:1: rule__Responses__ResponsesAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Responses__ResponsesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1473:1: ( ( RULE_STRING ) )
-            // InternalDialogFlow.g:1474:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1480:1: ( ( RULE_STRING ) )
+            // InternalDialogFlow.g:1481:2: ( RULE_STRING )
             {
-            // InternalDialogFlow.g:1474:2: ( RULE_STRING )
-            // InternalDialogFlow.g:1475:3: RULE_STRING
+            // InternalDialogFlow.g:1481:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1482:3: RULE_STRING
             {
              before(grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4403,22 +4464,22 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Responses__ResponsesAssignment_1"
 
 
-    // $ANTLR start "rule__Responses__ResponsesAssignment_3_1"
-    // InternalDialogFlow.g:1484:1: rule__Responses__ResponsesAssignment_3_1 : ( RULE_STRING ) ;
-    public final void rule__Responses__ResponsesAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Responses__ResponsesAssignment_2_1"
+    // InternalDialogFlow.g:1491:1: rule__Responses__ResponsesAssignment_2_1 : ( RULE_STRING ) ;
+    public final void rule__Responses__ResponsesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1488:1: ( ( RULE_STRING ) )
-            // InternalDialogFlow.g:1489:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1495:1: ( ( RULE_STRING ) )
+            // InternalDialogFlow.g:1496:2: ( RULE_STRING )
             {
-            // InternalDialogFlow.g:1489:2: ( RULE_STRING )
-            // InternalDialogFlow.g:1490:3: RULE_STRING
+            // InternalDialogFlow.g:1496:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1497:3: RULE_STRING
             {
-             before(grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_3_1_0()); 
+             before(grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_3_1_0()); 
+             after(grammarAccess.getResponsesAccess().getResponsesSTRINGTerminalRuleCall_2_1_0()); 
 
             }
 
@@ -4437,21 +4498,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__Responses__ResponsesAssignment_3_1"
+    // $ANTLR end "rule__Responses__ResponsesAssignment_2_1"
 
 
     // $ANTLR start "rule__Actions__ActionsAssignment_2"
-    // InternalDialogFlow.g:1499:1: rule__Actions__ActionsAssignment_2 : ( ruleActionValue ) ;
+    // InternalDialogFlow.g:1506:1: rule__Actions__ActionsAssignment_2 : ( ruleActionValue ) ;
     public final void rule__Actions__ActionsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1503:1: ( ( ruleActionValue ) )
-            // InternalDialogFlow.g:1504:2: ( ruleActionValue )
+            // InternalDialogFlow.g:1510:1: ( ( ruleActionValue ) )
+            // InternalDialogFlow.g:1511:2: ( ruleActionValue )
             {
-            // InternalDialogFlow.g:1504:2: ( ruleActionValue )
-            // InternalDialogFlow.g:1505:3: ruleActionValue
+            // InternalDialogFlow.g:1511:2: ( ruleActionValue )
+            // InternalDialogFlow.g:1512:3: ruleActionValue
             {
              before(grammarAccess.getActionsAccess().getActionsActionValueParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4482,17 +4543,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__NameAssignment_1"
-    // InternalDialogFlow.g:1514:1: rule__ActionValue__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDialogFlow.g:1521:1: rule__ActionValue__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__ActionValue__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1518:1: ( ( RULE_ID ) )
-            // InternalDialogFlow.g:1519:2: ( RULE_ID )
+            // InternalDialogFlow.g:1525:1: ( ( RULE_ID ) )
+            // InternalDialogFlow.g:1526:2: ( RULE_ID )
             {
-            // InternalDialogFlow.g:1519:2: ( RULE_ID )
-            // InternalDialogFlow.g:1520:3: RULE_ID
+            // InternalDialogFlow.g:1526:2: ( RULE_ID )
+            // InternalDialogFlow.g:1527:3: RULE_ID
             {
              before(grammarAccess.getActionValueAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4519,21 +4580,21 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__TypeAssignment_2"
-    // InternalDialogFlow.g:1529:1: rule__ActionValue__TypeAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalDialogFlow.g:1536:1: rule__ActionValue__TypeAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ActionValue__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1533:1: ( ( ( RULE_ID ) ) )
-            // InternalDialogFlow.g:1534:2: ( ( RULE_ID ) )
+            // InternalDialogFlow.g:1540:1: ( ( ( RULE_ID ) ) )
+            // InternalDialogFlow.g:1541:2: ( ( RULE_ID ) )
             {
-            // InternalDialogFlow.g:1534:2: ( ( RULE_ID ) )
-            // InternalDialogFlow.g:1535:3: ( RULE_ID )
+            // InternalDialogFlow.g:1541:2: ( ( RULE_ID ) )
+            // InternalDialogFlow.g:1542:3: ( RULE_ID )
             {
              before(grammarAccess.getActionValueAccess().getTypeEntityCrossReference_2_0()); 
-            // InternalDialogFlow.g:1536:3: ( RULE_ID )
-            // InternalDialogFlow.g:1537:4: RULE_ID
+            // InternalDialogFlow.g:1543:3: ( RULE_ID )
+            // InternalDialogFlow.g:1544:4: RULE_ID
             {
              before(grammarAccess.getActionValueAccess().getTypeEntityIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4564,17 +4625,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__ActionValue__ListAssignment_3"
-    // InternalDialogFlow.g:1548:1: rule__ActionValue__ListAssignment_3 : ( RULE_STRING ) ;
+    // InternalDialogFlow.g:1555:1: rule__ActionValue__ListAssignment_3 : ( RULE_STRING ) ;
     public final void rule__ActionValue__ListAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1552:1: ( ( RULE_STRING ) )
-            // InternalDialogFlow.g:1553:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1559:1: ( ( RULE_STRING ) )
+            // InternalDialogFlow.g:1560:2: ( RULE_STRING )
             {
-            // InternalDialogFlow.g:1553:2: ( RULE_STRING )
-            // InternalDialogFlow.g:1554:3: RULE_STRING
+            // InternalDialogFlow.g:1560:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1561:3: RULE_STRING
             {
              before(grammarAccess.getActionValueAccess().getListSTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -4601,17 +4662,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__NameAssignment_1"
-    // InternalDialogFlow.g:1563:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalDialogFlow.g:1570:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1567:1: ( ( RULE_ID ) )
-            // InternalDialogFlow.g:1568:2: ( RULE_ID )
+            // InternalDialogFlow.g:1574:1: ( ( RULE_ID ) )
+            // InternalDialogFlow.g:1575:2: ( RULE_ID )
             {
-            // InternalDialogFlow.g:1568:2: ( RULE_ID )
-            // InternalDialogFlow.g:1569:3: RULE_ID
+            // InternalDialogFlow.g:1575:2: ( RULE_ID )
+            // InternalDialogFlow.g:1576:3: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4638,17 +4699,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__Entity__EntitiesAssignment_2"
-    // InternalDialogFlow.g:1578:1: rule__Entity__EntitiesAssignment_2 : ( ruleEntityValue ) ;
+    // InternalDialogFlow.g:1585:1: rule__Entity__EntitiesAssignment_2 : ( ruleEntityValue ) ;
     public final void rule__Entity__EntitiesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1582:1: ( ( ruleEntityValue ) )
-            // InternalDialogFlow.g:1583:2: ( ruleEntityValue )
+            // InternalDialogFlow.g:1589:1: ( ( ruleEntityValue ) )
+            // InternalDialogFlow.g:1590:2: ( ruleEntityValue )
             {
-            // InternalDialogFlow.g:1583:2: ( ruleEntityValue )
-            // InternalDialogFlow.g:1584:3: ruleEntityValue
+            // InternalDialogFlow.g:1590:2: ( ruleEntityValue )
+            // InternalDialogFlow.g:1591:3: ruleEntityValue
             {
              before(grammarAccess.getEntityAccess().getEntitiesEntityValueParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4678,22 +4739,22 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Entity__EntitiesAssignment_2"
 
 
-    // $ANTLR start "rule__EntityValue__ValuesAssignment_2"
-    // InternalDialogFlow.g:1593:1: rule__EntityValue__ValuesAssignment_2 : ( RULE_STRING ) ;
-    public final void rule__EntityValue__ValuesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__EntityValue__ValuesAssignment_1"
+    // InternalDialogFlow.g:1600:1: rule__EntityValue__ValuesAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__EntityValue__ValuesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1597:1: ( ( RULE_STRING ) )
-            // InternalDialogFlow.g:1598:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1604:1: ( ( RULE_STRING ) )
+            // InternalDialogFlow.g:1605:2: ( RULE_STRING )
             {
-            // InternalDialogFlow.g:1598:2: ( RULE_STRING )
-            // InternalDialogFlow.g:1599:3: RULE_STRING
+            // InternalDialogFlow.g:1605:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1606:3: RULE_STRING
             {
-             before(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_2_0()); 
+             before(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_2_0()); 
+             after(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
 
             }
 
@@ -4712,25 +4773,25 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__EntityValue__ValuesAssignment_2"
+    // $ANTLR end "rule__EntityValue__ValuesAssignment_1"
 
 
-    // $ANTLR start "rule__EntityValue__ValuesAssignment_4_1"
-    // InternalDialogFlow.g:1608:1: rule__EntityValue__ValuesAssignment_4_1 : ( RULE_STRING ) ;
-    public final void rule__EntityValue__ValuesAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__EntityValue__ValuesAssignment_2_1"
+    // InternalDialogFlow.g:1615:1: rule__EntityValue__ValuesAssignment_2_1 : ( RULE_STRING ) ;
+    public final void rule__EntityValue__ValuesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1612:1: ( ( RULE_STRING ) )
-            // InternalDialogFlow.g:1613:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1619:1: ( ( RULE_STRING ) )
+            // InternalDialogFlow.g:1620:2: ( RULE_STRING )
             {
-            // InternalDialogFlow.g:1613:2: ( RULE_STRING )
-            // InternalDialogFlow.g:1614:3: RULE_STRING
+            // InternalDialogFlow.g:1620:2: ( RULE_STRING )
+            // InternalDialogFlow.g:1621:3: RULE_STRING
             {
-             before(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_4_1_0()); 
+             before(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_4_1_0()); 
+             after(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
 
             }
 
@@ -4749,7 +4810,7 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__EntityValue__ValuesAssignment_4_1"
+    // $ANTLR end "rule__EntityValue__ValuesAssignment_2_1"
 
     // Delegated rules
 
@@ -4762,12 +4823,12 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000041000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000041002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000004002L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000008002L});
 
 }

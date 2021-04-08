@@ -17,13 +17,13 @@ Intent:
 Phrases:
 	{Phrases} 'phrases' phrases+=PhraseValue* //require min 10 N's
 ;
-
+//WIP - needs to be reviewed
 PhraseValue:
-	'val' value=STRING
+	'val' value=STRING (',' text+=STRING (entity+=[Entity])?)*
 ;
 
 Responses:
-	responses+=STRING (',' responses+=STRING)*
+	'responses' responses+=STRING (',' responses+=STRING)*
 ;
 
 

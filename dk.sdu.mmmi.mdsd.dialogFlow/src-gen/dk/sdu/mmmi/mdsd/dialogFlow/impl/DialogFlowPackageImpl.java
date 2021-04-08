@@ -313,6 +313,28 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   @Override
+  public EAttribute getPhraseValue_Text()
+  {
+    return (EAttribute)phraseValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getPhraseValue_Entity()
+  {
+    return (EReference)phraseValueEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getResponses()
   {
     return responsesEClass;
@@ -487,6 +509,8 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
 
     phraseValueEClass = createEClass(PHRASE_VALUE);
     createEAttribute(phraseValueEClass, PHRASE_VALUE__VALUE);
+    createEAttribute(phraseValueEClass, PHRASE_VALUE__TEXT);
+    createEReference(phraseValueEClass, PHRASE_VALUE__ENTITY);
 
     responsesEClass = createEClass(RESPONSES);
     createEAttribute(responsesEClass, RESPONSES__RESPONSES);
@@ -556,6 +580,8 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
 
     initEClass(phraseValueEClass, PhraseValue.class, "PhraseValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPhraseValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, PhraseValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPhraseValue_Text(), ecorePackage.getEString(), "text", null, 0, -1, PhraseValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPhraseValue_Entity(), this.getEntity(), null, "entity", null, 0, -1, PhraseValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(responsesEClass, Responses.class, "Responses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getResponses_Responses(), ecorePackage.getEString(), "responses", null, 0, -1, Responses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

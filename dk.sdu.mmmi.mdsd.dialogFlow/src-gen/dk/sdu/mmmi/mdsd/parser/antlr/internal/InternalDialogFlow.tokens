@@ -1,9 +1,9 @@
-'"'=15
-','=16
+','=15
 'actions'=17
 'entity'=18
 'intent'=12
 'phrases'=13
+'responses'=16
 'system'=11
 'val'=14
 RULE_ANY_OTHER=10
