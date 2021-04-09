@@ -1,31 +1,31 @@
 system Booking
   entity venue_accomodation_chain
-	val "Hilton" 
-	val "Hilton one", "Hotel two"
+    reference "Hilton" 
+    reference "Hilton one" synonym "Hotel two"
   entity venue_accomodation_type
-	val "apartment”, “apartments"
-	val "hotel", "hotels"
-	val "motel", "motels"
+    reference "apartment” synonyms “apartments"
+    reference "hotel" synonym "hotels"
+    reference "motel" synonym "motels"
   entity star
-	val "1", "1 or more", "1 star" 
-	val "2", "2 or more", "2 star"
+    reference "1" synonyms "1 or more", "1 star" 
+    reference "2" synonyms "2 or more", "2 star"
   intent Welcome 
     phrases
-		val "Hello" 
- 		val "Hi"
-  	responses "Welcome. I can help you book a hotel. Would you like to
-                 book a hotel room?",
-                 "Hello. Would you like to book a hotel room?",
-                 "Hi there. I can help you book a hotel room. Would you
-                 like to book a hotel room?"
-    intent Book
-     phrases
-     	val "book suite in", "Hilton" venue_accomodation_type 
-     	val "book", "1 star" star, "motel" venue_accomodation_type, "room"
-     responses "I need some more information.", "Okay I have
-                 booked a room of $venue-type with $star star"
-     actions 
-     	val venue_type venue_accomodation_type
-     	val venue_chain venue_accomodation_chain "isList"
-     	val star star
+      expression "Hello" 
+      expression "Hi"
+    responses 
+      reply "Welcome. I can help you book a hotel. Would you like to book a hotel room?"
+      reply "Hello. Would you like to book a hotel room?"
+      reply "Hi there. I can help you book a hotel room. Would you like to book a hotel room?"
+  intent Book
+    phrases
+      expression "book suite in", "Hilton" as venue_accomodation_type 
+      expression "book", "1 star" as star, "motel" as venue_accomodation_type, "room" 
+    responses 
+      reply "I need some more information."
+      reply  "Okay I have booked a room of $venue-type with $star star"
+    actions 
+      param name venue_type type venue_accomodation_type "$venue-type" 
+      param name venue_chain type venue_accomodation_chain "$venue-chain" "isList"
+      param name star type star "$star"
 
