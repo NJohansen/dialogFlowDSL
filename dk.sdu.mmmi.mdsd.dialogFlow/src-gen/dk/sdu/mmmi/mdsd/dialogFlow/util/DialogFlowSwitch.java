@@ -109,10 +109,24 @@ public class DialogFlowSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DialogFlowPackage.MAPPING:
+      {
+        Mapping mapping = (Mapping)theEObject;
+        T result = caseMapping(mapping);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DialogFlowPackage.RESPONSES:
       {
         Responses responses = (Responses)theEObject;
         T result = caseResponses(responses);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DialogFlowPackage.RESPONSE_VALUE:
+      {
+        ResponseValue responseValue = (ResponseValue)theEObject;
+        T result = caseResponseValue(responseValue);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -142,6 +156,13 @@ public class DialogFlowSwitch<T> extends Switch<T>
       {
         EntityValue entityValue = (EntityValue)theEObject;
         T result = caseEntityValue(entityValue);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DialogFlowPackage.ENTITY_SYNONYMS:
+      {
+        EntitySynonyms entitySynonyms = (EntitySynonyms)theEObject;
+        T result = caseEntitySynonyms(entitySynonyms);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -230,6 +251,22 @@ public class DialogFlowSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Mapping</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMapping(Mapping object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Responses</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -241,6 +278,22 @@ public class DialogFlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseResponses(Responses object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Response Value</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Response Value</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseResponseValue(ResponseValue object)
   {
     return null;
   }
@@ -305,6 +358,22 @@ public class DialogFlowSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEntityValue(EntityValue object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entity Synonyms</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entity Synonyms</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntitySynonyms(EntitySynonyms object)
   {
     return null;
   }

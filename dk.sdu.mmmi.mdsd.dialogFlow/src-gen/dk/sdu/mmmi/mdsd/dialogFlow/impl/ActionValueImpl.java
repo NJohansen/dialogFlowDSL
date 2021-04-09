@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ActionValueImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ActionValueImpl#getType <em>Type</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ActionValueImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ActionValueImpl#getList <em>List</em>}</li>
  * </ul>
  *
@@ -61,6 +62,26 @@ public class ActionValueImpl extends MinimalEObjectImpl.Container implements Act
    * @ordered
    */
   protected Entity type;
+
+  /**
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected static final String VALUE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
 
   /**
    * The default value of the '{@link #getList() <em>List</em>}' attribute.
@@ -179,6 +200,31 @@ public class ActionValueImpl extends MinimalEObjectImpl.Container implements Act
    * @generated
    */
   @Override
+  public String getValue()
+  {
+    return value;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setValue(String newValue)
+  {
+    String oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DialogFlowPackage.ACTION_VALUE__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getList()
   {
     return list;
@@ -213,6 +259,8 @@ public class ActionValueImpl extends MinimalEObjectImpl.Container implements Act
       case DialogFlowPackage.ACTION_VALUE__TYPE:
         if (resolve) return getType();
         return basicGetType();
+      case DialogFlowPackage.ACTION_VALUE__VALUE:
+        return getValue();
       case DialogFlowPackage.ACTION_VALUE__LIST:
         return getList();
     }
@@ -234,6 +282,9 @@ public class ActionValueImpl extends MinimalEObjectImpl.Container implements Act
         return;
       case DialogFlowPackage.ACTION_VALUE__TYPE:
         setType((Entity)newValue);
+        return;
+      case DialogFlowPackage.ACTION_VALUE__VALUE:
+        setValue((String)newValue);
         return;
       case DialogFlowPackage.ACTION_VALUE__LIST:
         setList((String)newValue);
@@ -258,6 +309,9 @@ public class ActionValueImpl extends MinimalEObjectImpl.Container implements Act
       case DialogFlowPackage.ACTION_VALUE__TYPE:
         setType((Entity)null);
         return;
+      case DialogFlowPackage.ACTION_VALUE__VALUE:
+        setValue(VALUE_EDEFAULT);
+        return;
       case DialogFlowPackage.ACTION_VALUE__LIST:
         setList(LIST_EDEFAULT);
         return;
@@ -279,6 +333,8 @@ public class ActionValueImpl extends MinimalEObjectImpl.Container implements Act
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DialogFlowPackage.ACTION_VALUE__TYPE:
         return type != null;
+      case DialogFlowPackage.ACTION_VALUE__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case DialogFlowPackage.ACTION_VALUE__LIST:
         return LIST_EDEFAULT == null ? list != null : !LIST_EDEFAULT.equals(list);
     }
@@ -298,6 +354,8 @@ public class ActionValueImpl extends MinimalEObjectImpl.Container implements Act
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", value: ");
+    result.append(value);
     result.append(", list: ");
     result.append(list);
     result.append(')');

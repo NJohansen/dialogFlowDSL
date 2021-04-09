@@ -216,31 +216,13 @@ public interface DialogFlowPackage extends EPackage
   int PHRASE_VALUE = 4;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * The feature id for the '<em><b>Mapping</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PHRASE_VALUE__VALUE = 0;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PHRASE_VALUE__TEXT = 1;
-
-  /**
-   * The feature id for the '<em><b>Entity</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PHRASE_VALUE__ENTITY = 2;
+  int PHRASE_VALUE__MAPPING = 0;
 
   /**
    * The number of structural features of the '<em>Phrase Value</em>' class.
@@ -249,7 +231,44 @@ public interface DialogFlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PHRASE_VALUE_FEATURE_COUNT = 3;
+  int PHRASE_VALUE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.MappingImpl <em>Mapping</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.MappingImpl
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getMapping()
+   * @generated
+   */
+  int MAPPING = 5;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__VALUE = 0;
+
+  /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING__ENTITY = 1;
+
+  /**
+   * The number of structural features of the '<em>Mapping</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPING_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ResponsesImpl <em>Responses</em>}' class.
@@ -259,10 +278,10 @@ public interface DialogFlowPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getResponses()
    * @generated
    */
-  int RESPONSES = 5;
+  int RESPONSES = 6;
 
   /**
-   * The feature id for the '<em><b>Responses</b></em>' attribute list.
+   * The feature id for the '<em><b>Responses</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -280,6 +299,34 @@ public interface DialogFlowPackage extends EPackage
   int RESPONSES_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ResponseValueImpl <em>Response Value</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.ResponseValueImpl
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getResponseValue()
+   * @generated
+   */
+  int RESPONSE_VALUE = 7;
+
+  /**
+   * The feature id for the '<em><b>Response</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESPONSE_VALUE__RESPONSE = 0;
+
+  /**
+   * The number of structural features of the '<em>Response Value</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RESPONSE_VALUE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ActionsImpl <em>Actions</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -287,7 +334,7 @@ public interface DialogFlowPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getActions()
    * @generated
    */
-  int ACTIONS = 6;
+  int ACTIONS = 8;
 
   /**
    * The feature id for the '<em><b>Actions</b></em>' containment reference list.
@@ -315,7 +362,7 @@ public interface DialogFlowPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getActionValue()
    * @generated
    */
-  int ACTION_VALUE = 7;
+  int ACTION_VALUE = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -336,13 +383,22 @@ public interface DialogFlowPackage extends EPackage
   int ACTION_VALUE__TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_VALUE__VALUE = 2;
+
+  /**
    * The feature id for the '<em><b>List</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_VALUE__LIST = 2;
+  int ACTION_VALUE__LIST = 3;
 
   /**
    * The number of structural features of the '<em>Action Value</em>' class.
@@ -351,7 +407,7 @@ public interface DialogFlowPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_VALUE_FEATURE_COUNT = 3;
+  int ACTION_VALUE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntityImpl <em>Entity</em>}' class.
@@ -361,7 +417,7 @@ public interface DialogFlowPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 8;
+  int ENTITY = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -398,7 +454,7 @@ public interface DialogFlowPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getEntityValue()
    * @generated
    */
-  int ENTITY_VALUE = 9;
+  int ENTITY_VALUE = 11;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -410,13 +466,50 @@ public interface DialogFlowPackage extends EPackage
   int ENTITY_VALUE__VALUES = 0;
 
   /**
+   * The feature id for the '<em><b>Synonyms</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_VALUE__SYNONYMS = 1;
+
+  /**
    * The number of structural features of the '<em>Entity Value</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_VALUE_FEATURE_COUNT = 1;
+  int ENTITY_VALUE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntitySynonymsImpl <em>Entity Synonyms</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.EntitySynonymsImpl
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getEntitySynonyms()
+   * @generated
+   */
+  int ENTITY_SYNONYMS = 12;
+
+  /**
+   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_SYNONYMS__VALUES = 0;
+
+  /**
+   * The number of structural features of the '<em>Entity Synonyms</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_SYNONYMS_FEATURE_COUNT = 1;
 
 
   /**
@@ -547,37 +640,47 @@ public interface DialogFlowPackage extends EPackage
   EClass getPhraseValue();
 
   /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getValue <em>Value</em>}'.
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getMapping <em>Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Mapping</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getMapping()
+   * @see #getPhraseValue()
+   * @generated
+   */
+  EReference getPhraseValue_Mapping();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.dialogFlow.Mapping <em>Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Mapping</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.Mapping
+   * @generated
+   */
+  EClass getMapping();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.dialogFlow.Mapping#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Value</em>'.
-   * @see dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getValue()
-   * @see #getPhraseValue()
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.Mapping#getValue()
+   * @see #getMapping()
    * @generated
    */
-  EAttribute getPhraseValue_Value();
+  EAttribute getMapping_Value();
 
   /**
-   * Returns the meta object for the attribute list '{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getText <em>Text</em>}'.
+   * Returns the meta object for the reference '{@link dk.sdu.mmmi.mdsd.dialogFlow.Mapping#getEntity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Text</em>'.
-   * @see dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getText()
-   * @see #getPhraseValue()
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.Mapping#getEntity()
+   * @see #getMapping()
    * @generated
    */
-  EAttribute getPhraseValue_Text();
-
-  /**
-   * Returns the meta object for the reference list '{@link dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getEntity <em>Entity</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Entity</em>'.
-   * @see dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue#getEntity()
-   * @see #getPhraseValue()
-   * @generated
-   */
-  EReference getPhraseValue_Entity();
+  EReference getMapping_Entity();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.dialogFlow.Responses <em>Responses</em>}'.
@@ -590,15 +693,36 @@ public interface DialogFlowPackage extends EPackage
   EClass getResponses();
 
   /**
-   * Returns the meta object for the attribute list '{@link dk.sdu.mmmi.mdsd.dialogFlow.Responses#getResponses <em>Responses</em>}'.
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.dialogFlow.Responses#getResponses <em>Responses</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Responses</em>'.
+   * @return the meta object for the containment reference list '<em>Responses</em>'.
    * @see dk.sdu.mmmi.mdsd.dialogFlow.Responses#getResponses()
    * @see #getResponses()
    * @generated
    */
-  EAttribute getResponses_Responses();
+  EReference getResponses_Responses();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue <em>Response Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Response Value</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue
+   * @generated
+   */
+  EClass getResponseValue();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue#getResponse <em>Response</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Response</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue#getResponse()
+   * @see #getResponseValue()
+   * @generated
+   */
+  EAttribute getResponseValue_Response();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.dialogFlow.Actions <em>Actions</em>}'.
@@ -654,6 +778,17 @@ public interface DialogFlowPackage extends EPackage
   EReference getActionValue_Type();
 
   /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.dialogFlow.ActionValue#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.ActionValue#getValue()
+   * @see #getActionValue()
+   * @generated
+   */
+  EAttribute getActionValue_Value();
+
+  /**
    * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.dialogFlow.ActionValue#getList <em>List</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -705,6 +840,38 @@ public interface DialogFlowPackage extends EPackage
    * @generated
    */
   EAttribute getEntityValue_Values();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getSynonyms <em>Synonyms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Synonyms</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getSynonyms()
+   * @see #getEntityValue()
+   * @generated
+   */
+  EReference getEntityValue_Synonyms();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms <em>Entity Synonyms</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entity Synonyms</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms
+   * @generated
+   */
+  EClass getEntitySynonyms();
+
+  /**
+   * Returns the meta object for the attribute list '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms#getValues <em>Values</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms#getValues()
+   * @see #getEntitySynonyms()
+   * @generated
+   */
+  EAttribute getEntitySynonyms_Values();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -836,28 +1003,38 @@ public interface DialogFlowPackage extends EPackage
     EClass PHRASE_VALUE = eINSTANCE.getPhraseValue();
 
     /**
+     * The meta object literal for the '<em><b>Mapping</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PHRASE_VALUE__MAPPING = eINSTANCE.getPhraseValue_Mapping();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.MappingImpl <em>Mapping</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.MappingImpl
+     * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getMapping()
+     * @generated
+     */
+    EClass MAPPING = eINSTANCE.getMapping();
+
+    /**
      * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PHRASE_VALUE__VALUE = eINSTANCE.getPhraseValue_Value();
+    EAttribute MAPPING__VALUE = eINSTANCE.getMapping_Value();
 
     /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PHRASE_VALUE__TEXT = eINSTANCE.getPhraseValue_Text();
-
-    /**
-     * The meta object literal for the '<em><b>Entity</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PHRASE_VALUE__ENTITY = eINSTANCE.getPhraseValue_Entity();
+    EReference MAPPING__ENTITY = eINSTANCE.getMapping_Entity();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ResponsesImpl <em>Responses</em>}' class.
@@ -870,12 +1047,30 @@ public interface DialogFlowPackage extends EPackage
     EClass RESPONSES = eINSTANCE.getResponses();
 
     /**
-     * The meta object literal for the '<em><b>Responses</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Responses</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute RESPONSES__RESPONSES = eINSTANCE.getResponses_Responses();
+    EReference RESPONSES__RESPONSES = eINSTANCE.getResponses_Responses();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ResponseValueImpl <em>Response Value</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.ResponseValueImpl
+     * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getResponseValue()
+     * @generated
+     */
+    EClass RESPONSE_VALUE = eINSTANCE.getResponseValue();
+
+    /**
+     * The meta object literal for the '<em><b>Response</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RESPONSE_VALUE__RESPONSE = eINSTANCE.getResponseValue_Response();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.ActionsImpl <em>Actions</em>}' class.
@@ -922,6 +1117,14 @@ public interface DialogFlowPackage extends EPackage
     EReference ACTION_VALUE__TYPE = eINSTANCE.getActionValue_Type();
 
     /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION_VALUE__VALUE = eINSTANCE.getActionValue_Value();
+
+    /**
      * The meta object literal for the '<em><b>List</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -964,6 +1167,32 @@ public interface DialogFlowPackage extends EPackage
      * @generated
      */
     EAttribute ENTITY_VALUE__VALUES = eINSTANCE.getEntityValue_Values();
+
+    /**
+     * The meta object literal for the '<em><b>Synonyms</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_VALUE__SYNONYMS = eINSTANCE.getEntityValue_Synonyms();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntitySynonymsImpl <em>Entity Synonyms</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.EntitySynonymsImpl
+     * @see dk.sdu.mmmi.mdsd.dialogFlow.impl.DialogFlowPackageImpl#getEntitySynonyms()
+     * @generated
+     */
+    EClass ENTITY_SYNONYMS = eINSTANCE.getEntitySynonyms();
+
+    /**
+     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTITY_SYNONYMS__VALUES = eINSTANCE.getEntitySynonyms_Values();
 
   }
 

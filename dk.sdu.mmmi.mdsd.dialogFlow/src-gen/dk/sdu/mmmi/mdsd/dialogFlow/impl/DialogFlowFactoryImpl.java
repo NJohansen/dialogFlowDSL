@@ -70,11 +70,14 @@ public class DialogFlowFactoryImpl extends EFactoryImpl implements DialogFlowFac
       case DialogFlowPackage.INTENT: return createIntent();
       case DialogFlowPackage.PHRASES: return createPhrases();
       case DialogFlowPackage.PHRASE_VALUE: return createPhraseValue();
+      case DialogFlowPackage.MAPPING: return createMapping();
       case DialogFlowPackage.RESPONSES: return createResponses();
+      case DialogFlowPackage.RESPONSE_VALUE: return createResponseValue();
       case DialogFlowPackage.ACTIONS: return createActions();
       case DialogFlowPackage.ACTION_VALUE: return createActionValue();
       case DialogFlowPackage.ENTITY: return createEntity();
       case DialogFlowPackage.ENTITY_VALUE: return createEntityValue();
+      case DialogFlowPackage.ENTITY_SYNONYMS: return createEntitySynonyms();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -146,10 +149,34 @@ public class DialogFlowFactoryImpl extends EFactoryImpl implements DialogFlowFac
    * @generated
    */
   @Override
+  public Mapping createMapping()
+  {
+    MappingImpl mapping = new MappingImpl();
+    return mapping;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Responses createResponses()
   {
     ResponsesImpl responses = new ResponsesImpl();
     return responses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ResponseValue createResponseValue()
+  {
+    ResponseValueImpl responseValue = new ResponseValueImpl();
+    return responseValue;
   }
 
   /**
@@ -198,6 +225,18 @@ public class DialogFlowFactoryImpl extends EFactoryImpl implements DialogFlowFac
   {
     EntityValueImpl entityValue = new EntityValueImpl();
     return entityValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EntitySynonyms createEntitySynonyms()
+  {
+    EntitySynonymsImpl entitySynonyms = new EntitySynonymsImpl();
+    return entitySynonyms;
   }
 
   /**

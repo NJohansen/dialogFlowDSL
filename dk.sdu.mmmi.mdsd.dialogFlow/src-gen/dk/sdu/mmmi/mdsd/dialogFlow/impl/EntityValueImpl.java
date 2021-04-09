@@ -4,17 +4,23 @@
 package dk.sdu.mmmi.mdsd.dialogFlow.impl;
 
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage;
+import dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms;
 import dk.sdu.mmmi.mdsd.dialogFlow.EntityValue;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +31,7 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntityValueImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntityValueImpl#getSynonyms <em>Synonyms</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,6 +47,16 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
    * @ordered
    */
   protected EList<String> values;
+
+  /**
+   * The cached value of the '{@link #getSynonyms() <em>Synonyms</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSynonyms()
+   * @generated
+   * @ordered
+   */
+  protected EList<EntitySynonyms> synonyms;
 
   /**
    * <!-- begin-user-doc -->
@@ -83,12 +100,45 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
    * @generated
    */
   @Override
+  public EList<EntitySynonyms> getSynonyms()
+  {
+    if (synonyms == null)
+    {
+      synonyms = new EObjectContainmentEList<EntitySynonyms>(EntitySynonyms.class, this, DialogFlowPackage.ENTITY_VALUE__SYNONYMS);
+    }
+    return synonyms;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
+        return ((InternalEList<?>)getSynonyms()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case DialogFlowPackage.ENTITY_VALUE__VALUES:
         return getValues();
+      case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
+        return getSynonyms();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -108,6 +158,10 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
         getValues().clear();
         getValues().addAll((Collection<? extends String>)newValue);
         return;
+      case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
+        getSynonyms().clear();
+        getSynonyms().addAll((Collection<? extends EntitySynonyms>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -125,6 +179,9 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
       case DialogFlowPackage.ENTITY_VALUE__VALUES:
         getValues().clear();
         return;
+      case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
+        getSynonyms().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -141,6 +198,8 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
     {
       case DialogFlowPackage.ENTITY_VALUE__VALUES:
         return values != null && !values.isEmpty();
+      case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
+        return synonyms != null && !synonyms.isEmpty();
     }
     return super.eIsSet(featureID);
   }

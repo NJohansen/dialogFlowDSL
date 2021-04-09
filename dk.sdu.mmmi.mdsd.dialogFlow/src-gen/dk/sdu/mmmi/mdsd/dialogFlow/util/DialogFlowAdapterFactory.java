@@ -101,9 +101,19 @@ public class DialogFlowAdapterFactory extends AdapterFactoryImpl
         return createPhraseValueAdapter();
       }
       @Override
+      public Adapter caseMapping(Mapping object)
+      {
+        return createMappingAdapter();
+      }
+      @Override
       public Adapter caseResponses(Responses object)
       {
         return createResponsesAdapter();
+      }
+      @Override
+      public Adapter caseResponseValue(ResponseValue object)
+      {
+        return createResponseValueAdapter();
       }
       @Override
       public Adapter caseActions(Actions object)
@@ -124,6 +134,11 @@ public class DialogFlowAdapterFactory extends AdapterFactoryImpl
       public Adapter caseEntityValue(EntityValue object)
       {
         return createEntityValueAdapter();
+      }
+      @Override
+      public Adapter caseEntitySynonyms(EntitySynonyms object)
+      {
+        return createEntitySynonymsAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -223,6 +238,21 @@ public class DialogFlowAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.dialogFlow.Mapping <em>Mapping</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.Mapping
+   * @generated
+   */
+  public Adapter createMappingAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.dialogFlow.Responses <em>Responses</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -233,6 +263,21 @@ public class DialogFlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createResponsesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue <em>Response Value</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue
+   * @generated
+   */
+  public Adapter createResponseValueAdapter()
   {
     return null;
   }
@@ -293,6 +338,21 @@ public class DialogFlowAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEntityValueAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms <em>Entity Synonyms</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms
+   * @generated
+   */
+  public Adapter createEntitySynonymsAdapter()
   {
     return null;
   }

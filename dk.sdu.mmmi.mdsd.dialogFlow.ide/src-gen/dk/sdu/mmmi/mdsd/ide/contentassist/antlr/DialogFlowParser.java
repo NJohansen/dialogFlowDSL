@@ -32,19 +32,23 @@ public class DialogFlowParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, DialogFlowGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getDeclarationAccess().getAlternatives(), "rule__Declaration__Alternatives");
-			builder.put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
+			builder.put(grammarAccess.getEntityValueAccess().getAlternatives_2_0(), "rule__EntityValue__Alternatives_2_0");
 			builder.put(grammarAccess.getDialogFlowSystemAccess().getGroup(), "rule__DialogFlowSystem__Group__0");
 			builder.put(grammarAccess.getIntentAccess().getGroup(), "rule__Intent__Group__0");
 			builder.put(grammarAccess.getPhrasesAccess().getGroup(), "rule__Phrases__Group__0");
 			builder.put(grammarAccess.getPhraseValueAccess().getGroup(), "rule__PhraseValue__Group__0");
 			builder.put(grammarAccess.getPhraseValueAccess().getGroup_2(), "rule__PhraseValue__Group_2__0");
+			builder.put(grammarAccess.getMappingAccess().getGroup(), "rule__Mapping__Group__0");
+			builder.put(grammarAccess.getMappingAccess().getGroup_1(), "rule__Mapping__Group_1__0");
 			builder.put(grammarAccess.getResponsesAccess().getGroup(), "rule__Responses__Group__0");
-			builder.put(grammarAccess.getResponsesAccess().getGroup_2(), "rule__Responses__Group_2__0");
+			builder.put(grammarAccess.getResponseValueAccess().getGroup(), "rule__ResponseValue__Group__0");
 			builder.put(grammarAccess.getActionsAccess().getGroup(), "rule__Actions__Group__0");
 			builder.put(grammarAccess.getActionValueAccess().getGroup(), "rule__ActionValue__Group__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 			builder.put(grammarAccess.getEntityValueAccess().getGroup(), "rule__EntityValue__Group__0");
 			builder.put(grammarAccess.getEntityValueAccess().getGroup_2(), "rule__EntityValue__Group_2__0");
+			builder.put(grammarAccess.getEntitySynonymsAccess().getGroup(), "rule__EntitySynonyms__Group__0");
+			builder.put(grammarAccess.getEntitySynonymsAccess().getGroup_2(), "rule__EntitySynonyms__Group_2__0");
 			builder.put(grammarAccess.getDialogFlowSystemAccess().getNameAssignment_1(), "rule__DialogFlowSystem__NameAssignment_1");
 			builder.put(grammarAccess.getDialogFlowSystemAccess().getDeclarationsAssignment_2(), "rule__DialogFlowSystem__DeclarationsAssignment_2");
 			builder.put(grammarAccess.getIntentAccess().getNameAssignment_1(), "rule__Intent__NameAssignment_1");
@@ -52,19 +56,23 @@ public class DialogFlowParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIntentAccess().getResponseAssignment_3(), "rule__Intent__ResponseAssignment_3");
 			builder.put(grammarAccess.getIntentAccess().getActionAssignment_4(), "rule__Intent__ActionAssignment_4");
 			builder.put(grammarAccess.getPhrasesAccess().getPhrasesAssignment_2(), "rule__Phrases__PhrasesAssignment_2");
-			builder.put(grammarAccess.getPhraseValueAccess().getValueAssignment_1(), "rule__PhraseValue__ValueAssignment_1");
-			builder.put(grammarAccess.getPhraseValueAccess().getTextAssignment_2_1(), "rule__PhraseValue__TextAssignment_2_1");
-			builder.put(grammarAccess.getPhraseValueAccess().getEntityAssignment_2_2(), "rule__PhraseValue__EntityAssignment_2_2");
-			builder.put(grammarAccess.getResponsesAccess().getResponsesAssignment_1(), "rule__Responses__ResponsesAssignment_1");
-			builder.put(grammarAccess.getResponsesAccess().getResponsesAssignment_2_1(), "rule__Responses__ResponsesAssignment_2_1");
+			builder.put(grammarAccess.getPhraseValueAccess().getMappingAssignment_1(), "rule__PhraseValue__MappingAssignment_1");
+			builder.put(grammarAccess.getPhraseValueAccess().getMappingAssignment_2_1(), "rule__PhraseValue__MappingAssignment_2_1");
+			builder.put(grammarAccess.getMappingAccess().getValueAssignment_0(), "rule__Mapping__ValueAssignment_0");
+			builder.put(grammarAccess.getMappingAccess().getEntityAssignment_1_1(), "rule__Mapping__EntityAssignment_1_1");
+			builder.put(grammarAccess.getResponsesAccess().getResponsesAssignment_2(), "rule__Responses__ResponsesAssignment_2");
+			builder.put(grammarAccess.getResponseValueAccess().getResponseAssignment_1(), "rule__ResponseValue__ResponseAssignment_1");
 			builder.put(grammarAccess.getActionsAccess().getActionsAssignment_2(), "rule__Actions__ActionsAssignment_2");
-			builder.put(grammarAccess.getActionValueAccess().getNameAssignment_1(), "rule__ActionValue__NameAssignment_1");
-			builder.put(grammarAccess.getActionValueAccess().getTypeAssignment_2(), "rule__ActionValue__TypeAssignment_2");
-			builder.put(grammarAccess.getActionValueAccess().getListAssignment_3(), "rule__ActionValue__ListAssignment_3");
+			builder.put(grammarAccess.getActionValueAccess().getNameAssignment_2(), "rule__ActionValue__NameAssignment_2");
+			builder.put(grammarAccess.getActionValueAccess().getTypeAssignment_4(), "rule__ActionValue__TypeAssignment_4");
+			builder.put(grammarAccess.getActionValueAccess().getValueAssignment_5(), "rule__ActionValue__ValueAssignment_5");
+			builder.put(grammarAccess.getActionValueAccess().getListAssignment_6(), "rule__ActionValue__ListAssignment_6");
 			builder.put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
 			builder.put(grammarAccess.getEntityAccess().getEntitiesAssignment_2(), "rule__Entity__EntitiesAssignment_2");
 			builder.put(grammarAccess.getEntityValueAccess().getValuesAssignment_1(), "rule__EntityValue__ValuesAssignment_1");
-			builder.put(grammarAccess.getEntityValueAccess().getValuesAssignment_2_1(), "rule__EntityValue__ValuesAssignment_2_1");
+			builder.put(grammarAccess.getEntityValueAccess().getSynonymsAssignment_2_1(), "rule__EntityValue__SynonymsAssignment_2_1");
+			builder.put(grammarAccess.getEntitySynonymsAccess().getValuesAssignment_1(), "rule__EntitySynonyms__ValuesAssignment_1");
+			builder.put(grammarAccess.getEntitySynonymsAccess().getValuesAssignment_2_1(), "rule__EntitySynonyms__ValuesAssignment_2_1");
 		}
 	}
 	

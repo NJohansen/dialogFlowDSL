@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface Responses extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Responses</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Responses</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Responses</em>' attribute list.
+   * @return the value of the '<em>Responses</em>' containment reference list.
    * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getResponses_Responses()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getResponses();
+  EList<ResponseValue> getResponses();
 
 } // Responses

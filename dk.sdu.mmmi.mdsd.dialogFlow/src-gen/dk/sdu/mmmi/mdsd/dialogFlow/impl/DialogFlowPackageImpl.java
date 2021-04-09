@@ -10,10 +10,13 @@ import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowFactory;
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage;
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowSystem;
 import dk.sdu.mmmi.mdsd.dialogFlow.Entity;
+import dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms;
 import dk.sdu.mmmi.mdsd.dialogFlow.EntityValue;
 import dk.sdu.mmmi.mdsd.dialogFlow.Intent;
+import dk.sdu.mmmi.mdsd.dialogFlow.Mapping;
 import dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue;
 import dk.sdu.mmmi.mdsd.dialogFlow.Phrases;
+import dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue;
 import dk.sdu.mmmi.mdsd.dialogFlow.Responses;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -71,7 +74,21 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass mappingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass responsesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass responseValueEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -100,6 +117,13 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   private EClass entityValueEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entitySynonymsEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -302,9 +326,9 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   @Override
-  public EAttribute getPhraseValue_Value()
+  public EReference getPhraseValue_Mapping()
   {
-    return (EAttribute)phraseValueEClass.getEStructuralFeatures().get(0);
+    return (EReference)phraseValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -313,9 +337,9 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   @Override
-  public EAttribute getPhraseValue_Text()
+  public EClass getMapping()
   {
-    return (EAttribute)phraseValueEClass.getEStructuralFeatures().get(1);
+    return mappingEClass;
   }
 
   /**
@@ -324,9 +348,20 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   @Override
-  public EReference getPhraseValue_Entity()
+  public EAttribute getMapping_Value()
   {
-    return (EReference)phraseValueEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)mappingEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMapping_Entity()
+  {
+    return (EReference)mappingEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -346,9 +381,31 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   @Override
-  public EAttribute getResponses_Responses()
+  public EReference getResponses_Responses()
   {
-    return (EAttribute)responsesEClass.getEStructuralFeatures().get(0);
+    return (EReference)responsesEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getResponseValue()
+  {
+    return responseValueEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getResponseValue_Response()
+  {
+    return (EAttribute)responseValueEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -412,9 +469,20 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   @Override
-  public EAttribute getActionValue_List()
+  public EAttribute getActionValue_Value()
   {
     return (EAttribute)actionValueEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getActionValue_List()
+  {
+    return (EAttribute)actionValueEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -467,6 +535,39 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   @Override
+  public EReference getEntityValue_Synonyms()
+  {
+    return (EReference)entityValueEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEntitySynonyms()
+  {
+    return entitySynonymsEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEntitySynonyms_Values()
+  {
+    return (EAttribute)entitySynonymsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public DialogFlowFactory getDialogFlowFactory()
   {
     return (DialogFlowFactory)getEFactoryInstance();
@@ -508,12 +609,17 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
     createEReference(phrasesEClass, PHRASES__PHRASES);
 
     phraseValueEClass = createEClass(PHRASE_VALUE);
-    createEAttribute(phraseValueEClass, PHRASE_VALUE__VALUE);
-    createEAttribute(phraseValueEClass, PHRASE_VALUE__TEXT);
-    createEReference(phraseValueEClass, PHRASE_VALUE__ENTITY);
+    createEReference(phraseValueEClass, PHRASE_VALUE__MAPPING);
+
+    mappingEClass = createEClass(MAPPING);
+    createEAttribute(mappingEClass, MAPPING__VALUE);
+    createEReference(mappingEClass, MAPPING__ENTITY);
 
     responsesEClass = createEClass(RESPONSES);
-    createEAttribute(responsesEClass, RESPONSES__RESPONSES);
+    createEReference(responsesEClass, RESPONSES__RESPONSES);
+
+    responseValueEClass = createEClass(RESPONSE_VALUE);
+    createEAttribute(responseValueEClass, RESPONSE_VALUE__RESPONSE);
 
     actionsEClass = createEClass(ACTIONS);
     createEReference(actionsEClass, ACTIONS__ACTIONS);
@@ -521,6 +627,7 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
     actionValueEClass = createEClass(ACTION_VALUE);
     createEAttribute(actionValueEClass, ACTION_VALUE__NAME);
     createEReference(actionValueEClass, ACTION_VALUE__TYPE);
+    createEAttribute(actionValueEClass, ACTION_VALUE__VALUE);
     createEAttribute(actionValueEClass, ACTION_VALUE__LIST);
 
     entityEClass = createEClass(ENTITY);
@@ -528,6 +635,10 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
 
     entityValueEClass = createEClass(ENTITY_VALUE);
     createEAttribute(entityValueEClass, ENTITY_VALUE__VALUES);
+    createEReference(entityValueEClass, ENTITY_VALUE__SYNONYMS);
+
+    entitySynonymsEClass = createEClass(ENTITY_SYNONYMS);
+    createEAttribute(entitySynonymsEClass, ENTITY_SYNONYMS__VALUES);
   }
 
   /**
@@ -579,12 +690,17 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
     initEReference(getPhrases_Phrases(), this.getPhraseValue(), null, "phrases", null, 0, -1, Phrases.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(phraseValueEClass, PhraseValue.class, "PhraseValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPhraseValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, PhraseValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPhraseValue_Text(), ecorePackage.getEString(), "text", null, 0, -1, PhraseValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPhraseValue_Entity(), this.getEntity(), null, "entity", null, 0, -1, PhraseValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPhraseValue_Mapping(), this.getMapping(), null, "mapping", null, 0, -1, PhraseValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMapping_Value(), ecorePackage.getEString(), "value", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMapping_Entity(), this.getEntity(), null, "entity", null, 0, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(responsesEClass, Responses.class, "Responses", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResponses_Responses(), ecorePackage.getEString(), "responses", null, 0, -1, Responses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getResponses_Responses(), this.getResponseValue(), null, "responses", null, 0, -1, Responses.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(responseValueEClass, ResponseValue.class, "ResponseValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getResponseValue_Response(), ecorePackage.getEString(), "response", null, 0, 1, ResponseValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionsEClass, Actions.class, "Actions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActions_Actions(), this.getActionValue(), null, "actions", null, 0, -1, Actions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -592,6 +708,7 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
     initEClass(actionValueEClass, ActionValue.class, "ActionValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getActionValue_Name(), ecorePackage.getEString(), "name", null, 0, 1, ActionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getActionValue_Type(), this.getEntity(), null, "type", null, 0, 1, ActionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getActionValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, ActionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getActionValue_List(), ecorePackage.getEString(), "list", null, 0, 1, ActionValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -599,6 +716,10 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
 
     initEClass(entityValueEClass, EntityValue.class, "EntityValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntityValue_Values(), ecorePackage.getEString(), "values", null, 0, -1, EntityValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityValue_Synonyms(), this.getEntitySynonyms(), null, "synonyms", null, 0, -1, EntityValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(entitySynonymsEClass, EntitySynonyms.class, "EntitySynonyms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEntitySynonyms_Values(), ecorePackage.getEString(), "values", null, 0, -1, EntitySynonyms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

@@ -4,17 +4,22 @@
 package dk.sdu.mmmi.mdsd.dialogFlow.impl;
 
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage;
+import dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue;
 import dk.sdu.mmmi.mdsd.dialogFlow.Responses;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,14 +37,14 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class ResponsesImpl extends MinimalEObjectImpl.Container implements Responses
 {
   /**
-   * The cached value of the '{@link #getResponses() <em>Responses</em>}' attribute list.
+   * The cached value of the '{@link #getResponses() <em>Responses</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getResponses()
    * @generated
    * @ordered
    */
-  protected EList<String> responses;
+  protected EList<ResponseValue> responses;
 
   /**
    * <!-- begin-user-doc -->
@@ -68,13 +73,29 @@ public class ResponsesImpl extends MinimalEObjectImpl.Container implements Respo
    * @generated
    */
   @Override
-  public EList<String> getResponses()
+  public EList<ResponseValue> getResponses()
   {
     if (responses == null)
     {
-      responses = new EDataTypeEList<String>(String.class, this, DialogFlowPackage.RESPONSES__RESPONSES);
+      responses = new EObjectContainmentEList<ResponseValue>(ResponseValue.class, this, DialogFlowPackage.RESPONSES__RESPONSES);
     }
     return responses;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DialogFlowPackage.RESPONSES__RESPONSES:
+        return ((InternalEList<?>)getResponses()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -106,7 +127,7 @@ public class ResponsesImpl extends MinimalEObjectImpl.Container implements Respo
     {
       case DialogFlowPackage.RESPONSES__RESPONSES:
         getResponses().clear();
-        getResponses().addAll((Collection<? extends String>)newValue);
+        getResponses().addAll((Collection<? extends ResponseValue>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,23 +164,6 @@ public class ResponsesImpl extends MinimalEObjectImpl.Container implements Respo
         return responses != null && !responses.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (responses: ");
-    result.append(responses);
-    result.append(')');
-    return result.toString();
   }
 
 } //ResponsesImpl

@@ -69,6 +69,15 @@ public interface DialogFlowFactory extends EFactory
   PhraseValue createPhraseValue();
 
   /**
+   * Returns a new object of class '<em>Mapping</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mapping</em>'.
+   * @generated
+   */
+  Mapping createMapping();
+
+  /**
    * Returns a new object of class '<em>Responses</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,6 +85,15 @@ public interface DialogFlowFactory extends EFactory
    * @generated
    */
   Responses createResponses();
+
+  /**
+   * Returns a new object of class '<em>Response Value</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Response Value</em>'.
+   * @generated
+   */
+  ResponseValue createResponseValue();
 
   /**
    * Returns a new object of class '<em>Actions</em>'.
@@ -112,6 +130,15 @@ public interface DialogFlowFactory extends EFactory
    * @generated
    */
   EntityValue createEntityValue();
+
+  /**
+   * Returns a new object of class '<em>Entity Synonyms</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity Synonyms</em>'.
+   * @generated
+   */
+  EntitySynonyms createEntitySynonyms();
 
   /**
    * Returns the package supported by this factory.

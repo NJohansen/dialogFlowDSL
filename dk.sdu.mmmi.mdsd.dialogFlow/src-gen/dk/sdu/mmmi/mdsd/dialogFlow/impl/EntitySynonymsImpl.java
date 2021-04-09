@@ -4,54 +4,49 @@
 package dk.sdu.mmmi.mdsd.dialogFlow.impl;
 
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage;
-import dk.sdu.mmmi.mdsd.dialogFlow.Mapping;
-import dk.sdu.mmmi.mdsd.dialogFlow.PhraseValue;
+import dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms;
 
 import java.util.Collection;
-
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Phrase Value</b></em>'.
+ * An implementation of the model object '<em><b>Entity Synonyms</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.PhraseValueImpl#getMapping <em>Mapping</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntitySynonymsImpl#getValues <em>Values</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PhraseValueImpl extends MinimalEObjectImpl.Container implements PhraseValue
+public class EntitySynonymsImpl extends MinimalEObjectImpl.Container implements EntitySynonyms
 {
   /**
-   * The cached value of the '{@link #getMapping() <em>Mapping</em>}' containment reference list.
+   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMapping()
+   * @see #getValues()
    * @generated
    * @ordered
    */
-  protected EList<Mapping> mapping;
+  protected EList<String> values;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected PhraseValueImpl()
+  protected EntitySynonymsImpl()
   {
     super();
   }
@@ -64,7 +59,7 @@ public class PhraseValueImpl extends MinimalEObjectImpl.Container implements Phr
   @Override
   protected EClass eStaticClass()
   {
-    return DialogFlowPackage.Literals.PHRASE_VALUE;
+    return DialogFlowPackage.Literals.ENTITY_SYNONYMS;
   }
 
   /**
@@ -73,29 +68,13 @@ public class PhraseValueImpl extends MinimalEObjectImpl.Container implements Phr
    * @generated
    */
   @Override
-  public EList<Mapping> getMapping()
+  public EList<String> getValues()
   {
-    if (mapping == null)
+    if (values == null)
     {
-      mapping = new EObjectContainmentEList<Mapping>(Mapping.class, this, DialogFlowPackage.PHRASE_VALUE__MAPPING);
+      values = new EDataTypeEList<String>(String.class, this, DialogFlowPackage.ENTITY_SYNONYMS__VALUES);
     }
-    return mapping;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case DialogFlowPackage.PHRASE_VALUE__MAPPING:
-        return ((InternalEList<?>)getMapping()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return values;
   }
 
   /**
@@ -108,8 +87,8 @@ public class PhraseValueImpl extends MinimalEObjectImpl.Container implements Phr
   {
     switch (featureID)
     {
-      case DialogFlowPackage.PHRASE_VALUE__MAPPING:
-        return getMapping();
+      case DialogFlowPackage.ENTITY_SYNONYMS__VALUES:
+        return getValues();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -125,9 +104,9 @@ public class PhraseValueImpl extends MinimalEObjectImpl.Container implements Phr
   {
     switch (featureID)
     {
-      case DialogFlowPackage.PHRASE_VALUE__MAPPING:
-        getMapping().clear();
-        getMapping().addAll((Collection<? extends Mapping>)newValue);
+      case DialogFlowPackage.ENTITY_SYNONYMS__VALUES:
+        getValues().clear();
+        getValues().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -143,8 +122,8 @@ public class PhraseValueImpl extends MinimalEObjectImpl.Container implements Phr
   {
     switch (featureID)
     {
-      case DialogFlowPackage.PHRASE_VALUE__MAPPING:
-        getMapping().clear();
+      case DialogFlowPackage.ENTITY_SYNONYMS__VALUES:
+        getValues().clear();
         return;
     }
     super.eUnset(featureID);
@@ -160,10 +139,27 @@ public class PhraseValueImpl extends MinimalEObjectImpl.Container implements Phr
   {
     switch (featureID)
     {
-      case DialogFlowPackage.PHRASE_VALUE__MAPPING:
-        return mapping != null && !mapping.isEmpty();
+      case DialogFlowPackage.ENTITY_SYNONYMS__VALUES:
+        return values != null && !values.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //PhraseValueImpl
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (values: ");
+    result.append(values);
+    result.append(')');
+    return result.toString();
+  }
+
+} //EntitySynonymsImpl

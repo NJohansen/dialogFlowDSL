@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getValues <em>Values</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getSynonyms <em>Synonyms</em>}</li>
  * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getEntityValue()
@@ -36,5 +37,17 @@ public interface EntityValue extends EObject
    * @generated
    */
   EList<String> getValues();
+
+  /**
+   * Returns the value of the '<em><b>Synonyms</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Synonyms</em>' containment reference list.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getEntityValue_Synonyms()
+   * @model containment="true"
+   * @generated
+   */
+  EList<EntitySynonyms> getSynonyms();
 
 } // EntityValue

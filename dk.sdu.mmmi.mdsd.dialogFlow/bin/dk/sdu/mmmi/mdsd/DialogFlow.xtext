@@ -17,13 +17,21 @@ Intent:
 Phrases:
 	{Phrases} 'phrases' phrases+=PhraseValue* //require min 10 N's
 ;
-//WIP - needs to be reviewed
+
 PhraseValue:
-	'val' value=STRING (',' text+=STRING (entity+=[Entity])?)*
+	'expression' mapping+=Mapping (',' mapping+=Mapping)*
+;
+
+Mapping:
+	value=STRING ('as' entity=[Entity])?   
 ;
 
 Responses:
-	'responses' responses+=STRING (',' responses+=STRING)*
+	{Responses} 'responses' responses+=ResponseValue*
+;
+
+ResponseValue:
+	'reply' response=STRING 
 ;
 
 
@@ -32,7 +40,7 @@ Actions:
 ;
 
 ActionValue:
-	'val' name=ID type=[Entity] (list=STRING)?
+	'param' 'name' name=ID 'type' type=[Entity] value=STRING (list=STRING)?
 ;
 
 Entity:
@@ -40,6 +48,9 @@ Entity:
 ;
 
 EntityValue:
-	'val' values+=STRING (',' values+=STRING )*
+	'reference' values+=STRING (('synonym'| 'synonyms') synonyms+=EntitySynonyms*)?
 ;
 
+EntitySynonyms:
+	{EntitySynonyms} values+=STRING (',' values+=STRING )*
+;

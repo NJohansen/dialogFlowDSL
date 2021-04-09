@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.ActionValue#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.ActionValue#getType <em>Type</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.ActionValue#getValue <em>Value</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.ActionValue#getList <em>List</em>}</li>
  * </ul>
  *
@@ -68,6 +69,28 @@ public interface ActionValue extends EObject
    * @generated
    */
   void setType(Entity value);
+
+  /**
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see #setValue(String)
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getActionValue_Value()
+   * @model
+   * @generated
+   */
+  String getValue();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.dialogFlow.ActionValue#getValue <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Value</em>' attribute.
+   * @see #getValue()
+   * @generated
+   */
+  void setValue(String value);
 
   /**
    * Returns the value of the '<em><b>List</b></em>' attribute.

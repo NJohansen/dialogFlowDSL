@@ -22,12 +22,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//Phrases/phrases"/>
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//PhraseValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//PhraseValue/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//PhraseValue/text"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//PhraseValue/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//PhraseValue/mapping"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogFlow.ecore#//Mapping">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//Mapping/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//Mapping/entity"/>
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//Responses">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//Responses/responses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//Responses/responses"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogFlow.ecore#//ResponseValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//ResponseValue/response"/>
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//Actions">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//Actions/actions"/>
@@ -35,6 +40,7 @@
     <genClasses ecoreClass="DialogFlow.ecore#//ActionValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//ActionValue/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//ActionValue/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//ActionValue/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//ActionValue/list"/>
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//Entity">
@@ -42,6 +48,10 @@
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//EntityValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//EntityValue/values"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//EntityValue/synonyms"/>
+    </genClasses>
+    <genClasses ecoreClass="DialogFlow.ecore#//EntitySynonyms">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//EntitySynonyms/values"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
