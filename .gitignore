@@ -1,0 +1,6 @@
+*.class
+*~
+**/bin
+
+*._trace
+*.xtendbin
