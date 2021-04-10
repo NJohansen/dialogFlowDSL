@@ -745,18 +745,18 @@ ruleEntityValue returns [EObject current=null]
 		}
 		(
 			(
-				lv_values_1_0=RULE_STRING
+				lv_value_1_0=RULE_STRING
 				{
-					newLeafNode(lv_values_1_0, grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_1_0());
+					newLeafNode(lv_value_1_0, grammarAccess.getEntityValueAccess().getValueSTRINGTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getEntityValueRule());
 					}
-					addWithLastConsumed(
+					setWithLastConsumed(
 						$current,
-						"values",
-						lv_values_1_0,
+						"value",
+						lv_value_1_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
@@ -783,7 +783,7 @@ ruleEntityValue returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntityValueRule());
 						}
-						add(
+						set(
 							$current,
 							"synonyms",
 							lv_synonyms_4_0,
@@ -791,7 +791,7 @@ ruleEntityValue returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
-			)*
+			)
 		)?
 	)
 ;

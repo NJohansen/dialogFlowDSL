@@ -7,20 +7,14 @@ import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage;
 import dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms;
 import dk.sdu.mmmi.mdsd.dialogFlow.EntityValue;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +24,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntityValueImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntityValueImpl#getValue <em>Value</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.impl.EntityValueImpl#getSynonyms <em>Synonyms</em>}</li>
  * </ul>
  *
@@ -39,24 +33,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EntityValueImpl extends MinimalEObjectImpl.Container implements EntityValue
 {
   /**
-   * The cached value of the '{@link #getValues() <em>Values</em>}' attribute list.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValues()
+   * @see #getValue()
    * @generated
    * @ordered
    */
-  protected EList<String> values;
+  protected static final String VALUE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSynonyms() <em>Synonyms</em>}' containment reference list.
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected String value = VALUE_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSynonyms() <em>Synonyms</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSynonyms()
    * @generated
    * @ordered
    */
-  protected EList<EntitySynonyms> synonyms;
+  protected EntitySynonyms synonyms;
 
   /**
    * <!-- begin-user-doc -->
@@ -85,13 +89,9 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
    * @generated
    */
   @Override
-  public EList<String> getValues()
+  public String getValue()
   {
-    if (values == null)
-    {
-      values = new EDataTypeEList<String>(String.class, this, DialogFlowPackage.ENTITY_VALUE__VALUES);
-    }
-    return values;
+    return value;
   }
 
   /**
@@ -100,13 +100,62 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
    * @generated
    */
   @Override
-  public EList<EntitySynonyms> getSynonyms()
+  public void setValue(String newValue)
   {
-    if (synonyms == null)
-    {
-      synonyms = new EObjectContainmentEList<EntitySynonyms>(EntitySynonyms.class, this, DialogFlowPackage.ENTITY_VALUE__SYNONYMS);
-    }
+    String oldValue = value;
+    value = newValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DialogFlowPackage.ENTITY_VALUE__VALUE, oldValue, value));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EntitySynonyms getSynonyms()
+  {
     return synonyms;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSynonyms(EntitySynonyms newSynonyms, NotificationChain msgs)
+  {
+    EntitySynonyms oldSynonyms = synonyms;
+    synonyms = newSynonyms;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DialogFlowPackage.ENTITY_VALUE__SYNONYMS, oldSynonyms, newSynonyms);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSynonyms(EntitySynonyms newSynonyms)
+  {
+    if (newSynonyms != synonyms)
+    {
+      NotificationChain msgs = null;
+      if (synonyms != null)
+        msgs = ((InternalEObject)synonyms).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DialogFlowPackage.ENTITY_VALUE__SYNONYMS, null, msgs);
+      if (newSynonyms != null)
+        msgs = ((InternalEObject)newSynonyms).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DialogFlowPackage.ENTITY_VALUE__SYNONYMS, null, msgs);
+      msgs = basicSetSynonyms(newSynonyms, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DialogFlowPackage.ENTITY_VALUE__SYNONYMS, newSynonyms, newSynonyms));
   }
 
   /**
@@ -120,7 +169,7 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
     switch (featureID)
     {
       case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
-        return ((InternalEList<?>)getSynonyms()).basicRemove(otherEnd, msgs);
+        return basicSetSynonyms(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +184,8 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
   {
     switch (featureID)
     {
-      case DialogFlowPackage.ENTITY_VALUE__VALUES:
-        return getValues();
+      case DialogFlowPackage.ENTITY_VALUE__VALUE:
+        return getValue();
       case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
         return getSynonyms();
     }
@@ -148,19 +197,16 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DialogFlowPackage.ENTITY_VALUE__VALUES:
-        getValues().clear();
-        getValues().addAll((Collection<? extends String>)newValue);
+      case DialogFlowPackage.ENTITY_VALUE__VALUE:
+        setValue((String)newValue);
         return;
       case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
-        getSynonyms().clear();
-        getSynonyms().addAll((Collection<? extends EntitySynonyms>)newValue);
+        setSynonyms((EntitySynonyms)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -176,11 +222,11 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
   {
     switch (featureID)
     {
-      case DialogFlowPackage.ENTITY_VALUE__VALUES:
-        getValues().clear();
+      case DialogFlowPackage.ENTITY_VALUE__VALUE:
+        setValue(VALUE_EDEFAULT);
         return;
       case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
-        getSynonyms().clear();
+        setSynonyms((EntitySynonyms)null);
         return;
     }
     super.eUnset(featureID);
@@ -196,10 +242,10 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
   {
     switch (featureID)
     {
-      case DialogFlowPackage.ENTITY_VALUE__VALUES:
-        return values != null && !values.isEmpty();
+      case DialogFlowPackage.ENTITY_VALUE__VALUE:
+        return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
       case DialogFlowPackage.ENTITY_VALUE__SYNONYMS:
-        return synonyms != null && !synonyms.isEmpty();
+        return synonyms != null;
     }
     return super.eIsSet(featureID);
   }
@@ -215,8 +261,8 @@ public class EntityValueImpl extends MinimalEObjectImpl.Container implements Ent
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (values: ");
-    result.append(values);
+    result.append(" (value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }

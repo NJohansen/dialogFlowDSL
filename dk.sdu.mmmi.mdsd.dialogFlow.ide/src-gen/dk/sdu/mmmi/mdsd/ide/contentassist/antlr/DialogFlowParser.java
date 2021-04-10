@@ -69,7 +69,7 @@ public class DialogFlowParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getActionValueAccess().getListAssignment_6(), "rule__ActionValue__ListAssignment_6");
 			builder.put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
 			builder.put(grammarAccess.getEntityAccess().getEntitiesAssignment_2(), "rule__Entity__EntitiesAssignment_2");
-			builder.put(grammarAccess.getEntityValueAccess().getValuesAssignment_1(), "rule__EntityValue__ValuesAssignment_1");
+			builder.put(grammarAccess.getEntityValueAccess().getValueAssignment_1(), "rule__EntityValue__ValueAssignment_1");
 			builder.put(grammarAccess.getEntityValueAccess().getSynonymsAssignment_2_1(), "rule__EntityValue__SynonymsAssignment_2_1");
 			builder.put(grammarAccess.getEntitySynonymsAccess().getValuesAssignment_1(), "rule__EntitySynonyms__ValuesAssignment_1");
 			builder.put(grammarAccess.getEntitySynonymsAccess().getValuesAssignment_2_1(), "rule__EntitySynonyms__ValuesAssignment_2_1");

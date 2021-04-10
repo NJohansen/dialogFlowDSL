@@ -22,13 +22,11 @@ public class DialogFlowSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DialogFlowGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_EntityValue_SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1;
-	protected AbstractElementAlias match_EntityValue___SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DialogFlowGrammarAccess) access;
 		match_EntityValue_SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getEntityValueAccess().getSynonymKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getEntityValueAccess().getSynonymsKeyword_2_0_1()));
-		match_EntityValue___SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1__q = new AlternativeAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntityValueAccess().getSynonymKeyword_2_0_0()), new TokenAlias(false, false, grammarAccess.getEntityValueAccess().getSynonymsKeyword_2_0_1()));
 	}
 	
 	@Override
@@ -45,8 +43,6 @@ public class DialogFlowSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_EntityValue_SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1.equals(syntax))
 				emit_EntityValue_SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_EntityValue___SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1__q.equals(syntax))
-				emit_EntityValue___SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -56,20 +52,9 @@ public class DialogFlowSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     'synonym' | 'synonyms'
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     values+=STRING (ambiguity) synonyms+=EntitySynonyms
+	 *     value=STRING (ambiguity) synonyms=EntitySynonyms
 	 */
 	protected void emit_EntityValue_SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     ('synonym' | 'synonyms')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     values+=STRING (ambiguity) (rule end)
-	 */
-	protected void emit_EntityValue___SynonymKeyword_2_0_0_or_SynonymsKeyword_2_0_1__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
