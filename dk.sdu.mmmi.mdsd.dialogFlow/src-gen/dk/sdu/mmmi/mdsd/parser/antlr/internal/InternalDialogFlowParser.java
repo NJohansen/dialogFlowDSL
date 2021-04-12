@@ -1833,12 +1833,12 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntityValue"
-    // InternalDialogFlow.g:734:1: ruleEntityValue returns [EObject current=null] : (otherlv_0= 'reference' ( (lv_values_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) )* )? ) ;
+    // InternalDialogFlow.g:734:1: ruleEntityValue returns [EObject current=null] : (otherlv_0= 'reference' ( (lv_value_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) ) )? ) ;
     public final EObject ruleEntityValue() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_values_1_0=null;
+        Token lv_value_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
         EObject lv_synonyms_4_0 = null;
@@ -1848,34 +1848,34 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalDialogFlow.g:740:2: ( (otherlv_0= 'reference' ( (lv_values_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) )* )? ) )
-            // InternalDialogFlow.g:741:2: (otherlv_0= 'reference' ( (lv_values_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) )* )? )
+            // InternalDialogFlow.g:740:2: ( (otherlv_0= 'reference' ( (lv_value_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) ) )? ) )
+            // InternalDialogFlow.g:741:2: (otherlv_0= 'reference' ( (lv_value_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) ) )? )
             {
-            // InternalDialogFlow.g:741:2: (otherlv_0= 'reference' ( (lv_values_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) )* )? )
-            // InternalDialogFlow.g:742:3: otherlv_0= 'reference' ( (lv_values_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) )* )?
+            // InternalDialogFlow.g:741:2: (otherlv_0= 'reference' ( (lv_value_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) ) )? )
+            // InternalDialogFlow.g:742:3: otherlv_0= 'reference' ( (lv_value_1_0= RULE_STRING ) ) ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) ) )?
             {
             otherlv_0=(Token)match(input,24,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEntityValueAccess().getReferenceKeyword_0());
             		
-            // InternalDialogFlow.g:746:3: ( (lv_values_1_0= RULE_STRING ) )
-            // InternalDialogFlow.g:747:4: (lv_values_1_0= RULE_STRING )
+            // InternalDialogFlow.g:746:3: ( (lv_value_1_0= RULE_STRING ) )
+            // InternalDialogFlow.g:747:4: (lv_value_1_0= RULE_STRING )
             {
-            // InternalDialogFlow.g:747:4: (lv_values_1_0= RULE_STRING )
-            // InternalDialogFlow.g:748:5: lv_values_1_0= RULE_STRING
+            // InternalDialogFlow.g:747:4: (lv_value_1_0= RULE_STRING )
+            // InternalDialogFlow.g:748:5: lv_value_1_0= RULE_STRING
             {
-            lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_18); 
 
-            					newLeafNode(lv_values_1_0, grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_1_0());
+            					newLeafNode(lv_value_1_0, grammarAccess.getEntityValueAccess().getValueSTRINGTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getEntityValueRule());
             					}
-            					addWithLastConsumed(
+            					setWithLastConsumed(
             						current,
-            						"values",
-            						lv_values_1_0,
+            						"value",
+            						lv_value_1_0,
             						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
@@ -1884,16 +1884,16 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalDialogFlow.g:764:3: ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) )* )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalDialogFlow.g:764:3: ( (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) ) )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( ((LA13_0>=25 && LA13_0<=26)) ) {
-                alt13=1;
+            if ( ((LA12_0>=25 && LA12_0<=26)) ) {
+                alt12=1;
             }
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
-                    // InternalDialogFlow.g:765:4: (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) )*
+                    // InternalDialogFlow.g:765:4: (otherlv_2= 'synonym' | otherlv_3= 'synonyms' ) ( (lv_synonyms_4_0= ruleEntitySynonyms ) )
                     {
                     // InternalDialogFlow.g:765:4: (otherlv_2= 'synonym' | otherlv_3= 'synonyms' )
                     int alt11=2;
@@ -1915,7 +1915,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // InternalDialogFlow.g:766:5: otherlv_2= 'synonym'
                             {
-                            otherlv_2=(Token)match(input,25,FOLLOW_16); 
+                            otherlv_2=(Token)match(input,25,FOLLOW_9); 
 
                             					newLeafNode(otherlv_2, grammarAccess.getEntityValueAccess().getSynonymKeyword_2_0_0());
                             				
@@ -1925,7 +1925,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
                         case 2 :
                             // InternalDialogFlow.g:771:5: otherlv_3= 'synonyms'
                             {
-                            otherlv_3=(Token)match(input,26,FOLLOW_16); 
+                            otherlv_3=(Token)match(input,26,FOLLOW_9); 
 
                             					newLeafNode(otherlv_3, grammarAccess.getEntityValueAccess().getSynonymsKeyword_2_0_1());
                             				
@@ -1935,54 +1935,36 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalDialogFlow.g:776:4: ( (lv_synonyms_4_0= ruleEntitySynonyms ) )*
-                    loop12:
-                    do {
-                        int alt12=2;
-                        int LA12_0 = input.LA(1);
+                    // InternalDialogFlow.g:776:4: ( (lv_synonyms_4_0= ruleEntitySynonyms ) )
+                    // InternalDialogFlow.g:777:5: (lv_synonyms_4_0= ruleEntitySynonyms )
+                    {
+                    // InternalDialogFlow.g:777:5: (lv_synonyms_4_0= ruleEntitySynonyms )
+                    // InternalDialogFlow.g:778:6: lv_synonyms_4_0= ruleEntitySynonyms
+                    {
 
-                        if ( (LA12_0==RULE_STRING) ) {
-                            alt12=1;
-                        }
+                    						newCompositeNode(grammarAccess.getEntityValueAccess().getSynonymsEntitySynonymsParserRuleCall_2_1_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_synonyms_4_0=ruleEntitySynonyms();
 
-
-                        switch (alt12) {
-                    	case 1 :
-                    	    // InternalDialogFlow.g:777:5: (lv_synonyms_4_0= ruleEntitySynonyms )
-                    	    {
-                    	    // InternalDialogFlow.g:777:5: (lv_synonyms_4_0= ruleEntitySynonyms )
-                    	    // InternalDialogFlow.g:778:6: lv_synonyms_4_0= ruleEntitySynonyms
-                    	    {
-
-                    	    						newCompositeNode(grammarAccess.getEntityValueAccess().getSynonymsEntitySynonymsParserRuleCall_2_1_0());
-                    	    					
-                    	    pushFollow(FOLLOW_16);
-                    	    lv_synonyms_4_0=ruleEntitySynonyms();
-
-                    	    state._fsp--;
+                    state._fsp--;
 
 
-                    	    						if (current==null) {
-                    	    							current = createModelElementForParent(grammarAccess.getEntityValueRule());
-                    	    						}
-                    	    						add(
-                    	    							current,
-                    	    							"synonyms",
-                    	    							lv_synonyms_4_0,
-                    	    							"dk.sdu.mmmi.mdsd.DialogFlow.EntitySynonyms");
-                    	    						afterParserOrEnumRuleCall();
-                    	    					
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getEntityValueRule());
+                    						}
+                    						set(
+                    							current,
+                    							"synonyms",
+                    							lv_synonyms_4_0,
+                    							"dk.sdu.mmmi.mdsd.DialogFlow.EntitySynonyms");
+                    						afterParserOrEnumRuleCall();
+                    					
 
-                    	    }
+                    }
 
 
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop12;
-                        }
-                    } while (true);
+                    }
 
 
                     }
@@ -2105,17 +2087,17 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
             }
 
             // InternalDialogFlow.g:840:3: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
-            loop14:
+            loop13:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA14_0==15) ) {
-                    alt14=1;
+                if ( (LA13_0==15) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt13) {
             	case 1 :
             	    // InternalDialogFlow.g:841:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
             	    {
@@ -2154,7 +2136,7 @@ public class InternalDialogFlowParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop13;
                 }
             } while (true);
 

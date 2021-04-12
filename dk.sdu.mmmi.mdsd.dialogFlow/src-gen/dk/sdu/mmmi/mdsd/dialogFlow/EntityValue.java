@@ -3,8 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.dialogFlow;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getValues <em>Values</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getValue <em>Value</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getSynonyms <em>Synonyms</em>}</li>
  * </ul>
  *
@@ -27,27 +25,47 @@ import org.eclipse.emf.ecore.EObject;
 public interface EntityValue extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Values</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Values</em>' attribute list.
-   * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getEntityValue_Values()
-   * @model unique="false"
+   * @return the value of the '<em>Value</em>' attribute.
+   * @see #setValue(String)
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getEntityValue_Value()
+   * @model
    * @generated
    */
-  EList<String> getValues();
+  String getValue();
 
   /**
-   * Returns the value of the '<em><b>Synonyms</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.mmmi.mdsd.dialogFlow.EntitySynonyms}.
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getValue <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Synonyms</em>' containment reference list.
+   * @param value the new value of the '<em>Value</em>' attribute.
+   * @see #getValue()
+   * @generated
+   */
+  void setValue(String value);
+
+  /**
+   * Returns the value of the '<em><b>Synonyms</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Synonyms</em>' containment reference.
+   * @see #setSynonyms(EntitySynonyms)
    * @see dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage#getEntityValue_Synonyms()
    * @model containment="true"
    * @generated
    */
-  EList<EntitySynonyms> getSynonyms();
+  EntitySynonyms getSynonyms();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getSynonyms <em>Synonyms</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Synonyms</em>' containment reference.
+   * @see #getSynonyms()
+   * @generated
+   */
+  void setSynonyms(EntitySynonyms value);
 
 } // EntityValue

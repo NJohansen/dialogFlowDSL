@@ -457,16 +457,16 @@ public interface DialogFlowPackage extends EPackage
   int ENTITY_VALUE = 11;
 
   /**
-   * The feature id for the '<em><b>Values</b></em>' attribute list.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_VALUE__VALUES = 0;
+  int ENTITY_VALUE__VALUE = 0;
 
   /**
-   * The feature id for the '<em><b>Synonyms</b></em>' containment reference list.
+   * The feature id for the '<em><b>Synonyms</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -831,21 +831,21 @@ public interface DialogFlowPackage extends EPackage
   EClass getEntityValue();
 
   /**
-   * Returns the meta object for the attribute list '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getValues <em>Values</em>}'.
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getValue <em>Value</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Values</em>'.
-   * @see dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getValues()
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getValue()
    * @see #getEntityValue()
    * @generated
    */
-  EAttribute getEntityValue_Values();
+  EAttribute getEntityValue_Value();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getSynonyms <em>Synonyms</em>}'.
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getSynonyms <em>Synonyms</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Synonyms</em>'.
+   * @return the meta object for the containment reference '<em>Synonyms</em>'.
    * @see dk.sdu.mmmi.mdsd.dialogFlow.EntityValue#getSynonyms()
    * @see #getEntityValue()
    * @generated
@@ -1161,15 +1161,15 @@ public interface DialogFlowPackage extends EPackage
     EClass ENTITY_VALUE = eINSTANCE.getEntityValue();
 
     /**
-     * The meta object literal for the '<em><b>Values</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENTITY_VALUE__VALUES = eINSTANCE.getEntityValue_Values();
+    EAttribute ENTITY_VALUE__VALUE = eINSTANCE.getEntityValue_Value();
 
     /**
-     * The meta object literal for the '<em><b>Synonyms</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Synonyms</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

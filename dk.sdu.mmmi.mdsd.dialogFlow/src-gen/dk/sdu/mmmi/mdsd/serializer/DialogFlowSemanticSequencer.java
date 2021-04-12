@@ -137,7 +137,7 @@ public class DialogFlowSemanticSequencer extends AbstractDelegatingSemanticSeque
 	 *     EntityValue returns EntityValue
 	 *
 	 * Constraint:
-	 *     (values+=STRING synonyms+=EntitySynonyms*)
+	 *     (value=STRING synonyms=EntitySynonyms?)
 	 */
 	protected void sequence_EntityValue(ISerializationContext context, EntityValue semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

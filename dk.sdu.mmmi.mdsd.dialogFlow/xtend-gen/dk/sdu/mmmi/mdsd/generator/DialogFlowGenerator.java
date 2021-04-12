@@ -3,10 +3,18 @@
  */
 package dk.sdu.mmmi.mdsd.generator;
 
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
+import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowSystem;
+import dk.sdu.mmmi.mdsd.dialogFlow.Entity;
+import dk.sdu.mmmi.mdsd.generator.EntityCreator;
+import dk.sdu.mmmi.mdsd.generator.RootElementCreator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +25,15 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class DialogFlowGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    final DialogFlowSystem baseSystem = Iterators.<DialogFlowSystem>filter(resource.getAllContents(), DialogFlowSystem.class).next();
+    String _name = baseSystem.getName();
+    final RootElementCreator rootElementCreator = new RootElementCreator(_name);
+    rootElementCreator.generateElements(baseSystem, fsa);
+    String _name_1 = baseSystem.getName();
+    final EntityCreator entityCreator = new EntityCreator(_name_1);
+    Iterable<Entity> _filter = Iterables.<Entity>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Entity.class);
+    for (final Entity e : _filter) {
+      entityCreator.generateEntity(e, fsa);
+    }
   }
 }

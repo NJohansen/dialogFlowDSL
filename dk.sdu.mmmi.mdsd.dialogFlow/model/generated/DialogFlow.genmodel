@@ -47,7 +47,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//Entity/entities"/>
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//EntityValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//EntityValue/values"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute DialogFlow.ecore#//EntityValue/value"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference DialogFlow.ecore#//EntityValue/synonyms"/>
     </genClasses>
     <genClasses ecoreClass="DialogFlow.ecore#//EntitySynonyms">

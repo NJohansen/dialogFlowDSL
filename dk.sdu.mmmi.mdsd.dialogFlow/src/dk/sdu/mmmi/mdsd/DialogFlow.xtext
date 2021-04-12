@@ -48,7 +48,7 @@ Entity:
 ;
 
 EntityValue:
-	'reference' values+=STRING (('synonym'| 'synonyms') synonyms+=EntitySynonyms*)?
+	'reference' value=STRING (('synonym'|'synonyms') synonyms=EntitySynonyms)?
 ;
 
 EntitySynonyms:

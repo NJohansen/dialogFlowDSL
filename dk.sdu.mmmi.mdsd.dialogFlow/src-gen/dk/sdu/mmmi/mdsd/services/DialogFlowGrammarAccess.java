@@ -398,8 +398,8 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.DialogFlow.EntityValue");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cReferenceKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cValuesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cValuesSTRINGTerminalRuleCall_1_0 = (RuleCall)cValuesAssignment_1.eContents().get(0);
+		private final Assignment cValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_1_0 = (RuleCall)cValueAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Alternatives cAlternatives_2_0 = (Alternatives)cGroup_2.eContents().get(0);
 		private final Keyword cSynonymKeyword_2_0_0 = (Keyword)cAlternatives_2_0.eContents().get(0);
@@ -408,22 +408,22 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 		private final RuleCall cSynonymsEntitySynonymsParserRuleCall_2_1_0 = (RuleCall)cSynonymsAssignment_2_1.eContents().get(0);
 		
 		//EntityValue:
-		//	'reference' values+=STRING (('synonym' | 'synonyms') synonyms+=EntitySynonyms*)?;
+		//	'reference' value=STRING (('synonym' | 'synonyms') synonyms=EntitySynonyms)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'reference' values+=STRING (('synonym' | 'synonyms') synonyms+=EntitySynonyms*)?
+		//'reference' value=STRING (('synonym' | 'synonyms') synonyms=EntitySynonyms)?
 		public Group getGroup() { return cGroup; }
 		
 		//'reference'
 		public Keyword getReferenceKeyword_0() { return cReferenceKeyword_0; }
 		
-		//values+=STRING
-		public Assignment getValuesAssignment_1() { return cValuesAssignment_1; }
+		//value=STRING
+		public Assignment getValueAssignment_1() { return cValueAssignment_1; }
 		
 		//STRING
-		public RuleCall getValuesSTRINGTerminalRuleCall_1_0() { return cValuesSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getValueSTRINGTerminalRuleCall_1_0() { return cValueSTRINGTerminalRuleCall_1_0; }
 		
-		//(('synonym' | 'synonyms') synonyms+=EntitySynonyms*)?
+		//(('synonym' | 'synonyms') synonyms=EntitySynonyms)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//('synonym' | 'synonyms')
@@ -435,7 +435,7 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 		//'synonyms'
 		public Keyword getSynonymsKeyword_2_0_1() { return cSynonymsKeyword_2_0_1; }
 		
-		//synonyms+=EntitySynonyms*
+		//synonyms=EntitySynonyms
 		public Assignment getSynonymsAssignment_2_1() { return cSynonymsAssignment_2_1; }
 		
 		//EntitySynonyms
@@ -659,7 +659,7 @@ public class DialogFlowGrammarAccess extends AbstractElementFinder.AbstractGramm
 	}
 	
 	//EntityValue:
-	//	'reference' values+=STRING (('synonym' | 'synonyms') synonyms+=EntitySynonyms*)?;
+	//	'reference' value=STRING (('synonym' | 'synonyms') synonyms=EntitySynonyms)?;
 	public EntityValueElements getEntityValueAccess() {
 		return pEntityValue;
 	}

@@ -524,7 +524,7 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
    * @generated
    */
   @Override
-  public EAttribute getEntityValue_Values()
+  public EAttribute getEntityValue_Value()
   {
     return (EAttribute)entityValueEClass.getEStructuralFeatures().get(0);
   }
@@ -634,7 +634,7 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
     createEReference(entityEClass, ENTITY__ENTITIES);
 
     entityValueEClass = createEClass(ENTITY_VALUE);
-    createEAttribute(entityValueEClass, ENTITY_VALUE__VALUES);
+    createEAttribute(entityValueEClass, ENTITY_VALUE__VALUE);
     createEReference(entityValueEClass, ENTITY_VALUE__SYNONYMS);
 
     entitySynonymsEClass = createEClass(ENTITY_SYNONYMS);
@@ -715,8 +715,8 @@ public class DialogFlowPackageImpl extends EPackageImpl implements DialogFlowPac
     initEReference(getEntity_Entities(), this.getEntityValue(), null, "entities", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityValueEClass, EntityValue.class, "EntityValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEntityValue_Values(), ecorePackage.getEString(), "values", null, 0, -1, EntityValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntityValue_Synonyms(), this.getEntitySynonyms(), null, "synonyms", null, 0, -1, EntityValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntityValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, EntityValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityValue_Synonyms(), this.getEntitySynonyms(), null, "synonyms", null, 0, 1, EntityValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entitySynonymsEClass, EntitySynonyms.class, "EntitySynonyms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntitySynonyms_Values(), ecorePackage.getEString(), "values", null, 0, -1, EntitySynonyms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

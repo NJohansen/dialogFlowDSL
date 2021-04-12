@@ -4500,31 +4500,31 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__EntityValue__Group__1__Impl"
-    // InternalDialogFlow.g:1484:1: rule__EntityValue__Group__1__Impl : ( ( rule__EntityValue__ValuesAssignment_1 ) ) ;
+    // InternalDialogFlow.g:1484:1: rule__EntityValue__Group__1__Impl : ( ( rule__EntityValue__ValueAssignment_1 ) ) ;
     public final void rule__EntityValue__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1488:1: ( ( ( rule__EntityValue__ValuesAssignment_1 ) ) )
-            // InternalDialogFlow.g:1489:1: ( ( rule__EntityValue__ValuesAssignment_1 ) )
+            // InternalDialogFlow.g:1488:1: ( ( ( rule__EntityValue__ValueAssignment_1 ) ) )
+            // InternalDialogFlow.g:1489:1: ( ( rule__EntityValue__ValueAssignment_1 ) )
             {
-            // InternalDialogFlow.g:1489:1: ( ( rule__EntityValue__ValuesAssignment_1 ) )
-            // InternalDialogFlow.g:1490:2: ( rule__EntityValue__ValuesAssignment_1 )
+            // InternalDialogFlow.g:1489:1: ( ( rule__EntityValue__ValueAssignment_1 ) )
+            // InternalDialogFlow.g:1490:2: ( rule__EntityValue__ValueAssignment_1 )
             {
-             before(grammarAccess.getEntityValueAccess().getValuesAssignment_1()); 
-            // InternalDialogFlow.g:1491:2: ( rule__EntityValue__ValuesAssignment_1 )
-            // InternalDialogFlow.g:1491:3: rule__EntityValue__ValuesAssignment_1
+             before(grammarAccess.getEntityValueAccess().getValueAssignment_1()); 
+            // InternalDialogFlow.g:1491:2: ( rule__EntityValue__ValueAssignment_1 )
+            // InternalDialogFlow.g:1491:3: rule__EntityValue__ValueAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__EntityValue__ValuesAssignment_1();
+            rule__EntityValue__ValueAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEntityValueAccess().getValuesAssignment_1()); 
+             after(grammarAccess.getEntityValueAccess().getValueAssignment_1()); 
 
             }
 
@@ -4756,47 +4756,29 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
 
 
     // $ANTLR start "rule__EntityValue__Group_2__1__Impl"
-    // InternalDialogFlow.g:1564:1: rule__EntityValue__Group_2__1__Impl : ( ( rule__EntityValue__SynonymsAssignment_2_1 )* ) ;
+    // InternalDialogFlow.g:1564:1: rule__EntityValue__Group_2__1__Impl : ( ( rule__EntityValue__SynonymsAssignment_2_1 ) ) ;
     public final void rule__EntityValue__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalDialogFlow.g:1568:1: ( ( ( rule__EntityValue__SynonymsAssignment_2_1 )* ) )
-            // InternalDialogFlow.g:1569:1: ( ( rule__EntityValue__SynonymsAssignment_2_1 )* )
+            // InternalDialogFlow.g:1568:1: ( ( ( rule__EntityValue__SynonymsAssignment_2_1 ) ) )
+            // InternalDialogFlow.g:1569:1: ( ( rule__EntityValue__SynonymsAssignment_2_1 ) )
             {
-            // InternalDialogFlow.g:1569:1: ( ( rule__EntityValue__SynonymsAssignment_2_1 )* )
-            // InternalDialogFlow.g:1570:2: ( rule__EntityValue__SynonymsAssignment_2_1 )*
+            // InternalDialogFlow.g:1569:1: ( ( rule__EntityValue__SynonymsAssignment_2_1 ) )
+            // InternalDialogFlow.g:1570:2: ( rule__EntityValue__SynonymsAssignment_2_1 )
             {
              before(grammarAccess.getEntityValueAccess().getSynonymsAssignment_2_1()); 
-            // InternalDialogFlow.g:1571:2: ( rule__EntityValue__SynonymsAssignment_2_1 )*
-            loop13:
-            do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+            // InternalDialogFlow.g:1571:2: ( rule__EntityValue__SynonymsAssignment_2_1 )
+            // InternalDialogFlow.g:1571:3: rule__EntityValue__SynonymsAssignment_2_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__EntityValue__SynonymsAssignment_2_1();
 
-                if ( (LA13_0==RULE_STRING) ) {
-                    alt13=1;
-                }
+            state._fsp--;
 
 
-                switch (alt13) {
-            	case 1 :
-            	    // InternalDialogFlow.g:1571:3: rule__EntityValue__SynonymsAssignment_2_1
-            	    {
-            	    pushFollow(FOLLOW_24);
-            	    rule__EntityValue__SynonymsAssignment_2_1();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop13;
-                }
-            } while (true);
+            }
 
              after(grammarAccess.getEntityValueAccess().getSynonymsAssignment_2_1()); 
 
@@ -5028,17 +5010,17 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
             {
              before(grammarAccess.getEntitySynonymsAccess().getGroup_2()); 
             // InternalDialogFlow.g:1652:2: ( rule__EntitySynonyms__Group_2__0 )*
-            loop14:
+            loop13:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA14_0==17) ) {
-                    alt14=1;
+                if ( (LA13_0==17) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt13) {
             	case 1 :
             	    // InternalDialogFlow.g:1652:3: rule__EntitySynonyms__Group_2__0
             	    {
@@ -5052,7 +5034,7 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop13;
                 }
             } while (true);
 
@@ -6029,9 +6011,9 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     // $ANTLR end "rule__Entity__EntitiesAssignment_2"
 
 
-    // $ANTLR start "rule__EntityValue__ValuesAssignment_1"
-    // InternalDialogFlow.g:2023:1: rule__EntityValue__ValuesAssignment_1 : ( RULE_STRING ) ;
-    public final void rule__EntityValue__ValuesAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__EntityValue__ValueAssignment_1"
+    // InternalDialogFlow.g:2023:1: rule__EntityValue__ValueAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__EntityValue__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
@@ -6042,9 +6024,9 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
             // InternalDialogFlow.g:2028:2: ( RULE_STRING )
             // InternalDialogFlow.g:2029:3: RULE_STRING
             {
-             before(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
+             before(grammarAccess.getEntityValueAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getEntityValueAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
+             after(grammarAccess.getEntityValueAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
 
@@ -6063,7 +6045,7 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
         }
         return ;
     }
-    // $ANTLR end "rule__EntityValue__ValuesAssignment_1"
+    // $ANTLR end "rule__EntityValue__ValueAssignment_1"
 
 
     // $ANTLR start "rule__EntityValue__SynonymsAssignment_2_1"
@@ -6208,6 +6190,5 @@ public class InternalDialogFlowParser extends AbstractInternalContentAssistParse
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000004000002L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000022L});
 
 }
