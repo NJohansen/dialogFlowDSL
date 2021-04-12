@@ -19,7 +19,7 @@ class RootElementCreator {
 		
 		fsa.generateFile(
 			systemName + "/agent.json",
-			createAgenFile
+			createAgentFile
 		)
 	}
 	
@@ -31,7 +31,7 @@ class RootElementCreator {
 		'''
 	}
 	
-	def createAgenFile() {
+	def createAgentFile() {
 		val secondaryKey = UUID.randomUUID()
 		
 		'''
