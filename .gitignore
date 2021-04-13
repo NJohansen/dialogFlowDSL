@@ -1,6 +1,10 @@
 *.class
 *~
 **/bin
+**/model
+**/src-gen
+**/xtend-gen
+**/test-bin
 
 *._trace
 *.xtendbin
