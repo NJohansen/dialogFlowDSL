@@ -9,6 +9,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowSystem
 import dk.sdu.mmmi.mdsd.dialogFlow.Entity
+import dk.sdu.mmmi.mdsd.dialogFlow.Intent
 
 /**
  * Generates code from your model files on save.
@@ -26,6 +27,11 @@ class DialogFlowGenerator extends AbstractGenerator {
 		val entityCreator = new EntityCreator(baseSystem.name)
 		for (e: resource.allContents.toIterable.filter(Entity)) {
 			entityCreator.generateEntity(e, fsa)
+		}
+		
+		val intentCreator = new IntentCreator(baseSystem.name)
+		for (i: resource.allContents.toIterable.filter(Intent)) {
+			intentCreator.generateIntent(i, fsa)
 		}
 	}
 }

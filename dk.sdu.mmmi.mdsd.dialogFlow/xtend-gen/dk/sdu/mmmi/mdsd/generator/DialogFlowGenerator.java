@@ -7,8 +7,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowSystem;
 import dk.sdu.mmmi.mdsd.dialogFlow.Entity;
-import dk.sdu.mmmi.mdsd.generator.EntityCreator;
-import dk.sdu.mmmi.mdsd.generator.RootElementCreator;
+import dk.sdu.mmmi.mdsd.dialogFlow.Intent;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
@@ -34,6 +33,12 @@ public class DialogFlowGenerator extends AbstractGenerator {
     Iterable<Entity> _filter = Iterables.<Entity>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Entity.class);
     for (final Entity e : _filter) {
       entityCreator.generateEntity(e, fsa);
+    }
+    String _name_2 = baseSystem.getName();
+    final IntentCreator intentCreator = new IntentCreator(_name_2);
+    Iterable<Intent> _filter_1 = Iterables.<Intent>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Intent.class);
+    for (final Intent i : _filter_1) {
+      intentCreator.generateIntent(i, fsa);
     }
   }
 }

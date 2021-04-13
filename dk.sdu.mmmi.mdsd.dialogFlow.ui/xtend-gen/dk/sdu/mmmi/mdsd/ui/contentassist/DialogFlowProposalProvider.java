@@ -3,8 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.ui.contentassist;
 
-import dk.sdu.mmmi.mdsd.ui.contentassist.AbstractDialogFlowProposalProvider;
-
 /**
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#content-assist
  * on how to customize the content assistant.

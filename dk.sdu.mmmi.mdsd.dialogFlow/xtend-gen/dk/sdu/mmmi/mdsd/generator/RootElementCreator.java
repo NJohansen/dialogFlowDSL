@@ -19,7 +19,7 @@ public class RootElementCreator {
       this.createPackageFile());
     fsa.generateFile(
       (this.systemName + "/agent.json"), 
-      this.createAgenFile());
+      this.createAgentFile());
   }
   
   public CharSequence createPackageFile() {
@@ -34,7 +34,7 @@ public class RootElementCreator {
     return _builder;
   }
   
-  public CharSequence createAgenFile() {
+  public CharSequence createAgentFile() {
     CharSequence _xblockexpression = null;
     {
       final UUID secondaryKey = UUID.randomUUID();
