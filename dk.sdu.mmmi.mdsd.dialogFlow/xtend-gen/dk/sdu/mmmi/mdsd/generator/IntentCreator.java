@@ -48,17 +48,6 @@ public class IntentCreator {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("[");
       _builder.newLine();
-      _builder.append("  ");
-      _builder.append("{");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("\"id\": \"");
-      _builder.append(id, "    ");
-      _builder.append("\",");
-      _builder.newLineIfNotEmpty();
-      _builder.append("    ");
-      _builder.append("\"data\": [");
-      _builder.newLine();
       {
         EList<PhraseValue> _phrases = intent.getPhrase().getPhrases();
         boolean _hasElements = false;
@@ -66,11 +55,29 @@ public class IntentCreator {
           if (!_hasElements) {
             _hasElements = true;
           } else {
-            _builder.appendImmediate(",", "    ");
+            _builder.appendImmediate(",", "");
           }
+          _builder.append("{");
+          _builder.newLine();
+          _builder.append("  ");
+          _builder.append("\"id\": \"");
+          _builder.append(id, "  ");
+          _builder.append("\",");
+          _builder.newLineIfNotEmpty();
+          _builder.append("  ");
+          _builder.append("\"data\": [");
+          _builder.newLine();
+          _builder.append("  ");
+          _builder.newLine();
           {
             EList<Mapping> _mapping = expression.getMapping();
+            boolean _hasElements_1 = false;
             for(final Mapping value : _mapping) {
+              if (!_hasElements_1) {
+                _hasElements_1 = true;
+              } else {
+                _builder.appendImmediate(",", "");
+              }
               _builder.append("\t\t    \t\t");
               _builder.append("{");
               _builder.newLine();
@@ -88,7 +95,7 @@ public class IntentCreator {
                   _builder.append(_name);
                   _builder.append("\",");
                   _builder.newLineIfNotEmpty();
-                  _builder.append("\"alias\": \"@");
+                  _builder.append("\"alias\": \"");
                   String _name_1 = value.getEntity().getName();
                   _builder.append(_name_1);
                   _builder.append("\",\t\t\t\t\t\t");
@@ -101,26 +108,25 @@ public class IntentCreator {
               _builder.newLine();
             }
           }
+          _builder.append("  ");
+          _builder.append("],");
+          _builder.newLine();
+          _builder.append("  ");
+          _builder.append("\"isTemplate\": false,");
+          _builder.newLine();
+          _builder.append("  ");
+          _builder.append("\"count\": 0,");
+          _builder.newLine();
+          _builder.append("  ");
+          _builder.append("\"lang\": \"en\",");
+          _builder.newLine();
+          _builder.append("  ");
+          _builder.append("\"updated\": 0");
+          _builder.newLine();
+          _builder.append("}");
+          _builder.newLine();
         }
       }
-      _builder.append("    ");
-      _builder.append("],");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("\"isTemplate\": false,");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("\"count\": 0,");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("\"lang\": \"en\",");
-      _builder.newLine();
-      _builder.append("    ");
-      _builder.append("\"updated\": 0");
-      _builder.newLine();
-      _builder.append("  ");
-      _builder.append("}");
-      _builder.newLine();
       _builder.append("]");
       _builder.newLine();
       _xblockexpression = _builder;
@@ -311,7 +317,7 @@ public class IntentCreator {
       _builder.append("\"condition\": \"\"");
       _builder.newLine();
       _builder.append("        ");
-      _builder.append("},");
+      _builder.append("}");
       _builder.newLine();
       _builder.append("      ");
       _builder.append("],");

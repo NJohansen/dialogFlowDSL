@@ -35,27 +35,28 @@ class IntentCreator {
 		var id = UUID.randomUUID().toString()
 		'''
 		[
+		«FOR expression : intent.phrase.phrases SEPARATOR ','»
 		  {
 		    "id": "«id»",
 		    "data": [
-		    «FOR expression : intent.phrase.phrases SEPARATOR ','»
-		    	«FOR value : expression.mapping»
+		    
+		    	«FOR value : expression.mapping SEPARATOR ','»
 		    		{
 					"text": "«value.value»",
 					«IF value.entity !== null»
 					"meta": "@«value.entity.name»",
-					"alias": "@«value.entity.name»",						
+					"alias": "«value.entity.name»",						
 					«ENDIF»
 					"userDefined": false
 					}
 				«ENDFOR»
-		    «ENDFOR»
 		    ],
 		    "isTemplate": false,
 		    "count": 0,
 		    "lang": "en",
 		    "updated": 0
 		  }
+		  «ENDFOR»
 		]
 		'''
 	}
@@ -105,7 +106,7 @@ class IntentCreator {
 		          «ENDFOR»
 		          ],
 		          "condition": ""
-		        },
+		        }
 		      ],
 		      "speech": []
 		    }

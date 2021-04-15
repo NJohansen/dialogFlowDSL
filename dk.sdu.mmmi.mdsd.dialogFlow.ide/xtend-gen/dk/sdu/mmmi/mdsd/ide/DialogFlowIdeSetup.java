@@ -7,7 +7,6 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import dk.sdu.mmmi.mdsd.DialogFlowRuntimeModule;
 import dk.sdu.mmmi.mdsd.DialogFlowStandaloneSetup;
-import dk.sdu.mmmi.mdsd.ide.DialogFlowIdeModule;
 import org.eclipse.xtext.util.Modules2;
 
 /**

@@ -3,8 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.ide;
 
-import dk.sdu.mmmi.mdsd.ide.AbstractDialogFlowIdeModule;
-
 /**
  * Use this class to register ide components.
  */

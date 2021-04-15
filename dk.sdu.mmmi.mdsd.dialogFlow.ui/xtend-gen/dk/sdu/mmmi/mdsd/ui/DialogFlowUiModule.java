@@ -3,7 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.ui;
 
-import dk.sdu.mmmi.mdsd.ui.AbstractDialogFlowUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtend.lib.annotations.FinalFieldsConstructor;
 

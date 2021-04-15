@@ -3,7 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.tests;
 
-import dk.sdu.mmmi.mdsd.tests.DialogFlowInjectorProvider;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
 import org.junit.jupiter.api.extension.ExtendWith;

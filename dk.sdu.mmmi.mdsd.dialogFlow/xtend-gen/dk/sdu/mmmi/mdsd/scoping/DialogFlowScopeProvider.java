@@ -3,8 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.scoping;
 
-import dk.sdu.mmmi.mdsd.scoping.AbstractDialogFlowScopeProvider;
-
 /**
  * This class contains custom scoping description.
  * 

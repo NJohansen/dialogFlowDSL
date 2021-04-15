@@ -3,8 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.validation;
 
-import dk.sdu.mmmi.mdsd.validation.AbstractDialogFlowValidator;
-
 /**
  * This class contains custom validation rules.
  * 

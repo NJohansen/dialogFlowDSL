@@ -3,8 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd;
 
-import dk.sdu.mmmi.mdsd.DialogFlowStandaloneSetupGenerated;
-
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
  */
