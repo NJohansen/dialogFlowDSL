@@ -25,6 +25,6 @@ system Booking
       reply "I need some more information."
       reply  "Okay I have booked a room of $venue-type with $star star"
     actions 
-      param name venue_type type venue_accomodation_type "venue-type" 
-      param name venue_chain type venue_accomodation_chain "venue-chain" "isList"
-      param name star type star "star" 
+      param venue_type type venue_accomodation_type "venue-type" 
+      param venue_chain type venue_accomodation_chain "venue-chain" isList
+      param star type star "star" 

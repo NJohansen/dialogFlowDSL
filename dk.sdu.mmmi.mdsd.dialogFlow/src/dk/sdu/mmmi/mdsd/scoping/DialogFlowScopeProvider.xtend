@@ -3,6 +3,14 @@
  */
 package dk.sdu.mmmi.mdsd.scoping
 
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue
+import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage
+import org.eclipse.xtext.EcoreUtil2
+import dk.sdu.mmmi.mdsd.dialogFlow.Entity
+import org.eclipse.xtext.scoping.Scopes
 
 /**
  * This class contains custom scoping description.
@@ -11,5 +19,14 @@ package dk.sdu.mmmi.mdsd.scoping
  * on how and when to use it.
  */
 class DialogFlowScopeProvider extends AbstractDialogFlowScopeProvider {
-
+	/*override IScope getScope(EObject context, EReference reference) {
+		switch context {
+			ResponseValue case reference==DialogFlowPackage.Literals.RESPONSE_VALUE : {
+				val entity = EcoreUtil2.getContainerOfType(context, Entity)
+				 
+				return Scopes.scopeFor(entity)
+			}
+		}
+		super.getScope(context, reference)
+	}*/
 }
