@@ -36,26 +36,26 @@ class IntentCreator {
 		'''
 		[
 		«FOR expression : intent.phrase.phrases SEPARATOR ','»
-		  {
-		    "id": "«id»",
-		    "data": [
-		    
-		    	«FOR value : expression.mapping SEPARATOR ','»
-		    		{
-					"text": "«value.value»",
-					«IF value.entity !== null»
-					"meta": "@«value.entity.name»",
-					"alias": "«value.entity.name»",						
-					«ENDIF»
-					"userDefined": false
-					}
-				«ENDFOR»
-		    ],
-		    "isTemplate": false,
-		    "count": 0,
-		    "lang": "en",
-		    "updated": 0
-		  }
+			{
+			    "id": "«id»",
+			    "data": [
+			    
+			    	«FOR value : expression.mapping SEPARATOR ','»
+						{
+							"text": "«value.value»",
+							«IF value.entity !== null»
+							"meta": "@«value.entity.name»",
+							"alias": "«value.entity.name»",						
+							«ENDIF»
+							"userDefined": false
+						}
+					«ENDFOR»
+			    ],
+			    "isTemplate": false,
+			    "count": 0,
+			    "lang": "en",
+			    "updated": 0
+		  	}
 		  «ENDFOR»
 		]
 		'''

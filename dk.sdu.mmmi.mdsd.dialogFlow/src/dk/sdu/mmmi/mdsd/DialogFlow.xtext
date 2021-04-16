@@ -40,7 +40,7 @@ Actions:
 ;
 
 ActionValue:
-	'param' 'name' name=ID 'type' type=[Entity] value=STRING (list=ActionValueIsList)?
+	'param' name=ID 'type' type=[Entity] value=STRING (list=ActionValueIsList)?
 ;
 
 ActionValueIsList:

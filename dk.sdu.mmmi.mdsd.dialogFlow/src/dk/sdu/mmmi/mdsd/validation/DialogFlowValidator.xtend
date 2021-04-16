@@ -3,6 +3,15 @@
  */
 package dk.sdu.mmmi.mdsd.validation
 
+import org.eclipse.xtext.validation.Check
+import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowSystem
+import dk.sdu.mmmi.mdsd.dialogFlow.Declaration
+import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage
+import dk.sdu.mmmi.mdsd.dialogFlow.ActionValue
+import dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue
+import org.eclipse.xtext.EcoreUtil2
+import dk.sdu.mmmi.mdsd.dialogFlow.Intent
+import java.util.ArrayList
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +20,39 @@ package dk.sdu.mmmi.mdsd.validation
  */
 class DialogFlowValidator extends AbstractDialogFlowValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					DialogFlowPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	@Check
+	def checkUniqueIntentAndEntityName(Declaration declaration) {
+		var system = EcoreUtil2.getContainerOfType(declaration, DialogFlowSystem);
+		
+		var timesFound = 0;
+		for (Declaration de : system.declarations) {
+			if (declaration.name.equals(de.name)) {
+				timesFound++;
+				if (timesFound > 1) {
+					error ("Declaration name is not unique", DialogFlowPackage.Literals.DECLARATION__NAME, "invalidName");
+					return;
+				}
+			}
+		}
+	}
 	
+	@Check
+	def checkResponses(ResponseValue responseValue) {
+		var intent = EcoreUtil2.getContainerOfType(responseValue, Intent);
+			
+		var actionValues = new ArrayList<String>();
+		for (ActionValue action : intent.action.actions) {
+			actionValues.add(action.value);
+		}
+
+		var tokens = responseValue.response.split(" ");
+		for (String s : tokens) {
+			if (s.startsWith("$")) {
+				if (!actionValues.contains(s.substring(1))) {
+					error ("Action value: " + s + " is not valid", DialogFlowPackage.Literals.RESPONSE_VALUE__RESPONSE, "invalidActionValue");
+					return;
+				}
+			}
+		}
+	}
 }
