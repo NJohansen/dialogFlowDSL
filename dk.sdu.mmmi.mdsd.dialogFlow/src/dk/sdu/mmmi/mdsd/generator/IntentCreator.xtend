@@ -72,7 +72,7 @@ class IntentCreator {
 		  "responses": [
 		    {
 		      "resetContexts": true,
-		      "action": "hotel.book",
+		      "action": "",
 		      "affectedContexts": [],
 		      "parameters": [
 		      «IF intent.action !== null»
