@@ -1,0 +1,18 @@
+system Flight
+  entity refundable 
+    reference "true" synonyms "refundable", "with refund"
+  entity location 
+    reference "Barcelona" 
+    reference "London"
+    reference "København" synonyms "CPH", "Copenhagen", "KBH", "Kastrup"
+  entity price 
+    reference "Cheap" synonyms "Not expensive"  
+  intent BookFlight 
+    phrases
+      expression "Book ", "refundable" as refundable, " tickets to ", "Kastrup" as location  
+      expression "Book a flight ", "with refund" as refundable, " only"
+    responses 
+      reply "Okay. I have reserved $refundable tickets for you to $location"
+    actions 
+      param location type location "location" 
+      param refundable type refundable "refundable" 
