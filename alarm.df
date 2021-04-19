@@ -1,0 +1,23 @@
+system Alarm
+  entity all 
+    reference "true" synonyms "all", "all of", "each", "every", "everything", "everywhere"
+  entity recurrence
+    reference "fridays" synonyms "each friday"
+    reference "mondays" synonyms "each monday"
+    reference "tuesdays" synonyms "each tuesday"
+    reference "wednesdays" synonyms "each wednesday"
+    reference "thursdays" synonyms "each thursday"
+    reference "fridays" synonyms "each friday"
+    reference "every day" synonyms "daily"
+  entity song 
+    reference "7 years" synonyms "7 years" 
+    reference "A Thousand Years" synonyms "A Thousand Years"
+  intent AlarmSet 
+    phrases
+      expression "wake me up ", "every day" as recurrence, " at 6 with ", "7 years" as song 
+      expression "set new alarm for 9 am on ", "Wednesday" as recurrence
+    responses 
+      reply "Welcome. Of course i will help you set the alarm $recurrence !"
+    actions 
+      param recurrence type recurrence "recurrence" 
+      param song type song "song" 
