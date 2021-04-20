@@ -32,9 +32,12 @@ class EntityCreator {
 				"value": "«value.value»",
 				"synonyms": [
 					«IF value.synonyms !== null»
+						"«value.value»",
 						«FOR synonym : value.synonyms.values SEPARATOR ','»
 							"«synonym»"
 						«ENDFOR»
+					«ELSE»
+						"«value.value»"
 					«ENDIF»
 				]
 			}
