@@ -1,9 +1,13 @@
 grammar dk.sdu.mmmi.mdsd.DialogFlow with org.eclipse.xtext.common.Terminals
 
 generate dialogFlow "http://www.sdu.dk/mmmi/mdsd/DialogFlow"
+
+SystemList:
+	systems+=DialogFlowSystem*
+;
 	
 DialogFlowSystem:
-	'system' name=ID declarations+=Declaration*
+	'system' name=ID ('extends' base=[DialogFlowSystem])? declarations+=Declaration*
 ;
 
 Declaration:
