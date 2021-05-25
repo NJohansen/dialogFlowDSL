@@ -6,11 +6,19 @@ package dk.sdu.mmmi.mdsd.scoping
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
-import dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue
+import dk.sdu.mmmi.mdsd.dialogFlow.Mapping
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage
 import org.eclipse.xtext.EcoreUtil2
 import dk.sdu.mmmi.mdsd.dialogFlow.Entity
 import org.eclipse.xtext.scoping.Scopes
+import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage.Literals
+import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowSystem
+import java.util.ArrayList
+import java.util.HashSet
+import java.util.Collections
+import dk.sdu.mmmi.mdsd.dialogFlow.Declaration
+import org.eclipse.emf.common.util.EList
+import dk.sdu.mmmi.mdsd.dialogFlow.ActionValue
 
 /**
  * This class contains custom scoping description.
@@ -19,14 +27,70 @@ import org.eclipse.xtext.scoping.Scopes
  * on how and when to use it.
  */
 class DialogFlowScopeProvider extends AbstractDialogFlowScopeProvider {
-	/*override IScope getScope(EObject context, EReference reference) {
+	override IScope getScope(EObject context, EReference reference) {
 		switch context {
-			ResponseValue case reference==DialogFlowPackage.Literals.RESPONSE_VALUE : {
-				val entity = EcoreUtil2.getContainerOfType(context, Entity)
-				 
-				return Scopes.scopeFor(entity)
+			Mapping case reference == Literals.MAPPING__ENTITY: {
+				val system = EcoreUtil2::getContainerOfType(context, DialogFlowSystem)
+				return Scopes.scopeFor(system.allEntities)
+			}
+			ActionValue case reference == Literals.ACTION_VALUE__TYPE: {
+				val system = EcoreUtil2::getContainerOfType(context, DialogFlowSystem)
+				return Scopes.scopeFor(system.allTypes)
+			} 
+		}
+	
+	
+	
+		super.getScope(context, reference)
+	}
+	
+	def Iterable<? extends EObject> allTypes(DialogFlowSystem system) {
+		val candidates = new ArrayList<Declaration>
+		val seen = new HashSet<DialogFlowSystem>
+		var s = system
+		addToCandidates(s, candidates, seen)
+		
+		val superSystems = s.base
+		
+		loopSuperSystems(superSystems, candidates, seen)	
+			
+		candidates
+	}
+	
+	def Iterable<? extends EObject> allEntities(DialogFlowSystem system) {
+		val candidates = new ArrayList<Declaration>
+		val seen = new HashSet<DialogFlowSystem>
+		var s = system
+		
+		
+		addToCandidates(s, candidates, seen)
+		
+		val superSystems = s.base
+		
+		loopSuperSystems(superSystems, candidates, seen)	
+			
+		candidates
+	}
+	
+	def addToCandidates(DialogFlowSystem system, ArrayList<Declaration> candidates, HashSet<DialogFlowSystem> seen){
+		if(seen.contains(system)) return Collections.EMPTY_LIST
+		seen.add(system)
+		val decl = system.declarations
+		for (i : 0 ..< decl.size) {
+			if(decl.get(i) instanceof Entity) {
+				val ent = decl.get(i)
+				candidates.add(ent)
 			}
 		}
-		super.getScope(context, reference)
-	}*/
+	}
+	
+	def loopSuperSystems(EList<DialogFlowSystem> systems, ArrayList<Declaration> candidates, HashSet<DialogFlowSystem> seen) {
+		for(i : 0 ..< systems.size) {
+			val superSystem =  systems.get(i)
+			if(superSystem.base !== null) {
+				loopSuperSystems(superSystem.base, candidates, seen)
+			}
+			addToCandidates(superSystem, candidates, seen)
+		}
+	}
 }
