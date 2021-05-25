@@ -1,0 +1,69 @@
+system GenericBooking
+	entity star
+		reference "1" synonyms "1 or more", "1 star"
+		reference "2" synonyms "2 or more", "2 star"
+	entity country
+		reference "Denmark" synonyms "DK", "Den"
+		reference "USA" synonyms "United States", "US", "United States of America"
+
+system HotelBooking extends GenericBooking 
+	entity venue_accomodation_type
+	    reference "apartment" synonym "apartments"
+	    reference "hotel" synonym "hotels" 
+	    reference "motel" synonym "motels"
+  	intent Welcome 
+	    phrases
+	      expression "Hello"  
+	      expression "Hi" 
+	    responses 
+	      reply "Welcome. I can help you book a hotel. Would you like to book a hotel room?"
+	      reply "Hello. Would you like to book a hotel room?"
+	      reply "Hi there. I can help you book a hotel room. Would you like to book a hotel room?"
+
+system HiltonHotelBooking extends HotelBooking 
+	entity venue_accomodation_chain  
+	    reference "Hilton" 
+	    reference "Hilton one" synonym "Hotel two" 
+	entity venue_accomodation_type
+	    reference "apartment" synonyms "apartments"
+	    reference "hotel" synonym "hotels"
+	    reference "cabin" synonym "cabins"       
+    intent Book
+	    phrases
+	      expression "book suite in ", "Hilton" as venue_accomodation_chain 
+	      expression "book ", "1 star " as star, "motel " as venue_accomodation_type, "room" 
+	    responses 
+	      reply "I need some more information."
+	      reply  "Okay I have booked a room of $venue-type with $star star"
+	    actions 
+	      param venue_type type venue_accomodation_type "venue-type"   
+	      param venue_chain type venue_accomodation_chain "venue-chain" islist
+	      param star type star "star" 
+	      
+system BicycleBooking extends GenericBooking
+	entity bike
+		reference "femalebike"
+		reference "malebike"
+		reference "childbike"
+	entity scooter
+		reference "scooter" synonyms "moped"
+	intent Book
+		phrases
+			expression "book", "malebike" as bike, " in ", "Denmark" as country
+			expression "book", "moped" as scooter, " in ", "USA" as country
+		responses
+			reply "Okay, I have booked a $bike in $country"
+			reply "Okay, I have booked a $scooter in $country"
+		actions
+			param bike type bike "bike"
+			param scooter type scooter "scooter"
+			param country type country "country"
+				
+				
+				
+				
+				
+				
+				
+				
+				
