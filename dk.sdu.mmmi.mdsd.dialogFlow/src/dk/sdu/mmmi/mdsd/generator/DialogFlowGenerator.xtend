@@ -45,6 +45,12 @@ class DialogFlowGenerator extends AbstractGenerator {
 			//	intentCreator.generateIntent(i, fsa)
 			//}
 			
+			
+			
+			if(base !== null) {
+				loopSuperSystems(base, entityCreator, intentCreator, fsa)
+			}
+			
 			for (i : 0 ..< decl.size) {
 				val element = decl.get(i)
 				println(element instanceof Entity)
@@ -53,10 +59,6 @@ class DialogFlowGenerator extends AbstractGenerator {
 				} else if(element instanceof Intent) {
 					intentCreator.generateIntent(element, fsa)
 				}
-			}
-			
-			if(base !== null) {
-				loopSuperSystems(base, entityCreator, intentCreator, fsa)
 			}
 		
 		}
