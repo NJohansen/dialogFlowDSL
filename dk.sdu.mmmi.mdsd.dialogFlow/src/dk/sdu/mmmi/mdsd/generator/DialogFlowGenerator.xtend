@@ -11,6 +11,7 @@ import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowSystem
 import dk.sdu.mmmi.mdsd.dialogFlow.SystemList
 import dk.sdu.mmmi.mdsd.dialogFlow.Entity
 import dk.sdu.mmmi.mdsd.dialogFlow.Intent
+import org.eclipse.emf.common.util.EList
 
 /**
  * Generates code from your model files on save.
@@ -29,11 +30,7 @@ class DialogFlowGenerator extends AbstractGenerator {
 			println(baseSystem.name)
 			
 			val decl = currentSystem.declarations
-			
-			
-			
-			
-			
+			val base = currentSystem.base
 
 			val rootElementCreator = new RootElementCreator(baseSystem.name)
 			rootElementCreator.generateElements(baseSystem, fsa)
@@ -57,8 +54,34 @@ class DialogFlowGenerator extends AbstractGenerator {
 					intentCreator.generateIntent(element, fsa)
 				}
 			}
+			
+			if(base !== null) {
+				loopSuperSystems(base, entityCreator, intentCreator, fsa)
+			}
 		
 		}
 		
 	}
+	
+	def addSuperThings(DialogFlowSystem base, EntityCreator entityCreator, IntentCreator intentCreator, IFileSystemAccess2 fsa) {
+		val superDecl = base.declarations
+		for (j : 0 ..< superDecl.size) {
+			val element = superDecl.get(j)
+			if(element instanceof Entity) {
+				entityCreator.generateEntity(element, fsa)
+			} else if(element instanceof Intent) {
+				intentCreator.generateIntent(element, fsa)
+			}
+		}
+	}
+	
+	def loopSuperSystems(EList<DialogFlowSystem> systems, EntityCreator entityCreator, IntentCreator intentCreator, IFileSystemAccess2 fsa) {
+		for(i : 0 ..< systems.size) {
+			val superSystem =  systems.get(i)
+			if(superSystem.base !== null) {
+				loopSuperSystems(superSystem.base, entityCreator, intentCreator, fsa)
+			}
+			addSuperThings(superSystem, entityCreator, intentCreator, fsa)
+		}
+	}	
 }
