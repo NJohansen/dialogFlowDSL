@@ -7,7 +7,7 @@ SystemList:
 ;
 	
 DialogFlowSystem:
-	'system' name=ID ('extends' base+=[DialogFlowSystem] (',' base+=[DialogFlowSystem])* )? declarations+=Declaration*
+	'system' name=ID ('extends' base+=[DialogFlowSystem]* (',' base+=[DialogFlowSystem]*)* )? declarations+=Declaration*
 ;
 
 Declaration:
