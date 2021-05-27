@@ -23,11 +23,7 @@ system HotelBooking extends GenericBooking
 system HiltonHotelBooking extends HotelBooking 
 	entity venue_accomodation_chain  
 	    reference "Hilton" 
-	    reference "Hilton one" synonym "Hotel two" 
-	entity venue_accomodation_type
-	    reference "apartment" synonyms "apartments"
-	    reference "hotel" synonym "hotels"
-	    reference "cabin" synonym "cabins"       
+	    reference "Hilton one" synonym "Hotel two"    
     intent Book
 	    phrases
 	      expression "book suite in ", "Hilton" as venue_accomodation_chain 
