@@ -6,27 +6,57 @@ package dk.sdu.mmmi.mdsd.scoping
 import org.eclipse.xtext.scoping.IScope
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
-import dk.sdu.mmmi.mdsd.dialogFlow.ResponseValue
 import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowPackage
 import org.eclipse.xtext.EcoreUtil2
-import dk.sdu.mmmi.mdsd.dialogFlow.Entity
 import org.eclipse.xtext.scoping.Scopes
+import dk.sdu.mmmi.mdsd.dialogFlow.DialogFlowSystem
+import java.util.HashSet
+import dk.sdu.mmmi.mdsd.dialogFlow.Mapping
+import dk.sdu.mmmi.mdsd.dialogFlow.Entity
+import java.util.ArrayList
+import dk.sdu.mmmi.mdsd.dialogFlow.ActionValue
 
-/**
- * This class contains custom scoping description.
- * 
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#scoping
- * on how and when to use it.
- */
 class DialogFlowScopeProvider extends AbstractDialogFlowScopeProvider {
-	/*override IScope getScope(EObject context, EReference reference) {
+	
+	//EObject context is the xtext metamodel instance, which we resolve stuff on. EReference points to a specific place in the xtext grammarr
+	override IScope getScope(EObject context, EReference reference) {
 		switch context {
-			ResponseValue case reference==DialogFlowPackage.Literals.RESPONSE_VALUE : {
-				val entity = EcoreUtil2.getContainerOfType(context, Entity)
-				 
-				return Scopes.scopeFor(entity)
+			Mapping case reference==DialogFlowPackage.Literals.MAPPING__ENTITY : {
+				val seenDialogFlows = new HashSet<DialogFlowSystem>
+				var dialogFlow = EcoreUtil2.getContainerOfType(context, DialogFlowSystem) //Ask for the enclosing dialogFlow. Var instead of Val while val is a final and cant be changed
+				val candidates = new ArrayList<Entity>
+				
+				while(dialogFlow !== null){
+					if(seenDialogFlows.contains(dialogFlow)) {
+						return super.getScope(context, reference)
+					}
+					seenDialogFlows.add(dialogFlow) 
+					candidates.addAll(dialogFlow.declarations.filter(Entity))	
+					
+					dialogFlow = dialogFlow.superType 
+				}
+
+				return Scopes.scopeFor(candidates)
+			}
+			ActionValue case reference==DialogFlowPackage.Literals.ACTION_VALUE__TYPE : {
+				val seen = new HashSet<DialogFlowSystem>
+				var system = EcoreUtil2.getContainerOfType(context, DialogFlowSystem) //Ask for the enclosing dialogFlow. Var instead of Val while val is a final and cant be changed
+				val candidates = new ArrayList<Entity>
+				
+				while(system !== null){
+					if(seen.contains(system)) {
+						return super.getScope(context, reference)
+					}
+					seen.add(system) 
+					candidates.addAll(system.declarations.filter(Entity))	
+					
+					system = system.superType 
+				}
+
+				return Scopes.scopeFor(candidates)
 			}
 		}
 		super.getScope(context, reference)
-	}*/
+	}
+	
 }

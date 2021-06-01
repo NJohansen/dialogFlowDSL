@@ -1,9 +1,19 @@
 grammar dk.sdu.mmmi.mdsd.DialogFlow with org.eclipse.xtext.common.Terminals
 
 generate dialogFlow "http://www.sdu.dk/mmmi/mdsd/DialogFlow"
+
+//exactly one (the default, no operator)
+//zero or one (operator ?)
+//zero or more (operator *)
+//one or more (operator +)
+
+//Used for inheritance
+Root: 
+dialogFlowSystems+=DialogFlowSystem*
+;
 	
 DialogFlowSystem:
-	'system' name=ID declarations+=Declaration*
+	'system' name=ID ('extends' superType=[DialogFlowSystem])? declarations+=Declaration*
 ;
 
 Declaration:
@@ -15,7 +25,7 @@ Intent:
 ;
 
 Phrases:
-	{Phrases} 'phrases' phrases+=PhraseValue* //require min 10 N's
+	{Phrases} 'phrases' phrases+=PhraseValue* 
 ;
 
 PhraseValue:
